@@ -1,0 +1,850 @@
+//users
+{
+	"username": "ime",
+	"password": "password",
+	"name": "ime",
+	"surname": "surname",
+	"nationality": "serbian",
+	"email": "mejl",
+	"isDelegate": true
+}
+//countries
+{
+	"countryName": "srbija",
+	"flagImage": "srpskazastava.jpg",
+	"numberOfAthletes": 25
+
+}
+
+//sports
+{
+	"sportName": "basketball",
+	"disciplines": [
+		{
+			"disciplineName": "basket3x3",
+			"medals": [
+				{
+					"athlete": {
+						"name": "Nikola",
+						"surname": "Jokic",
+						"sex": "man",
+						"country": {
+							"countryName": "srbija",
+							"flagImage": "srpskazastava.jpg",
+							"numberOfAthletes": 25
+						},
+						"competesIn": [
+							{
+								"disciplineName": "basketball",
+								"sportName": "basketball",
+								"individual": false,
+								"min": 5,
+								"max": 12
+							},
+							{
+								"disciplineName": "basket3x3",
+								"sportName": "basketball",
+								"individual": false,
+								"min": 5,
+								"max": 12
+							}
+						],
+						"medalWinner": true
+					},
+					"team": [],
+					"country": {
+						"countryName": "srbija",
+						"flagImage": "srpskazastava.jpg",
+						"numberOfAthletes": 25
+					},
+					"type": "golden"
+				}
+			]
+		}
+
+	]
+}
+
+//discipline
+{
+	"disciplineName": "basketball",
+	"sportName":"basketball",
+	"type": "team",
+	"min":5,
+	"max":12
+	
+}
+
+
+//athletes
+
+{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+
+//records
+{
+	"discipline": {
+		"disciplineName": "400m hurdles",
+		"individual": true,
+		"min": 1,
+		"max": 1
+	},
+	"date": "2012-04-23T18:25:43.511Z",
+	"athleteName": "Karsten Warholm",
+	"athleteCountry": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"result": "45,94s"
+}
+
+//medals
+
+{
+	"athlete": {
+		"name": "Nikola",
+		"surname": "Jokic",
+		"sex": "man",
+		"country": {
+			"countryName": "srbija",
+			"flagImage": "srpskazastava.jpg",
+			"numberOfAthletes": 25
+		},
+		"competesIn": [
+			{
+				"disciplineName": "basketball",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			},
+			{
+				"disciplineName": "basket3x3",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			}
+		],
+		"medalWinner": true
+	},
+	"team": [],
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"type": "golden"
+}
+
+
+
+
+//takmicenja
+
+{
+	"sportName": "basketball",
+	"disciplineName": "basketball",
+	"individual": false,
+	"type": "man",
+	"dateEnd": "2012-04-23T18:25:43.511Z",
+	"dateBegin": "2012-05-23T18:25:43.511Z",
+	"location": [
+		"string",
+		"string2"
+	],
+	"teams": [{
+	
+	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	],
+	"groupPoints":10
+}],
+	"competitors": [{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+],
+	"groupPhaseEvents": [{
+	
+	
+	"homeTeam":{	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	]},
+	"awayTeam":{	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	]},
+	"resultHome":"2",
+	"resultAway":"1",
+	"winner":1,
+	"time":"10",
+	"date":"2012-04-23T18:25:43.511Z",
+	"location":"Saporo Arena"
+	
+}],
+	"individualEvents": [
+		{
+			"results": [
+				{
+					"athlete": {
+						"name": "Nikola",
+						"surname": "Jokic",
+						"sex": "man",
+						"country": {
+							"countryName": "srbija",
+							"flagImage": "srpskazastava.jpg",
+							"numberOfAthletes": 25
+						},
+						"competesIn": [
+							{
+								"disciplineName": "basketball",
+								"sportName": "basketball",
+								"individual": false,
+								"min": 5,
+								"max": 12
+							},
+							{
+								"disciplineName": "basket3x3",
+								"sportName": "basketball",
+								"individual": false,
+								"min": 5,
+								"max": 12
+							}
+						],
+						"medalWinner": true
+					},
+					"result": "240m"
+				}
+			],
+			"goldMedal": {
+				"name": "Nikola",
+				"surname": "Jokic",
+				"sex": "man",
+				"country": {
+					"countryName": "srbija",
+					"flagImage": "srpskazastava.jpg",
+					"numberOfAthletes": 25
+				},
+				"competesIn": [
+					{
+						"disciplineName": "basketball",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					},
+					{
+						"disciplineName": "basket3x3",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					}
+				],
+				"medalWinner": true
+			},
+			"silverMedal": {
+				"name": "Nikola",
+				"surname": "Jokic",
+				"sex": "man",
+				"country": {
+					"countryName": "srbija",
+					"flagImage": "srpskazastava.jpg",
+					"numberOfAthletes": 25
+				},
+				"competesIn": [
+					{
+						"disciplineName": "basketball",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					},
+					{
+						"disciplineName": "basket3x3",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					}
+				],
+				"medalWinner": true
+			},
+			"bronzeMedal": {
+				"name": "Nikola",
+				"surname": "Jokic",
+				"sex": "man",
+				"country": {
+					"countryName": "srbija",
+					"flagImage": "srpskazastava.jpg",
+					"numberOfAthletes": 25
+				},
+				"competesIn": [
+					{
+						"disciplineName": "basketball",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					},
+					{
+						"disciplineName": "basket3x3",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					}
+				],
+				"medalWinner": true
+			},
+			"time": "10",
+			"date": "2012-04-23T18:25:43.511Z",
+			"location": "Saporo Arena"
+		}
+	],
+	"delegate": {	
+	"username": "ime",
+	"password": "password",
+	"name": "ime",
+	"surname": "surname",
+	"nationality": "serbian",
+	"email": "mejl",
+	"isDelegate": true
+	},
+	"started":true,
+	"ongoing":true
+}
+
+
+
+//individualEvent
+
+{
+	"results": [
+		{
+			"athlete": {
+				"name": "Nikola",
+				"surname": "Jokic",
+				"sex": "man",
+				"country": {
+					"countryName": "srbija",
+					"flagImage": "srpskazastava.jpg",
+					"numberOfAthletes": 25
+				},
+				"competesIn": [
+					{
+						"disciplineName": "basketball",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					},
+					{
+						"disciplineName": "basket3x3",
+						"sportName": "basketball",
+						"individual": false,
+						"min": 5,
+						"max": 12
+					}
+				],
+				"medalWinner": true
+			},
+			"result": "240m"
+		}
+	],
+	"goldMedal": {
+		"name": "Nikola",
+		"surname": "Jokic",
+		"sex": "man",
+		"country": {
+			"countryName": "srbija",
+			"flagImage": "srpskazastava.jpg",
+			"numberOfAthletes": 25
+		},
+		"competesIn": [
+			{
+				"disciplineName": "basketball",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			},
+			{
+				"disciplineName": "basket3x3",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			}
+		],
+		"medalWinner": true
+	},
+	"silverMedal": {
+		"name": "Nikola",
+		"surname": "Jokic",
+		"sex": "man",
+		"country": {
+			"countryName": "srbija",
+			"flagImage": "srpskazastava.jpg",
+			"numberOfAthletes": 25
+		},
+		"competesIn": [
+			{
+				"disciplineName": "basketball",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			},
+			{
+				"disciplineName": "basket3x3",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			}
+		],
+		"medalWinner": true
+	},
+	"bronzeMedal": {
+		
+		"name": "Nikola",
+		"surname": "Jokic",
+		"sex": "man",
+		"country": {
+			"countryName": "srbija",
+			"flagImage": "srpskazastava.jpg",
+			"numberOfAthletes": 25
+		},
+		"competesIn": [
+			{
+				"disciplineName": "basketball",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			},
+			{
+				"disciplineName": "basket3x3",
+				"sportName": "basketball",
+				"individual": false,
+				"min": 5,
+				"max": 12
+			}
+		],
+		"medalWinner": true
+	},
+	"time":"10",
+	"date":"2012-04-23T18:25:43.511Z",
+	"location":"Saporo Arena"
+}
+
+
+//groupPhaseEvent
+{
+	
+	
+	"homeTeam":{	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	]},
+	"awayTeam":{	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	]},
+	"resultHome":"2",
+	"resultAway":"1",
+	"winner":1,
+	"time":"10",
+	"date":"2012-04-23T18:25:43.511Z",
+	"location":"Saporo Arena"
+	
+}
+
+//timovi
+
+{
+	
+	"teamName":"basketball@serbia",
+	"teamMembers": [
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+},
+	{
+	"name": "Nikola",
+	"surname": "Jokic",
+	"sex": "man",
+	"country": {
+		"countryName": "srbija",
+		"flagImage": "srpskazastava.jpg",
+		"numberOfAthletes": 25
+	},
+	"competesIn": [
+		{
+			"disciplineName": "basketball",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		},
+		{
+			"disciplineName": "basket3x3",
+			"sportName": "basketball",
+			"individual": false,
+			"min": 5,
+			"max": 12
+		}
+	],
+	"medalWinner": true
+}
+	
+	],
+	"groupPoints":10
+	
+}
