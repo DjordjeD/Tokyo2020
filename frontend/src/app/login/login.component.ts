@@ -26,9 +26,12 @@ export class LoginComponent implements OnInit {
   message: string ;
   //this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value
   submit() {
-    this.userService.login("","","").subscribe((user: User)=>{
+    this.userService.login(this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value).subscribe((user: User)=>{
       if(user)
-      { console.log(user.password)}
+      { 
+        localStorage.setItem("user", JSON.stringify(user));
+        console.log(user.password)
+      }
     })
   }
   

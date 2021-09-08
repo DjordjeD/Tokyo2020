@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from './models/user';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  login(username, password, type) {
+  login(username, password, type):Observable<any> {
     const data = {
       username: username,
       password: password,
@@ -21,7 +22,7 @@ export class UserService {
     return this.http.post(`http://localhost:4000/users/login`, data);
   }
 
-  register(username, password, type, country,name,surname,email){
+  register(username, password, type, country,name,surname,email):any{
     const data = {
       username: username,
       password: password,
@@ -35,13 +36,23 @@ export class UserService {
     return this.http.post(`${this.uri}/users/register`, data);
   }
 
-  changePassword(username, password){
+  changePassword(username, password, newPassword) :any {
+    const data = {
+      username: username,
+      password: password,
+      newPassword: newPassword
+    }
+
+    return this.http.post(`${this.uri}/users/changePassword`, data);
+  }
+
+  getUser(username, password):any{
     const data = {
       username: username,
       password: password,
     }
 
-    return this.http.post(`${this.uri}/users/changePassword`, data);
+    return this.http.post(`${this.uri}/users/getUser`, data);
   }
 
 }

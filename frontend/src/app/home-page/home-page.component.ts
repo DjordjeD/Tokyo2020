@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
   constructor(private router: Router) {}
   
-  registered:boolean ;
+  registered:boolean;
   ngOnInit(): void {}
 
   login(){
