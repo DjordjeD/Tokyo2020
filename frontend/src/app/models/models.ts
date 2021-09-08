@@ -1,3 +1,4 @@
+import { User } from "./user";
 export class Tournaments {
   sportName: string;
   disciplineName: string;
@@ -38,15 +39,6 @@ export class Country {
   numberOfAthletes: number;
 }
 
-export class User {
-  username: string;
-  password: string;
-  name: string;
-  surname: string;
-  nationality: string;
-  email: string;
-  isDelegate: boolean;
-}
 
 export class GroupPhaseEvent {
   homeTeam: Team;

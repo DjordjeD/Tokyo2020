@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" >
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+        <div>
+            <button mat-menu-item color="primary"  >Competitors</button>
+        </div>
+      
+
+        <div>
+            <button mat-menu-item  color="primary" >Something</button> 
+        </div>
+       
+
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+    <div *ngIf="!registered">
+        <button mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
+            Register
+         </button>
+    </div>
+  
+      <button mat-raised-button aria-label="Example icon-button with share icon"  (click)="login()"> 
+        Login
+      </button>
+      <button mat-raised-button aria-label="Example icon-button with share icon"  (click)="changePassword()" >
+        Change password
+      </button>
+    
+</mat-toolbar>
