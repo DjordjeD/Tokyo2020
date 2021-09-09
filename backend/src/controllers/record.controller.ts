@@ -1,9 +1,9 @@
 import express from "express";
-import record from "../models/record";
+import Records from "../models/record";
 
 export class recordController {
   getAllRecords = (req: express.Request, res: express.Response) => {
-    record.find({}, (err, record) => {
+    Records.find({}, (err, record) => {
       if (err) console.log(err);
       else res.json(record);
     });

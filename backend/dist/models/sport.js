@@ -6,14 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 let Sports = new Schema({
-    "sportName": {
-        "type": "String"
+    sportName: {
+        type: "String",
     },
-    "disciplines": {
-        "type": [
-            "Mixed"
-        ]
-    }
+    disciplines: {
+        type: ["Mixed"],
+    },
 });
-exports.default = mongoose_1.default.model('Sports', Sports, 'Sports');
+exports.default = mongoose_1.default.model("Sports", Sports, "Sports");
 //# sourceMappingURL=sport.js.map

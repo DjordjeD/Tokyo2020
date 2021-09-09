@@ -4,7 +4,7 @@ import { countryController } from "../controllers/country.controller";
 const countryRouter = express.Router();
 
 countryRouter
-  .route("/getAllCountries")
-  .post((req, res) => new countryController().getAllCountries(req, res));
+  .route('/getAllCountries')
+  .get((req, res) => new countryController().getAllCountries(req, res));
 
 export default countryRouter;

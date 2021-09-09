@@ -1,35 +1,157 @@
-<mat-toolbar color="primary" >
+
+<mat-toolbar color="primary">
 
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
 
-        <div>
-            <button mat-menu-item color="primary"  >Competitors</button>
-        </div>
-      
-
-        <div>
-            <button mat-menu-item  color="primary" >Something</button> 
-        </div>
-       
-
-
-
-
-    </mat-menu>
-    <span class="example-spacer"></span>
-    <div *ngIf="!registered">
-        <button mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
-            Register
-         </button>
+    <div>
+      <button mat-menu-item color="primary" (click)="medalsRepresent()" >Olympic Medal Count  </button>
     </div>
+
+
+    <div>
+      <button mat-menu-item color="primary" (click)="countriesRepresent()">Countries </button>
+    </div>
+
+
+
+  </mat-menu>
+  <span class="example-spacer"></span>
   
-      <button mat-raised-button aria-label="Example icon-button with share icon"  (click)="login()"> 
-        Login
-      </button>
-      <button mat-raised-button aria-label="Example icon-button with share icon"  (click)="changePassword()" >
-        Change password
-      </button>
-    
+  <div *ngIf="!registered">
+    <button mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
+      Register
+    </button>
+  </div>
+
+  <button mat-raised-button aria-label="Example icon-button with share icon" (click)="login()">
+    Login
+  </button>
+  <button mat-raised-button aria-label="Example icon-button with share icon" (click)="changePassword()">
+    Change password
+  </button>
+
 </mat-toolbar>
+
+
+<div class="container">
+  <mat-card>
+    <mat-card-title>Search</mat-card-title>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="nameFormControl" placeholder="Name">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Surname</mat-label>
+          <input matInput [formControl]="surnameFormControl" placeholder="Surname">
+        </mat-form-field>
+  
+         <mat-form-field appearance="fill">
+          <mat-label>Country</mat-label>
+          <mat-select [(ngModel)]="countryName" name="country">
+            <mat-option *ngFor="let country of countries" [value]="country.countryName">
+              {{country.countryName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Sport</mat-label>
+          <mat-select [(ngModel)]="sportName" name="sportName">
+            <mat-option *ngFor="let sport of sports" [value]="sport.sportName">
+              {{sport.sportName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+         <mat-form-field appearance="fill">
+          <mat-label>Discipline</mat-label>
+        
+            <mat-select [(ngModel)]="disciplineName" name="discipline">
+              <mat-optgroup *ngFor="let sport of sports" [label]="sport.sportName"> 
+                <mat-option *ngFor="let discipline of sport.disciplines" [value]="discipline.disciplineName">
+                  {{discipline.disciplineName}}
+                </mat-option>
+              </mat-optgroup>
+             
+            </mat-select>
+         
+  
+        </mat-form-field> 
+        <div>
+          <label>Float label: </label>
+          <mat-radio-group [formControl]="floatLabelControl">
+            <mat-radio-button value="man">Man</mat-radio-button>
+            <mat-radio-button value="woman">Woman</mat-radio-button>
+          </mat-radio-group>
+        </div>
+  
+        <button mat-raised-button color="primary"  (click)="search()" >Search</button>
+       
+  
+      </form>
+  
+    </mat-card-content>
+  </mat-card>
+  
+</div>
+
+
+
+  <div class="container">
+    <h5>Search results</h5>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Country</th>
+              <th scope="col">Sex</th>
+              <th scope="col">Sport</th>
+              <th scope="col">Disciplines</th>
+              <th scope="col">Medal Winner</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor='let c of competitors'>
+              <td>
+                {{c.name}}
+
+              </td>
+              <td>
+                {{c.surname}}
+              </td>
+              <td>
+                {{c.country.countryName}}
+              </td>
+              <td>
+                {{c.sex}}
+              </td>
+              <td>
+                {{c.competesIn[0].sportName}}
+              </td>
+              <td>
+                <div *ngFor='let d of c.competesIn'>
+                  {{d.disciplineName}}
+                </div>
+              </td>
+              <td>
+                {{c.medalWinner}}
+              </td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

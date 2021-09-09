@@ -32,3 +32,16 @@
     justify-content: center;
     width: 120px;
   }
+  .demo-table {
+    width: 100%;
+  }
+
+  .container {
+    padding: 2rem 0rem;
+  }
+  
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+
+  

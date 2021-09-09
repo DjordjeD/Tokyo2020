@@ -1,6 +1,7 @@
 import {  OnInit } from '@angular/core';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from "../models/user";
 import { UserService } from '../user.service';
 
@@ -13,7 +14,7 @@ import { UserService } from '../user.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,8 +30,20 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value).subscribe((user: User)=>{
       if(user)
       { 
-        localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("currentUser", JSON.stringify(user));
+
+        if(user.username="admin"){
+        this.router.navigate['organizer'];
+        }
+        else if(user.isDelegate)
+        {
+          this.router.navigate(['delegate'])
+        }
+        else this.router.navigate(['nationalDelegation'])
         console.log(user.password)
+      }
+      else{
+        this.error="Unsuccesfull login";
       }
     })
   }

@@ -6,15 +6,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 let Countries = new Schema({
-    "countryName": {
-        "type": "String"
+    countryName: {
+        type: "String",
     },
-    "flagImage": {
-        "type": "String"
+    flagImage: {
+        type: "String",
     },
-    "numberOfAthletes": {
-        "type": "Number"
-    }
+    numberOfAthletes: {
+        type: "Number",
+    },
 });
-exports.default = mongoose_1.default.model('Countries', Countries, 'Countries');
+exports.default = mongoose_1.default.model("Countries", Countries, "Countries");
 //# sourceMappingURL=country.js.map

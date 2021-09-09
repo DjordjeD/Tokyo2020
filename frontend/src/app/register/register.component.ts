@@ -1,6 +1,6 @@
 import {  OnInit } from '@angular/core';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from "../models/user";
 import { UserService } from '../user.service';
 
@@ -17,13 +17,13 @@ export class RegisterComponent implements OnInit {
   }
 
   form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    name: new FormControl(''),
-    surname: new FormControl(''),
-    country: new FormControl(''),
-    email: new FormControl(''),
-    repeatPassword: new FormControl(''),
+    username: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
+    name: new FormControl('',[Validators.required]),
+    surname: new FormControl('',[Validators.required]),
+    country: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required]),
+    repeatPassword: new FormControl('',[Validators.required]),
     
   });
   floatLabelControl = new FormControl('auto');

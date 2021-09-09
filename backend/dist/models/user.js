@@ -6,27 +6,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 let Users = new Schema({
-    "username": {
-        "type": "String"
+    username: {
+        type: "String",
     },
-    "password": {
-        "type": "String"
+    password: {
+        type: "String",
     },
-    "name": {
-        "type": "String"
+    name: {
+        type: "String",
     },
-    "surname": {
-        "type": "String"
+    surname: {
+        type: "String",
     },
-    "nationality": {
-        "type": "String"
+    nationality: {
+        type: "String",
     },
-    "email": {
-        "type": "String"
+    email: {
+        type: "String",
     },
-    "isDelegate": {
-        "type": "Boolean"
-    }
+    isDelegate: {
+        type: "Boolean",
+    },
 });
-exports.default = mongoose_1.default.model('Users', Users, 'Users');
+exports.default = mongoose_1.default.model("Users", Users, "Users");
 //# sourceMappingURL=user.js.map

@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const tournament_controller_1 = require("../controllers/tournament.controller");
 const tournamentRouter = express_1.default.Router();
-tournamentRouter.route('/getAllTournaments').post((req, res) => new tournament_controller_1.tournamentController().getAllTournaments(req, res));
+tournamentRouter
+    .route("/getAllTournaments")
+    .post((req, res) => new tournament_controller_1.tournamentController().getAllTournaments(req, res));
 exports.default = tournamentRouter;
 //# sourceMappingURL=tournament.routes.js.map

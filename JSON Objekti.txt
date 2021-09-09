@@ -1,4 +1,4 @@
-//users
+//user
 {
 	"username": "ime",
 	"password": "password",
@@ -8,7 +8,7 @@
 	"email": "mejl",
 	"isDelegate": true
 }
-//countries
+//zemlja
 {
 	"countryName": "srbija",
 	"flagImage": "srpskazastava.jpg",

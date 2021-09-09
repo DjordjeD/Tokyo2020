@@ -19,9 +19,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatSelectModule} from '@angular/material/select';
+import { OrganizerComponent } from './organizer/organizer.component';
+import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
+import { CountriesRepresentComponent } from './countries-represent/countries-represent.component'
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +39,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
  
   ],
   providers: [],

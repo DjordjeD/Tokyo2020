@@ -6,78 +6,68 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 let Tournaments = new Schema({
-    "sportName": {
-        "type": "String"
+    sportName: {
+        type: "String",
     },
-    "disciplineName": {
-        "type": "String"
+    disciplineName: {
+        type: "String",
     },
-    "individual": {
-        "type": "Boolean"
+    individual: {
+        type: "Boolean",
     },
-    "type": {
-        "type": "String"
+    type: {
+        type: "String",
     },
-    "dateEnd": {
-        "type": "Date"
+    dateEnd: {
+        type: "Date",
     },
-    "dateBegin": {
-        "type": "Date"
+    dateBegin: {
+        type: "Date",
     },
-    "location": {
-        "type": [
-            "String"
-        ]
+    location: {
+        type: ["String"],
     },
-    "teams": {
-        "type": [
-            "Mixed"
-        ]
+    teams: {
+        type: ["Mixed"],
     },
-    "competitors": {
-        "type": [
-            "Mixed"
-        ]
+    competitors: {
+        type: ["Mixed"],
     },
-    "groupPhaseEvents": {
-        "type": [
-            "Mixed"
-        ]
+    groupPhaseEvents: {
+        type: ["Mixed"],
     },
-    "individualEvents": {
-        "type": [
-            "Mixed"
-        ]
+    individualEvents: {
+        type: ["Mixed"],
     },
-    "delegate": {
-        "username": {
-            "type": "String"
+    delegate: {
+        username: {
+            type: "String",
         },
-        "password": {
-            "type": "String"
+        password: {
+            type: "String",
         },
-        "name": {
-            "type": "String"
+        name: {
+            type: "String",
         },
-        "surname": {
-            "type": "String"
+        surname: {
+            type: "String",
         },
-        "nationality": {
-            "type": "String"
+        nationality: {
+            type: "String",
         },
-        "email": {
-            "type": "String"
+        email: {
+            type: "String",
         },
-        "isDelegate": {
-            "type": "Boolean"
-        }
+        isDelegate: {
+            type: "Boolean",
+        },
     },
-    "started": {
-        "type": "Boolean"
+    started: {
+        type: "Boolean",
     },
-    "ongoing": {
-        "type": "Boolean"
-    }
+    ongoing: {
+        type: "Boolean",
+    },
 });
-exports.default = mongoose_1.default.model('Tournaments', Tournaments, 'Tournaments');
+exports.default = mongoose_1.default.model("Tournaments", Tournaments, "Tournaments");
 //# sourceMappingURL=tournament.js.map
