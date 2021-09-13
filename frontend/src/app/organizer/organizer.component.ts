@@ -17,7 +17,8 @@ export class OrganizerComponent implements OnInit {
     private router: Router,
     private competitorService: CompetitorService,
     private sportService: SportService,
-    private countryService: CountryService
+    private countryService: CountryService,
+
   ) {}
 
     ngOnInit(): void {
@@ -41,7 +42,7 @@ export class OrganizerComponent implements OnInit {
   sports:Sport[];
 
   addDiscipline() {
-    
+      this.sportService.addDiscipline(this.sportName,this.disciplineFormControl.value,this.individualFormControl.value,this.minimumPlayersForm.value,this.maximumPlayersForm.value)
   }
 
   login() {

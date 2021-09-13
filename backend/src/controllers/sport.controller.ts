@@ -8,4 +8,10 @@ export class sportController {
       else res.json(sport);
     });
   };
+
+  addDiscipline = (req: express.Request, res: express.Response) => {
+    //todos
+
+  };
+
 }

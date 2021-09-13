@@ -79,11 +79,11 @@
 
                 <label> Team Sport? </label>
                 <mat-radio-group [formControl]="individualFormControl">
-                  <mat-radio-button value=true>Yes</mat-radio-button>
-                  <mat-radio-button value=false>No</mat-radio-button>
+                  <mat-radio-button value="team">Yes</mat-radio-button>
+                  <mat-radio-button value="individual">No</mat-radio-button>
                 </mat-radio-group>
 
-                <div *ngIf="individualFormControl.value">
+                <div *ngIf="individualFormControl.value=='team'">
                     <mat-form-field appearance="fill">
                         <mat-label>Minimum players</mat-label>
                         <input matInput [formControl]="minimumPlayersForm" placeholder="Name">
@@ -92,7 +92,7 @@
                 </div>
 
             
-                <div *ngIf="individualFormControl.value">
+                <div *ngIf="individualFormControl.value=='team'">
 
                     <mat-form-field appearance="fill">
                         <mat-label>Maximum players</mat-label>
@@ -111,7 +111,7 @@
     </mat-card>
 
 
-
+    <br>
 
     <div class="container">
         <h5>Disciplines</h5>
