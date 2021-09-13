@@ -1,1 +1,150 @@
-<p>organizer works!</p>
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="medalsRepresent()">Olympic Medal Count </button>
+        </div>
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+
+
+
+    <div class="buttons-row">
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="changePassword()">
+            Change password
+        </button>
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="home()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+<!-- < <mat-card>
+    <mat-card-title>Insert a new Sport</mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Sport Name</mat-label>
+                <input matInput [formControl]="nameFormControl" placeholder="Name">
+            </mat-form-field>
+
+
+            <button mat-raised-button color="primary" (click)="addSport()">Search</button>
+
+
+        </form>
+
+    </mat-card-content>
+    </mat-card> -->
+
+
+    <mat-card>
+        <mat-card-title>Insert A New Discipline</mat-card-title>
+        <mat-card-content>
+            <form>
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Sport</mat-label>
+                    <mat-select [(ngModel)]="sportName" name="sportName">
+                        <mat-option *ngFor="let sport of sports" [value]="sport.sportName">
+                            {{sport.sportName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Discipline Name</mat-label>
+                    <input matInput [formControl]="disciplineFormControl" placeholder="Name">
+                </mat-form-field>
+
+                <label> Team Sport? </label>
+                <mat-radio-group [formControl]="individualFormControl">
+                  <mat-radio-button value=true>Yes</mat-radio-button>
+                  <mat-radio-button value=false>No</mat-radio-button>
+                </mat-radio-group>
+
+                <div *ngIf="individualFormControl.value">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Minimum players</mat-label>
+                        <input matInput [formControl]="minimumPlayersForm" placeholder="Name">
+                    </mat-form-field>
+
+                </div>
+
+            
+                <div *ngIf="individualFormControl.value">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Maximum players</mat-label>
+                        <input matInput [formControl]="maximumPlayersForm" placeholder="Name">
+                    </mat-form-field>
+                </div>
+               
+
+
+                <button mat-raised-button color="primary" (click)="addDiscipline()">Search</button>
+
+
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+
+
+
+
+    <div class="container">
+        <h5>Disciplines</h5>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Country</th>
+                            <th scope="col">Number of Athletes</th>
+                            <th scope="col">Flag</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor='let c of countries'>
+                            <td>
+                                {{c.countryName}}
+
+                            </td>
+                            <td>
+                                <img src="/assets/{{c.flagImage}}" class="img-thumbnail rounded-circle|" alt="">
+                            </td>
+                            <td>
+                                {{c.numberOfAthletes}}
+                            </td>
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

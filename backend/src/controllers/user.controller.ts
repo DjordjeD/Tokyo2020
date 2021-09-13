@@ -49,18 +49,22 @@ export class userController {
   register = (req: express.Request, res: express.Response) => {
     let username = req.body.username;
     let password = req.body.password;
-    let newPassword = req.body.newPassword;
-    let type = req.body.type;
-    let country = req.body.country;
+    
+    let isDelegate = req.body.isDelegate;
+    let nationality = req.body.nationality;
     let name = req.body.name;
     let surname = req.body.surname;
     console.log("register");
     Users.findOne(
-      { password: password, username: username, type: type },
+      { password: password, username: username, isDelegate: isDelegate },
       (err, user) => {
-        if (err) {
+        if (user) {
           let newUser = new Users(req.body);
-          newUser
+         // if(isDelegate==false && newUser.isDelegate==false) slucaj kada hocu nacionalu delegaciju da doodam
+
+          if(user == null)
+          {
+            newUser
             .save()
             .then(() => {
               res.status(200).json({ message: "ok" });
@@ -69,7 +73,14 @@ export class userController {
               console.log(err);
               res.status(400).json({ message: err });
             });
-        } else res.status(400).json({ message: err });
+          }
+          else {
+            res.json({ message: "Korisnik vec postoji" });
+          } 
+         
+        } else {
+          res.json({ message: err });
+        }
       }
     );
   };

@@ -20,15 +20,15 @@
   <span class="example-spacer"></span>
   
   <div *ngIf="!registered">
-    <button mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
+    <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
       Register
     </button>
   </div>
 
-  <button mat-raised-button aria-label="Example icon-button with share icon" (click)="login()">
+  <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" (click)="login()">
     Login
   </button>
-  <button mat-raised-button aria-label="Example icon-button with share icon" (click)="changePassword()">
+  <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" (click)="changePassword()">
     Change password
   </button>
 
@@ -73,8 +73,8 @@
         
             <mat-select [(ngModel)]="disciplineName" name="discipline">
               <mat-optgroup *ngFor="let sport of sports" [label]="sport.sportName"> 
-                <mat-option *ngFor="let discipline of sport.disciplines" [value]="discipline.disciplineName">
-                  {{discipline.disciplineName}}
+                <mat-option *ngFor="let discipline of sport.disciplines" [value]="discipline.discipline.disciplineName">
+                  {{discipline.discipline.disciplineName}}
                 </mat-option>
               </mat-optgroup>
              
@@ -83,13 +83,21 @@
   
         </mat-form-field> 
         <div>
-          <label>Float label: </label>
+          <label>Sex: </label>
           <mat-radio-group [formControl]="floatLabelControl">
             <mat-radio-button value="man">Man</mat-radio-button>
             <mat-radio-button value="woman">Woman</mat-radio-button>
           </mat-radio-group>
         </div>
   
+
+        <div>
+          <label>Medal winners only? : </label>
+          <mat-radio-group [formControl]="medalWinnerFormControl">
+            <mat-radio-button value="true">Yes</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
         <button mat-raised-button color="primary"  (click)="search()" >Search</button>
        
   

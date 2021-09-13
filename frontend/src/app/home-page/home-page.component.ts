@@ -36,6 +36,7 @@ export class HomePageComponent implements OnInit {
   allCompetitors:Array<Competitor>;
 
   floatLabelControl = new FormControl('');
+  medalWinnerFormControl = new FormControl('');
   nameFormControl = new FormControl('');
   surnameFormControl = new FormControl('');
   ngOnInit(): void {
@@ -70,7 +71,8 @@ export class HomePageComponent implements OnInit {
         this.countryName,
         this.sportName,
         this.disciplineName,
-        this.floatLabelControl.value
+        this.floatLabelControl.value,
+        this.medalWinnerFormControl.value
       )
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {

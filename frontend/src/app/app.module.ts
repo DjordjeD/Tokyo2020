@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
 import { CountriesRepresentComponent } from './countries-represent/countries-represent.component'
+import {MatGridListModule} from '@angular/material/grid-list';
 @NgModule({
   declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent],
   imports: [
@@ -40,7 +41,8 @@ import { CountriesRepresentComponent } from './countries-represent/countries-rep
     ReactiveFormsModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule
  
   ],
   providers: [],

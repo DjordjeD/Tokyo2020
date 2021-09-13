@@ -14,4 +14,19 @@ export class SportService {
   getAllSports():Observable<any> {
     return this.http.get(`http://localhost:4000/sports/getAllSports`);
   }
+
+  addDiscipline(sportName,disciplineName,type,min,max) {
+
+    const data = {
+      sportName: sportName,
+      disciplineName: disciplineName,
+      type: type,
+      min: min,
+      max: max
+    }
+
+    return this.http.post(`http://localhost:4000/sports/addDiscipline`,data);
+
+
+  }
 }

@@ -22,15 +22,16 @@ export class UserService {
     return this.http.post(`http://localhost:4000/users/login`, data);
   }
 
-  register(username, password, type, country,name,surname,email):any{
+  register(username, password, type, nationality,name,surname,email,isDelegate):any{
     const data = {
       username: username,
       password: password,
       type: type,
-      country: country,
+      nationality: nationality,
       name: name,
       surname: surname,
       email: email,
+      isDelegate:isDelegate
     }
 
     return this.http.post(`${this.uri}/users/register`, data);

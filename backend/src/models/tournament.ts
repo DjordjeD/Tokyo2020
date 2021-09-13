@@ -59,6 +59,20 @@ let Tournaments = new Schema({
       type: "Boolean",
     },
   },
+  format: {
+    numberOfRounds: {
+      type: "Number",
+    },
+    numberOfGroups: {
+      type: "Number",
+    },
+    numberOfTeamsInGroup: {
+      type: "Number",
+    },
+    resultFormat: {
+      type: "String",
+    },
+  },
   started: {
     type: "Boolean",
   },

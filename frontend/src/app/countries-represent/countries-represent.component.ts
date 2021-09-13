@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CompetitorService } from '../competitor.service';
+import { CountryService } from '../country.service';
+import { Country } from '../models/models';
+import { SportService } from '../sport.service';
 
 @Component({
   selector: 'app-countries-represent',
@@ -7,9 +12,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountriesRepresentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private competitorService: CompetitorService,
+    private sportService: SportService,
+    private countryService: CountryService
+  ) {}
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+
+      this.country=new Country()
+      this.country.flagImage="olympicGames.png"
+      this.country.countryName="srbiija"
+      this.country.numberOfAthletes=25
+
+      this.countries.push(this.country)
+
+      console.log(this.countries[0].flagImage)
+
+    }
+  
+  country:Country
+  countries: Array<Country> =[]   
+  registered:boolean
+
+  login() {
+    this.router.navigate(['/login']);
   }
 
+  register() {
+    this.router.navigate(['/register']);
+  }
+
+  changePassword() {
+    this.router.navigate(['/changePassword']);
+  }
+
+  medalsRepresent() {
+    this.router.navigate(['medalsRepresent'])
+  }
+
+  home(){
+    this.router.navigate([''])
+  }
 }
