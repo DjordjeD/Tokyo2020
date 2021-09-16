@@ -1,0 +1,48 @@
+<br>
+<div class="container">
+    <mat-card>
+      <mat-card-title>Add a new Sport</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [formControl]="nameFormControl" placeholder="Name">
+          </mat-form-field>
+    
+       
+          <button mat-raised-button color="primary"  (click)="addSport()" >Add</button>
+         
+        </form>
+    
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h5>All Sports</h5>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">SportName</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor='let s of sports'>
+              <td>
+                {{s.sportName}}
+
+              </td>
+              
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,183 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="addSport()">Add a new Sport </button>
+        </div>
+<!-- 
+        <div>
+            <button mat-menu-item color="primary" (click)="addTournament()">Add a Tournament</button>
+        </div>
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+ -->
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+    <div class="buttons-row">
+
+        
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="home()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+
+
+<mat-card>
+    <mat-card-title>Select Delegate</mat-card-title>
+    <mat-card-content>
+        <form> 
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Delegate</mat-label>
+                <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
+                    <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
+                        {{delegate.name}} {{delegate.surname}} 
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        (click)="selectDelegate()">
+        Select
+        </button>
+
+        <form *ngIf="currentTournament.individual"> 
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Athlete</mat-label>
+                <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
+                    <mat-option *ngFor="let a of athletes" [value]="a.name">
+                        {{a.name}} {{a.surname}} 
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+
+
+        <!-- <form *ngIf="!currentTournament.individual"> 
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Teams</mat-label>
+                <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
+                    <mat-option *ngFor="let a of athletes" [value]="a.name">
+                        {{a.name}} {{a.surname}} 
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+        </form> -->
+
+
+
+
+    </mat-card-content>
+</mat-card> 
+
+
+
+<!-- 
+<div class="container" *ngIf="currentTournament.individual">
+    <h5>Athletes</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Surname</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Sex</th>
+                  <th scope="col">Sport</th>
+                  <th scope="col">Disciplines</th>
+                  <th scope="col">Medal Winner</th>
+    
+                </tr>
+              </thead>
+              <tbody>
+    
+                <tr *ngFor='let c of currentTournament.competitors'>
+                  <td>
+                    {{c.name}}
+    
+                  </td>
+                  <td>
+                    {{c.surname}}
+                  </td>
+                  <td>
+                    {{c.country.countryName}}
+                  </td>
+                  <td>
+                    {{c.sex}}
+                  </td>
+                  <td>
+                    {{c.competesIn[0].sportName}}
+                  </td>
+                  <td>
+                    <div *ngFor='let d of c.competesIn'>
+                      {{d.disciplineName}}
+                    </div>
+                  </td>
+                  <td>
+                    {{c.medalWinner}}
+                  </td>
+    
+    
+                </tr>
+    
+              </tbody>
+            </table>
+
+      </div>
+</div> -->
+
+<!-- 
+<div class="container" *ngIf="!currentTournament.individual">
+    <h5>Teams</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+    
+                  <th scope="col">Country</th>
+                  <th scope="col">Discipline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let t of currentTournament.teams'>
+                    <td>
+                        {{t.teamName}} 
+                    </td>
+                    <td>
+                        {{t.teamName}}
+                    </td>
+                </tr>
+    
+              </tbody>
+            </table>
+
+      </div>
+</div>
+ -->
+

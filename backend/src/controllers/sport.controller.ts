@@ -14,4 +14,9 @@ export class sportController {
 
   };
 
+  addSport = (req: express.Request, res: express.Response) => {
+    //todos
+
+  };
+
 }

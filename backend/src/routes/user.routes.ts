@@ -3,9 +3,13 @@ import { userController } from "../controllers/user.controller";
 
 const userRouter = express.Router();
 
-userRouter
+  userRouter
   .route("/getAllUsers")
   .post((req, res) => new userController().getAllUsers(req, res));
+
+  userRouter
+  .route("/getDelegates")
+  .post((req, res) => new userController().getDelegates(req, res));
 
   userRouter
   .route("/login")

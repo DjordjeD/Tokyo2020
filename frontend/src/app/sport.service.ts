@@ -15,6 +15,18 @@ export class SportService {
     return this.http.get(`http://localhost:4000/sports/getAllSports`);
   }
 
+  addSport(sportName) {
+
+    const data = {
+      sportName: sportName,
+
+    }
+
+    return this.http.post(`http://localhost:4000/sports/addSport`,data);
+
+
+  }
+
   addDiscipline(sportName,disciplineName,type,min,max) {
 
     const data = {

@@ -8,6 +8,14 @@ export class userController {
       else res.json(user);
     });
   };
+
+  getDelegates = (req: express.Request, res: express.Response) => {
+    Users.find({'isDelegate':true}, (err, user) => {
+      if (err) console.log(err);
+      else res.json(user);
+    });
+  };
+
   getUser = (req: express.Request, res: express.Response) => {
     let username = req.body.username;
     let password = req.body.password;

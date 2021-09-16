@@ -1,0 +1,244 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="addSport()">Add a new Sport </button>
+        </div>
+
+        <div>
+            <button mat-menu-item color="primary" (click)="addTournament()">Add a Tournament</button>
+        </div>
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+        <div>
+            <button mat-menu-item color="primary" (click)="editTournament()">Edit Tournament</button>
+        </div>
+
+
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+
+
+
+    <div class="buttons-row">
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="changePassword()">
+            Change password
+        </button>
+        
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="home()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+<!-- < <mat-card>
+    <mat-card-title>Insert a new Sport</mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Sport Name</mat-label>
+                <input matInput [formControl]="nameFormControl" placeholder="Name">
+            </mat-form-field>
+
+
+            <button mat-raised-button color="primary" (click)="addSport()">Search</button>
+
+
+        </form>
+
+    </mat-card-content>
+    </mat-card> -->
+
+
+    <mat-card>
+        <mat-card-title>Add a new Tournament structure </mat-card-title>
+        <mat-card-content>
+            <form> 
+
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Sport</mat-label>
+                    <mat-select [(ngModel)]="sportName" name="sportName">
+                        <mat-option *ngFor="let sport of sports" [value]="sport.sportName">
+                            {{sport.sportName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Discipline</mat-label>
+                  
+                      <mat-select [(ngModel)]="disciplineName" name="discipline">
+                        <mat-optgroup *ngFor="let sport of sports" [label]="sport.sportName"> 
+                          <mat-option *ngFor="let discipline of sport.disciplines" [value]="discipline.discipline.disciplineName">
+                            {{discipline.discipline.disciplineName}}
+                          </mat-option>
+                        </mat-optgroup>
+                       
+                      </mat-select>
+                   
+            
+                </mat-form-field> 
+                
+                
+                <mat-label> Team Sport? </mat-label>
+                <mat-radio-group [formControl]="individualFormControl">
+                  <mat-radio-button value="team">Yes</mat-radio-button>
+                  <mat-radio-button value="individual">No</mat-radio-button>
+                </mat-radio-group>
+           
+
+                <!-- <mat-label> Men or Women? </mat-label>
+                <mat-radio-group [formControl]="typeFormControl">
+                  <mat-radio-button value="man">Man</mat-radio-button>
+                  <mat-radio-button value="woman">Woman</mat-radio-button>
+                </mat-radio-group>
+                 -->
+                <!-- <div *ngIf="individualFormControl.value=='team'">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Minimum players</mat-label>
+                        <input matInput [formControl]="minimumPlayersForm" placeholder="Name">
+                    </mat-form-field>
+
+                </div>
+
+            
+                <div *ngIf="individualFormControl.value=='team'">
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Maximum players</mat-label>
+                        <input matInput [formControl]="maximumPlayersForm" placeholder="Name">
+                    </mat-form-field>
+                </div>
+                -->
+                
+                <!-- <mat-checkbox formControlName="locationFormControl">
+                    Check me!
+                </mat-checkbox>
+
+
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose starting date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose ending date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Number of Rounds</mat-label>
+                    <input matInput [formControl]="roundsFormControl" placeholder="Rounds">
+                  </mat-form-field>
+                       
+                <div *ngIf="individualFormControl.value=='team'">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Number of Groups</mat-label>
+                    <input matInput [formControl]="groupsFormControl" placeholder="Number of Groups">
+                  </mat-form-field>
+                </div>
+
+                <div *ngIf="individualFormControl.value=='team'">
+                    <mat-form-field appearance="fill">
+                      <mat-label>Number of teams in group </mat-label>
+                      <input matInput [formControl]="teamsGroupFormControl" placeholder="Teams in group">
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Result Format</mat-label>
+                    <mat-select [(ngModel)]="resultFormat" name="resultFormat" placeholder="Result Format">
+                        <mat-option value="HH:MM:SS">
+                            HH:MM:SS
+                        </mat-option>
+                        <mat-option value="MM:SS">
+                            MM:SS
+                        </mat-option>
+                        <mat-option value="SS:MS">
+                            SS:MS
+                        </mat-option>
+                        <mat-option value="SET1:SET2">
+                            SET1:SET2
+                        </mat-option>
+                        <mat-option value="points@T1:points@T2">
+                            points@T1:points@T2
+                        </mat-option>
+                        <mat-option value="M:CM">
+                            M:CM
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+              
+
+            </form>
+
+
+            <button mat-raised-button color="primary" (click)="addTournament()">Add Tournament</button>
+
+
+        </mat-card-content>
+    </mat-card>
+    <br>
+
+    <h4>View and edit which Teams/Individuals play at which tournament by pressing on the button in the table</h4> 
+
+    <br>
+
+    <div class="container">
+        <h5>Tournaments</h5>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Sport</th>
+                            <th scope="col">Discipline</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Edit</th>
+                            
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor='let t of tournaments' [(ngModel)]="currentTournament">
+                            <td>
+                                {{t.sportName}}
+
+                            </td>
+                            <td>
+                                {{t.disciplineName}}
+                            </td>
+                            <td>
+                                {{t.type}}
+                            </td>
+                            <td>
+                                <button mat-raised-button color="primary" (click)="editTournament()">Edit</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

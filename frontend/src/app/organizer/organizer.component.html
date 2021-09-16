@@ -6,13 +6,17 @@
 
 
         <div>
-            <button mat-menu-item color="primary" (click)="medalsRepresent()">Olympic Medal Count </button>
+            <button mat-menu-item color="primary" (click)="addSport()">Add a new Sport </button>
         </div>
 
+        <div>
+            <button mat-menu-item color="primary" (click)="addTournament()">Add a Tournament</button>
+        </div>
 
         <div>
             <button mat-menu-item color="primary" (click)="home()">Home </button>
         </div>
+
 
 
 
@@ -29,6 +33,7 @@
             (click)="changePassword()">
             Change password
         </button>
+        
         <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
             (click)="home()">
             Back

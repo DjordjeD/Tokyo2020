@@ -24,8 +24,11 @@ import { OrganizerComponent } from './organizer/organizer.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
 import { CountriesRepresentComponent } from './countries-represent/countries-represent.component'
 import {MatGridListModule} from '@angular/material/grid-list';
+import { AddSportComponent } from './add-sport/add-sport.component';
+import { AddTournamentComponent } from './add-tournament/add-tournament.component';
+import { EditTournamentComponent } from './edit-tournament/edit-tournament.component';
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

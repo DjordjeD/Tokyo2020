@@ -56,4 +56,9 @@ export class UserService {
     return this.http.post(`${this.uri}/users/getUser`, data);
   }
 
+  getDelegates():any{
+
+
+    return this.http.get(`${this.uri}/users/getDelegates`);
+  }
 }
