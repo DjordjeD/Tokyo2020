@@ -3,7 +3,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
-import { Competitor, Country, Format, Sport, Tournaments } from '../models/models';
+import { Competitor, Country, Format, Sport, Team, Tournaments } from '../models/models';
 import { User } from '../models/user';
 import { SportService } from '../sport.service';
 import { TournamentService } from '../tournament.service';
@@ -53,30 +53,42 @@ export class EditTournamentComponent implements OnInit {
   roundsFormControl = new FormControl('');
   teamsGroupFormControl = new FormControl('',Validators.required);
   groupsFormControl = new FormControl('',Validators.required);
-  athletes:Array<Competitor>
-  currentComptetitor:Competitor;
-  disciplineName: string
-  resultFormat:string
-  countries: Country[];
-  registered:boolean
-  sportName: string
+
   sports:Sport[];
   currentTournament: Tournaments
   tournaments: Array<Tournaments>
-  format: Format
+  
+
+
+  allCompetitors:Array<Competitor>
+  selectedCompetitors:Array<Competitor>
+
+  allTeams:Array<Team>
+  selectedTeams: Array<Team>
   
   selectDelegate()
   {
-    //this.tournamentService.selectDelegate()
+    this.currentTournament.delegate=this.delegate;
   }
 
   login() {
     this.router.navigate(['/login']);
   }
 
+  addCompetitors() {
+    if(this.selectedCompetitors.length!=0)
+    this.currentTournament.competitors = this.selectedCompetitors;
+  }
 
-  addTournament() {
-    this.router.navigate(['/addTournament']);
+  addTeams() {
+    if(this.selectedTeams.length!=0)
+    this.currentTournament.teams = this.selectedTeams
+  }
+
+  saveTournament() {
+    this.tournamentService.saveTournament(this.currentTournament).subscribe((msg:any)=>{
+      console.log(msg);
+    })
   }
 
 

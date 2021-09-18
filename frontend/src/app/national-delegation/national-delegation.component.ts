@@ -71,7 +71,7 @@ export class NationalDelegationComponent implements OnInit {
    for (let index = 0; index < this.disciplines.length; index++) {
      
      
-   }S
+   }
    
 
     for (let index = 0; index < this.tournaments.length; index++) {

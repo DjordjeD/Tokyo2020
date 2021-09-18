@@ -4,11 +4,14 @@ import { AddSportComponent } from './add-sport/add-sport.component';
 import { AddTournamentComponent } from './add-tournament/add-tournament.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CountriesRepresentComponent } from './countries-represent/countries-represent.component';
+import { DelegatePageComponent } from './delegate-page/delegate-page.component';
 import { EditTournamentComponent } from './edit-tournament/edit-tournament.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
+import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
 import { OrganizerComponent } from './organizer/organizer.component';
+import { RecordsComponent } from './records/records.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
@@ -23,6 +26,9 @@ const routes: Routes = [
   {path: 'addSport', component: AddSportComponent},
   {path:'addTournament', component: AddTournamentComponent},
   {path:'editTournament', component: EditTournamentComponent},
+  {path:'records',component: RecordsComponent},
+  {path:'delegatePage',component: DelegatePageComponent},
+  {path:'nationalDelegation',component: NationalDelegationComponent }
 ];
 
 @NgModule({

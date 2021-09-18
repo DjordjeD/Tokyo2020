@@ -11,7 +11,7 @@ export class sportController {
 
   addDiscipline = (req: express.Request, res: express.Response) => {
     //todos
-
+    
   };
 
   addSport = (req: express.Request, res: express.Response) => {

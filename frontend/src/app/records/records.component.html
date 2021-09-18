@@ -1,0 +1,94 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="back()">Back to organizer </button>
+        </div>
+
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+ 
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+
+
+
+    <div class="buttons-row">
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="home()">
+            Home
+        </button>
+        
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="back()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+<div class="container" >
+    <h5>Records</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Sport</th>
+                  <th scope="col">Discipline</th>
+                  <th scope="col">Record holder</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Result</th>
+                  <th scope="col">Date</th>
+                  
+    
+                </tr>
+              </thead>
+              <tbody>
+    
+                <tr *ngFor='let c of records'>
+                  <td>
+                    {{c.discipline.sportName}}
+    
+                  </td>
+                  <td>
+                    {{c.discipline.disciplineName}}
+                  </td>
+                  <td>
+                    {{c.athleteName}}
+                  </td>
+                  <td>
+                    {{c.athleteCountry.countryName}}
+                  </td>
+                  <td>
+                    {{c.result}
+                  </td>
+                  <td>
+                    {{c.date}}
+                  </td>
+
+    
+    
+                </tr>
+    
+              </tbody>
+            </table>
+
+      </div>
+</div> 

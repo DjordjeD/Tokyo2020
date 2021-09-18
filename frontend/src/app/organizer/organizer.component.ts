@@ -30,6 +30,7 @@ export class OrganizerComponent implements OnInit {
         }
       });
 
+
     }
   
   disciplineFormControl = new FormControl('',Validators.required);
@@ -47,6 +48,10 @@ export class OrganizerComponent implements OnInit {
 
   login() {
     this.router.navigate(['/login']);
+  }
+
+  records() {
+    this.router.navigate(['/records']);
   }
 
 

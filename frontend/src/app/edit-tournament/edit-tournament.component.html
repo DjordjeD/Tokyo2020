@@ -35,62 +35,86 @@
 
 </mat-toolbar>
 
-
-
-<mat-card>
-    <mat-card-title>Select Delegate</mat-card-title>
-    <mat-card-content>
-        <form> 
-
-
-            <mat-form-field appearance="fill">
-                <mat-label>Delegate</mat-label>
-                <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
-                    <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
-                        {{delegate.name}} {{delegate.surname}} 
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </form>
-
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-        (click)="selectDelegate()">
-        Select
-        </button>
-
-        <form *ngIf="currentTournament.individual"> 
-
-
-            <mat-form-field appearance="fill">
-                <mat-label>Athlete</mat-label>
-                <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
-                    <mat-option *ngFor="let a of athletes" [value]="a.name">
-                        {{a.name}} {{a.surname}} 
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </form>
-
-
-        <!-- <form *ngIf="!currentTournament.individual"> 
-
-
-            <mat-form-field appearance="fill">
-                <mat-label>Teams</mat-label>
-                <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
-                    <mat-option *ngFor="let a of athletes" [value]="a.name">
-                        {{a.name}} {{a.surname}} 
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            
-        </form> -->
+<!-- <h2>{{currentTournament.sportName}} {{currentTournament.disciplineName}} <span class="badge bg-info"></span></h2> -->
 
 
 
+<h2> Ime sporta i discipline <span class="badge bg-info"></span></h2>
+<mat-grid-list cols="2" rowHeight="120px:100px">
+  <mat-grid-tile center="top">
+    <mat-card>
+      <mat-card-title>Select Delegate</mat-card-title>
+      <mat-card-content>
+          <form> 
+  
+  
+              <mat-form-field appearance="fill">
+                  <mat-label>Delegate</mat-label>
+                  <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
+                      <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
+                          {{delegate.name}} {{delegate.surname}} 
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </form>
+  
+          <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+          (click)="selectDelegate()">
+          Select delegate 
+          </button>
+  
+  
+      </mat-card-content>
+  </mat-card> 
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>
+          Select players/teams:
+      </mat-card-title>
+      <mat-card-content>
+         <!-- <form *ngIf="currentTournament.individual"> 
+  
+  
+              <mat-form-field appearance="fill">
+                  <mat-label>Athlete</mat-label>
+                  <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
+                      <mat-option *ngFor="let a of athletes" [value]="a.name">
+                          {{a.name}} {{a.surname}} 
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </form> -->
+  
+  
+          <!-- <form *ngIf="!currentTournament.individual"> 
+  
+  
+              <mat-form-field appearance="fill">
+                  <mat-label>Teams</mat-label>
+                  <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
+                      <mat-option *ngFor="let a of athletes" [value]="a.name">
+                          {{a.name}} {{a.surname}} 
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+              
+          </form> -->
+      </mat-card-content>
+    </mat-card>
+        
+  </mat-grid-tile>
+</mat-grid-list>
 
-    </mat-card-content>
-</mat-card> 
+<br>
+
+
+<button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+(click)="saveTournament()">
+Save Changes
+</button>
+
+
 
 
 
@@ -169,9 +193,7 @@
                     <td>
                         {{t.teamName}} 
                     </td>
-                    <td>
-                        {{t.teamName}}
-                    </td>
+
                 </tr>
     
               </tbody>

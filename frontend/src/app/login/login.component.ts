@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
         }
         else if(user.isDelegate)
         {
-          this.router.navigate(['delegate'])
+          this.router.navigate(['delegatePage'])
         }
         else this.router.navigate(['nationalDelegation'])
         console.log(user.password)

@@ -8,4 +8,11 @@ export class tournamentController {
       else res.json(tournament);
     });
   };
+
+  saveTournament = (req: express.Request, res: express.Response) => {
+    let newTournament=  new Tournaments(req.body)
+
+    Tournaments.findOneAndUpdate()
+    {}
+  };
 }
