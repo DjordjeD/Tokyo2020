@@ -27,6 +27,8 @@ let Users = new Schema({
     isDelegate: {
         type: "Boolean",
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Users", Users, "Users");
 //# sourceMappingURL=user.js.map

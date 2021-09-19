@@ -37,8 +37,8 @@ export class competitorController {
          name: { $regex: name.toString() },
          surname: { $regex: surname.toString() },
         'country.countryName':{$regex: countryName.toString()},
-         sex :{ $regex: sex.toString()},
-         medalWinner :{ $regex: medalWinner.toString()}
+         sex :{ $regex: sex.toString()}
+         //medalWinner :{ $regex: medalWinner.toString()}
 
       },
       (err, competitor) => {

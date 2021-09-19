@@ -44,7 +44,10 @@ export class OrganizerComponent implements OnInit {
 
   addDiscipline() {
       this.sportService.addDiscipline(this.sportName,this.disciplineFormControl.value,this.individualFormControl.value,this.minimumPlayersForm.value,this.maximumPlayersForm.value)
-  }
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['/organizer']);
+    }
 
   login() {
     this.router.navigate(['/login']);

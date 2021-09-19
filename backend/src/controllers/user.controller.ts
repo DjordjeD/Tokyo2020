@@ -10,7 +10,7 @@ export class userController {
   };
 
   getDelegates = (req: express.Request, res: express.Response) => {
-    Users.find({'isDelegate':true}, (err, user) => {
+    Users.find({ isDelegate: true }, (err, user) => {
       if (err) console.log(err);
       else res.json(user);
     });
@@ -57,39 +57,61 @@ export class userController {
   register = (req: express.Request, res: express.Response) => {
     let username = req.body.username;
     let password = req.body.password;
-    
+
     let isDelegate = req.body.isDelegate;
     let nationality = req.body.nationality;
     let name = req.body.name;
     let surname = req.body.surname;
-    console.log("register");
+    //console.log("register");
+    
+    let newUser = new Users(req.body);
+
     Users.findOne(
-      { password: password, username: username, isDelegate: isDelegate },
+      { password: password, username: username, isDelegate: isDelegate, nationality: nationality},
       (err, user) => {
         if (user) {
-          let newUser = new Users(req.body);
-         // if(isDelegate==false && newUser.isDelegate==false) slucaj kada hocu nacionalu delegaciju da doodam
-
-          if(user == null)
-          {
-            newUser
-            .save()
-            .then(() => {
-              res.status(200).json({ message: "ok" });
-            })
-            .catch((err) => {
-              console.log(err);
-              res.status(400).json({ message: err });
-            });
-          }
-          else {
-            res.json({ message: "Korisnik vec postoji" });
-          } 
-         
-        } else {
-          res.json({ message: err });
+          res.json({ message: "user already registered" });
         }
       }
     );
+
+    newUser
+      .save()
+      .then(() => {
+        res.status(200).json(newUser);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json({ message: err });
+      });
+
+    //   Users.findOne(
+    //     { password: password, username: username, isDelegate: isDelegate },
+    //     (err, user) => {
+    //       if (user) {
+    //         let newUser = new Users(req.body);
+    //        // if(isDelegate==false && newUser.isDelegate==false) slucaj kada hocu nacionalu delegaciju da doodam
+
+    //         if(user == null)
+    //         {
+    //           newUser
+    //           .save()
+    //           .then(() => {
+    //             res.status(200).json({ message: "ok" });
+    //           })
+    //           .catch((err) => {
+    //             console.log(err);
+    //             res.status(400).json({ message: err });
+    //           });
+    //         }
+    //         else {
+    //           res.json({ message: "Korisnik vec postoji" });
+    //         }
+
+    //       } else {
+    //         res.json({ message: err });
+    //       }
+    //     }
+    //   );
   };
 }

@@ -29,6 +29,9 @@ let Competitors = new Schema({
   medalWinner: {
     type: "Boolean",
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Competitors", Competitors, "Competitors");

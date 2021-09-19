@@ -79,6 +79,9 @@ let Tournaments = new Schema({
   ongoing: {
     type: "Boolean",
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Tournaments", Tournaments, "Tournaments");

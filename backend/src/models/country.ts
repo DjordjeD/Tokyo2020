@@ -12,6 +12,9 @@ let Countries = new Schema({
   numberOfAthletes: {
     type: "Number",
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Countries", Countries, "Countries");

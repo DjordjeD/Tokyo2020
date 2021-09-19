@@ -12,6 +12,9 @@ let Teams = new Schema({
   groupPoints: {
     type: "Number",
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Teams", Teams, "Teams");

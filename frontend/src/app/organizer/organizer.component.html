@@ -131,28 +131,28 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Country</th>
-                            <th scope="col">Number of Athletes</th>
-                            <th scope="col">Flag</th>
+                            <th scope="col">Sport</th>
+                            <th scope="col">Discipline Name</th>
 
                         </tr>
                     </thead>
                     <tbody>
 
-                        <tr *ngFor='let c of countries'>
-                            <td>
-                                {{c.countryName}}
-
-                            </td>
-                            <td>
-                                <img src="/assets/{{c.flagImage}}" class="img-thumbnail rounded-circle|" alt="">
-                            </td>
-                            <td>
-                                {{c.numberOfAthletes}}
-                            </td>
-
-
-                        </tr>
+                        <div *ngFor='let s of sports'>
+                            <tr *ngFor='let d of s.disciplines'>
+                                <td>
+                                    {{d.discipline.sportName}}
+    
+                                </td>
+                            
+                                <td>
+                                    {{d.discipline.disciplineName}}
+                                </td>
+    
+    
+                            </tr>
+                        </div>
+         
 
                     </tbody>
                 </table>

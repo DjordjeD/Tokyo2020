@@ -37,6 +37,9 @@ let Records = new Schema({
   result: {
     type: "String",
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Records", Records, "Records");

@@ -15,6 +15,12 @@ class sportController {
                     res.json(sport);
             });
         };
+        this.addDiscipline = (req, res) => {
+            //todos
+        };
+        this.addSport = (req, res) => {
+            //todos
+        };
     }
 }
 exports.sportController = sportController;

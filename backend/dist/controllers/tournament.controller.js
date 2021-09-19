@@ -15,6 +15,11 @@ class tournamentController {
                     res.json(tournament);
             });
         };
+        this.saveTournament = (req, res) => {
+            let newTournament = new tournament_1.default(req.body);
+            tournament_1.default.findOneAndUpdate();
+            { }
+        };
     }
 }
 exports.tournamentController = tournamentController;

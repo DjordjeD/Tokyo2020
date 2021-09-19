@@ -22,6 +22,7 @@ class competitorController {
             let sportName = req.body.sportName;
             let disciplineName = req.body.disciplineName;
             let sex = req.body.sex;
+            let medalWinner = req.body.medalWinner;
             if (name == null)
                 name = "";
             if (surname == null)
@@ -32,6 +33,7 @@ class competitorController {
             // if(disciplineName==undefined) disciplineName ="";
             if (countryName == null)
                 countryName = "";
+            //if(medalWinner == null) 
             console.log("search_competitors");
             console.log(req.body);
             competitor_1.default.find({
@@ -39,6 +41,7 @@ class competitorController {
                 surname: { $regex: surname.toString() },
                 'country.countryName': { $regex: countryName.toString() },
                 sex: { $regex: sex.toString() }
+                //medalWinner :{ $regex: medalWinner.toString()}
             }, (err, competitor) => {
                 if (err)
                     console.log(err);

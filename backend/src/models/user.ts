@@ -24,6 +24,10 @@ let Users = new Schema({
   isDelegate: {
     type: "Boolean",
   },
+
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Users", Users, "Users");

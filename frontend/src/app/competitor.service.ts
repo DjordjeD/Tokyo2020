@@ -10,7 +10,8 @@ export class CompetitorService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCompetitors():Observable<any> {
+  getAllCompetitors():any {
+    console.log('getAllCompetitors front ')
     return this.http.get(`http://localhost:4000/competitors/getAllCompetitors`);
   }
 

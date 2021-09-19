@@ -9,5 +9,11 @@ const sportRouter = express_1.default.Router();
 sportRouter
     .route("/getAllSports")
     .get((req, res) => new sport_controller_1.sportController().getAllSports(req, res));
+sportRouter
+    .route("/addDiscipline")
+    .post((req, res) => new sport_controller_1.sportController().addDiscipline(req, res));
+sportRouter
+    .route("/addSport")
+    .post((req, res) => new sport_controller_1.sportController().addSport(req, res));
 exports.default = sportRouter;
 //# sourceMappingURL=sport.routes.js.map

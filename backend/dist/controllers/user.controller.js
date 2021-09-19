@@ -15,6 +15,14 @@ class userController {
                     res.json(user);
             });
         };
+        this.getDelegates = (req, res) => {
+            user_1.default.find({ isDelegate: true }, (err, user) => {
+                if (err)
+                    console.log(err);
+                else
+                    res.json(user);
+            });
+        };
         this.getUser = (req, res) => {
             let username = req.body.username;
             let password = req.body.password;
@@ -50,27 +58,52 @@ class userController {
         this.register = (req, res) => {
             let username = req.body.username;
             let password = req.body.password;
-            let newPassword = req.body.newPassword;
-            let type = req.body.type;
-            let country = req.body.country;
+            let isDelegate = req.body.isDelegate;
+            let nationality = req.body.nationality;
             let name = req.body.name;
             let surname = req.body.surname;
-            user_1.default.findOne({ password: password, username: username, type: type }, (err, user) => {
-                if (err) {
-                    let newUser = new user_1.default(req.body);
-                    newUser
-                        .save()
-                        .then(() => {
-                        res.status(200).json({ message: "ok" });
-                    })
-                        .catch((err) => {
-                        console.log(err);
-                        res.status(400).json({ message: err });
-                    });
+            //console.log("register");
+            let newUser = new user_1.default(req.body);
+            user_1.default.findOne({ password: password, username: username, isDelegate: isDelegate, nationality: nationality }, (err, user) => {
+                if (user) {
+                    res.json({ message: "user already registered" });
                 }
-                else
-                    res.status(400).json({ message: err });
             });
+            newUser
+                .save()
+                .then(() => {
+                res.status(200).json(newUser);
+            })
+                .catch((err) => {
+                console.log(err);
+                res.status(400).json({ message: err });
+            });
+            //   Users.findOne(
+            //     { password: password, username: username, isDelegate: isDelegate },
+            //     (err, user) => {
+            //       if (user) {
+            //         let newUser = new Users(req.body);
+            //        // if(isDelegate==false && newUser.isDelegate==false) slucaj kada hocu nacionalu delegaciju da doodam
+            //         if(user == null)
+            //         {
+            //           newUser
+            //           .save()
+            //           .then(() => {
+            //             res.status(200).json({ message: "ok" });
+            //           })
+            //           .catch((err) => {
+            //             console.log(err);
+            //             res.status(400).json({ message: err });
+            //           });
+            //         }
+            //         else {
+            //           res.json({ message: "Korisnik vec postoji" });
+            //         }
+            //       } else {
+            //         res.json({ message: err });
+            //       }
+            //     }
+            //   );
         };
     }
 }

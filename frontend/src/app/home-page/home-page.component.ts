@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
 import { Competitor, Country, Sport } from '../models/models';
+import { User } from '../models/user';
 import { SportService } from '../sport.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class HomePageComponent implements OnInit {
     private competitorService: CompetitorService,
     private sportService: SportService,
     private countryService: CountryService
-  ) {}
+  ) { }
 
   competitors: Competitor[];
   sports: Sport[];
@@ -32,20 +33,27 @@ export class HomePageComponent implements OnInit {
   medalWinner: boolean;
 
   registered: boolean;
-
-  allCompetitors:Array<Competitor>;
+  currentUser: User;
+  allCompetitors: Array<Competitor>;
 
   floatLabelControl = new FormControl('');
   medalWinnerFormControl = new FormControl('');
   nameFormControl = new FormControl('');
   surnameFormControl = new FormControl('');
   ngOnInit(): void {
+    this.currentUser = JSON.parse(
+      localStorage.getItem('registeredUser') || '{}'
+    );
+   console.log(this.currentUser.name);
+    if (this.currentUser == null) this.registered = false;
+    else this.registered = true;
+
     this.competitorService
       .getAllCompetitors()
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
           this.competitors = competitors;
-          this.allCompetitors= competitors;
+          this.allCompetitors = competitors;
         }
       });
 
@@ -76,36 +84,30 @@ export class HomePageComponent implements OnInit {
       )
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
-          
-           
+          if (this.disciplineName != '') {
+            let sorted: Array<Competitor> = [];
 
-          if(this.disciplineName!=""){
+            console.log(this.disciplineName);
 
-            let sorted :Array<Competitor> = [];
-
-            console.log(this.disciplineName)
-
-
-            for (let i = 0; i < this.allCompetitors.length;i++)
-            {
-                for (let j = 0; j < this.allCompetitors[i].competesIn.length;j++) {
-
-                  if(this.allCompetitors[i].competesIn[j].disciplineName==this.disciplineName)
-                  {
-                    console.log(this.allCompetitors[i]);
-                    sorted.push(this.allCompetitors[i]); 
-                  }
+            for (let i = 0; i < this.allCompetitors.length; i++) {
+              for (
+                let j = 0;
+                j < this.allCompetitors[i].competesIn.length;
+                j++
+              ) {
+                if (
+                  this.allCompetitors[i].competesIn[j].disciplineName ==
+                  this.disciplineName
+                ) {
+                  console.log(this.allCompetitors[i]);
+                  sorted.push(this.allCompetitors[i]);
                 }
+              }
             }
             this.competitors = sorted;
-          
-          }
-          else 
-          { 
+          } else {
             this.competitors = competitors;
           }
-      
-
         }
       });
   }
@@ -123,10 +125,10 @@ export class HomePageComponent implements OnInit {
   }
 
   medalsRepresent() {
-    this.router.navigate(['medalsRepresent'])
+    this.router.navigate(['medalsRepresent']);
   }
 
-  countriesRepresent(){
-    this.router.navigate(['countriesRepresent'])
+  countriesRepresent() {
+    this.router.navigate(['countriesRepresent']);
   }
 }

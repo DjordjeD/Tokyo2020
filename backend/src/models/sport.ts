@@ -9,6 +9,9 @@ let Sports = new Schema({
   disciplines: {
     type: ["Mixed"],
   },
+},  {
+ 
+  versionKey:false
 });
 
 export default mongoose.model("Sports", Sports, "Sports");

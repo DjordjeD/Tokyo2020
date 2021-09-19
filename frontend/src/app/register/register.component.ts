@@ -1,6 +1,9 @@
 import {  OnInit } from '@angular/core';
 import { Input, Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CountryService } from '../country.service';
+import { Country } from '../models/models';
 import { User } from "../models/user";
 import { UserService } from '../user.service';
 
@@ -11,17 +14,25 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService, private router:Router, private countryService:CountryService) { }
 
   ngOnInit(): void {
-  }
 
+    this.countryService.getAllCountries().subscribe((countries: Country[]) => {
+      if (countries) {
+        this.countries = countries;
+        console.log(this.countries[0].countryName);
+      }
+    });
+  }
+  countryName:string
+  countries:Array<Country>
   form: FormGroup = new FormGroup({
     username: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required]),
     name: new FormControl('',[Validators.required]),
     surname: new FormControl('',[Validators.required]),
-    country: new FormControl('',[Validators.required]),
+   
     email: new FormControl('',[Validators.required]),
     repeatPassword: new FormControl('',[Validators.required]),
     
@@ -35,16 +46,19 @@ export class RegisterComponent implements OnInit {
     else this.isDelegate=false;
 
     if(this.form.getRawValue().password==this.form.getRawValue().repeatPassword){
+      console.log(this.countryName)
     this.userService.register(this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value,
-    this.form.getRawValue().country,this.form.getRawValue().name, this.form.getRawValue().surname,this.form.getRawValue().email,this.isDelegate).subscribe((user: User)=>{
+    this.countryName,this.form.getRawValue().name, this.form.getRawValue().surname,this.form.getRawValue().email,this.isDelegate).subscribe((user: User)=>{
       if(user)
       { 
-       // localStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("registeredUser", JSON.stringify(user));
         console.log("dodat user");
+
+        this.router.navigate(['/']);
       }
     })
    }
-   else
+   else 
    {
      this.error="passwords dont match";
    }
