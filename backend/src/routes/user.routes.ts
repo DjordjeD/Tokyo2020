@@ -9,7 +9,7 @@ const userRouter = express.Router();
 
   userRouter
   .route("/getDelegates")
-  .post((req, res) => new userController().getDelegates(req, res));
+  .get((req, res) => new userController().getDelegates(req, res));
 
   userRouter
   .route("/login")

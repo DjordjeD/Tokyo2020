@@ -26,6 +26,12 @@ export class AddTournamentComponent implements OnInit {
 
     ngOnInit(): void {
 
+      this.sportService.getAllSports().subscribe((sports: Sport[]) => {
+        if (sports) {
+          this.sports = sports;
+        }
+      });
+      
 
       this.tournamentService.getAllTournaments().subscribe((tournaments: Tournaments[]) => {
         if (tournaments) {

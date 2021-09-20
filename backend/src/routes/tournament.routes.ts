@@ -5,7 +5,7 @@ const tournamentRouter = express.Router();
 
 tournamentRouter
   .route("/getAllTournaments")
-  .post((req, res) => new tournamentController().getAllTournaments(req, res));
+  .get((req, res) => new tournamentController().getAllTournaments(req, res));
 
 
   tournamentRouter

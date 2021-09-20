@@ -3,42 +3,36 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SportService {
-
   uri = 'http://localhost:4000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllSports():Observable<any> {
+  getAllSports(): Observable<any> {
     return this.http.get(`http://localhost:4000/sports/getAllSports`);
   }
 
   addSport(sportName) {
-
     const data = {
       sportName: sportName,
+    };
 
-    }
-
-    return this.http.post(`http://localhost:4000/sports/addSport`,data);
-
-
+    return this.http.post(`http://localhost:4000/sports/addSport`, data);
   }
 
-  addDiscipline(sportName,disciplineName,type,min,max) {
-
+  addDiscipline(sportName, disciplineName, type, min, max) {
     const data = {
       sportName: sportName,
       disciplineName: disciplineName,
       type: type,
       min: min,
-      max: max
-    }
-
-    return this.http.post(`http://localhost:4000/sports/addDiscipline`,data);
+      max: max,
+    };
 
 
+    console.log(data);
+    return this.http.post(`http://localhost:4000/sports/addDiscipline`, data);
   }
 }

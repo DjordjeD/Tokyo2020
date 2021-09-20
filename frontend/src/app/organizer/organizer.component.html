@@ -136,23 +136,25 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let s of sports">
 
-                        <div *ngFor='let s of sports'>
-                            <tr *ngFor='let d of s.disciplines'>
-                                <td>
-                                    {{d.discipline.sportName}}
-    
-                                </td>
-                            
-                                <td>
-                                    {{d.discipline.disciplineName}}
-                                </td>
-    
-    
-                            </tr>
-                        </div>
-         
+                 
+
+                        <tr *ngFor='let d of s.disciplines'>
+                            <td>
+                                {{d.discipline.sportName}}
+
+                            </td>
+                        
+                            <td>
+                                {{d.discipline.disciplineName}}
+                            </td>
+
+
+                        </tr>
+
+     
+
 
                     </tbody>
                 </table>

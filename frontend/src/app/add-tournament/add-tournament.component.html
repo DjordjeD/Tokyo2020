@@ -218,9 +218,9 @@
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <!-- <tbody>
 
-                        <tr *ngFor='let t of tournaments' [(ngModel)]="currentTournament">
+                        <tr *ngFor='let t of tournaments; let index = index;' [(ngModel)]="tournaments[index]" name="currentTournament">
                             <td>
                                 {{t.sportName}}
 
@@ -237,7 +237,7 @@
 
                         </tr>
 
-                    </tbody>
+                    </tbody> -->
                 </table>
             </div>
         </div>

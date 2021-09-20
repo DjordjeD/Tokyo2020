@@ -29,14 +29,19 @@ export class AddSportComponent implements OnInit {
   nameFormControl = new FormControl('',Validators.required);
 
   addSport(){
-    this.sportService.addSport(this.sportName).subscribe((msg: any) => {
+    this.sportService.addSport(this.nameFormControl.value).subscribe((msg: any) => {
 
       console.log(msg);
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate(['/addSport']);
       
     })
   }
 
-
+  back(): void {
+    this.router.navigate(['/organizer'])
+  }
   ngOnInit(): void {
 
     this.sportService.getAllSports().subscribe((sports: Sport[])=>{

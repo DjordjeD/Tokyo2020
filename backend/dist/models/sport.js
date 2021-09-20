@@ -12,6 +12,8 @@ let Sports = new Schema({
     disciplines: {
         type: ["Mixed"],
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Sports", Sports, "Sports");
 //# sourceMappingURL=sport.js.map

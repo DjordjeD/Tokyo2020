@@ -8,7 +8,7 @@ const tournament_controller_1 = require("../controllers/tournament.controller");
 const tournamentRouter = express_1.default.Router();
 tournamentRouter
     .route("/getAllTournaments")
-    .post((req, res) => new tournament_controller_1.tournamentController().getAllTournaments(req, res));
+    .get((req, res) => new tournament_controller_1.tournamentController().getAllTournaments(req, res));
 tournamentRouter
     .route("/saveTournament")
     .post((req, res) => new tournament_controller_1.tournamentController().saveTournament(req, res));

@@ -9,45 +9,60 @@ import { SportService } from '../sport.service';
 @Component({
   selector: 'app-organizer',
   templateUrl: './organizer.component.html',
-  styleUrls: ['./organizer.component.css']
+  styleUrls: ['./organizer.component.css'],
 })
 export class OrganizerComponent implements OnInit {
-
   constructor(
     private router: Router,
     private competitorService: CompetitorService,
     private sportService: SportService,
-    private countryService: CountryService,
-
+    private countryService: CountryService
   ) {}
 
-    ngOnInit(): void {
+  ngOnInit(): void {
+    this.sportService.getAllSports().subscribe((sports: Sport[]) => {
+      if (sports) {
+        this.sports = sports;
+      }
+    });
+  }
 
-
-      this.sportService.getAllSports().subscribe((sports: Sport[]) => {
-        if (sports) {
-          this.sports = sports;
-        }
-      });
-
-
-    }
-  
-  disciplineFormControl = new FormControl('',Validators.required);
-  individualFormControl = new FormControl('',Validators.required);
-  minimumPlayersForm= new FormControl('',Validators.required);
-  maximumPlayersForm= new FormControl('',Validators.required);
+  disciplineFormControl = new FormControl('', Validators.required);
+  individualFormControl = new FormControl('', Validators.required);
+  minimumPlayersForm = new FormControl('', Validators.required);
+  maximumPlayersForm = new FormControl('', Validators.required);
   countries: Country[];
-  registered:boolean
-  sportName: string
-  sports:Sport[];
+  registered: boolean;
+  sportName: string;
+  min: number;
+  max: number;
+  sports: Sport[];
+  type: boolean;
 
   addDiscipline() {
-      this.sportService.addDiscipline(this.sportName,this.disciplineFormControl.value,this.individualFormControl.value,this.minimumPlayersForm.value,this.maximumPlayersForm.value)
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.router.onSameUrlNavigation = 'reload';
-      this.router.navigate(['/organizer']);
+    if (this.individualFormControl.value == 'individual') {
+      this.type = true;
+      this.min = 1;
+      this.max = 1;
+    } else if (this.individualFormControl.value == 'team') {
+      this.type = false;
+      this.min = this.minimumPlayersForm.value;
+      this.max = this.maximumPlayersForm.value;
     }
+
+    this.sportService.addDiscipline(
+      this.sportName,
+      this.disciplineFormControl.value,
+      this.type,
+      this.min,
+      this.max
+    );
+
+    console.log("front")
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    // this.router.onSameUrlNavigation = 'reload';
+    // this.router.navigate(['/organizer']);
+  }
 
   login() {
     this.router.navigate(['/login']);
@@ -57,16 +72,13 @@ export class OrganizerComponent implements OnInit {
     this.router.navigate(['/records']);
   }
 
-
   addTournament() {
     this.router.navigate(['/addTournament']);
   }
 
-
   addSport() {
     this.router.navigate(['/addSport']);
   }
-
 
   register() {
     this.router.navigate(['/register']);
@@ -77,11 +89,10 @@ export class OrganizerComponent implements OnInit {
   }
 
   medalsRepresent() {
-    this.router.navigate(['medalsRepresent'])
+    this.router.navigate(['medalsRepresent']);
   }
 
-  home(){
-    this.router.navigate([''])
+  home() {
+    this.router.navigate(['']);
   }
-
 }

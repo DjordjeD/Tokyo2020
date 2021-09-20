@@ -15,6 +15,8 @@ let Countries = new Schema({
     numberOfAthletes: {
         type: "Number",
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Countries", Countries, "Countries");
 //# sourceMappingURL=country.js.map

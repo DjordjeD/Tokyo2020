@@ -40,6 +40,8 @@ let Records = new Schema({
     result: {
         type: "String",
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Records", Records, "Records");
 //# sourceMappingURL=record.js.map

@@ -32,6 +32,8 @@ let Competitors = new Schema({
     medalWinner: {
         type: "Boolean",
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Competitors", Competitors, "Competitors");
 //# sourceMappingURL=competitor.js.map

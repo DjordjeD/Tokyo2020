@@ -15,6 +15,8 @@ let Teams = new Schema({
     groupPoints: {
         type: "Number",
     },
+}, {
+    versionKey: false
 });
 exports.default = mongoose_1.default.model("Teams", Teams, "Teams");
 //# sourceMappingURL=team.js.map

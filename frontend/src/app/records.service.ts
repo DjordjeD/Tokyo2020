@@ -13,7 +13,7 @@ export class RecordsService {
   constructor(private http: HttpClient) { }
 
   getAllRecords():Observable<any> {
-    return this.http.get(`http://localhost:4000/records/getRecords`);
+    return this.http.get(`http://localhost:4000/records/getAllRecords`);
   }
 
 }

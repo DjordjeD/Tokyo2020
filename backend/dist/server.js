@@ -17,6 +17,10 @@ const team_routes_1 = __importDefault(require("./routes/team.routes"));
 const app = express_1.default();
 app.use(cors_1.default());
 app.use(body_parser_1.default.json());
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
 mongoose_1.default.connect("mongodb://localhost:27017/Tokyo2020");
 const connection = mongoose_1.default.connection;
 connection.once("open", () => {

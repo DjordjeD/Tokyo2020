@@ -11,7 +11,7 @@ userRouter
     .post((req, res) => new user_controller_1.userController().getAllUsers(req, res));
 userRouter
     .route("/getDelegates")
-    .post((req, res) => new user_controller_1.userController().getDelegates(req, res));
+    .get((req, res) => new user_controller_1.userController().getDelegates(req, res));
 userRouter
     .route("/login")
     .post((req, res) => new user_controller_1.userController().login(req, res));

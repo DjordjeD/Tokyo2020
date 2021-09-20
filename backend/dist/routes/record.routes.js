@@ -8,6 +8,6 @@ const record_controller_1 = require("../controllers/record.controller");
 const recordRouter = express_1.default.Router();
 recordRouter
     .route("/getAllRecords")
-    .post((req, res) => new record_controller_1.recordController().getAllRecords(req, res));
+    .get((req, res) => new record_controller_1.recordController().getAllRecords(req, res));
 exports.default = recordRouter;
 //# sourceMappingURL=record.routes.js.map

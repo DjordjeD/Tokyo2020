@@ -17,9 +17,57 @@ class sportController {
         };
         this.addDiscipline = (req, res) => {
             //todos
+            console.log("addDiscipline");
+            let disciplineType1 = {
+                sportName: req.body.sportName,
+                disciplineName: req.body.disciplineName,
+                individual: req.body.type,
+                min: req.body.min,
+                max: req.body.max,
+            };
+            let bool = true;
+            let sportName = req.body.sportName;
+            res.json({ "message": "kurac" });
+            // Sports.findOne(
+            //   { 'disciplines.disciplineName': req.body.disciplineName },
+            //   (err, result) => {
+            //     if (err) console.log(err);
+            //     else if (!result) {
+            //       console.log("nema ove discipline");
+            //       bool = false;
+            //     }
+            //   }
+            // );
+            console.log("addDiscipline");
+            // if (bool) {
+            //   Sports.collection.updateOne(
+            //     { sportName: sportName },
+            //     { $push: { disciplines: disciplineType1 } },
+            //     (err, result) => {
+            //       if (err) console.log(err);
+            //       else res.json(result);
+            //     }
+            //   );
+            // }
         };
         this.addSport = (req, res) => {
             //todos
+            let smthn = {
+                sportName: req.body.sportName,
+            };
+            // console.log(req.body.sportName);
+            sport_1.default.findOne({ sportName: req.body.sportName }, (err, result) => {
+                if (err)
+                    console.log(err);
+                else {
+                    if (!result) {
+                        let newSport = new sport_1.default(smthn);
+                        newSport.save().then(() => {
+                            res.json(newSport);
+                        });
+                    }
+                }
+            });
         };
     }
 }
