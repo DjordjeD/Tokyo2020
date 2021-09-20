@@ -21,14 +21,21 @@ export class CountriesRepresentComponent implements OnInit {
 
     ngOnInit(): void {
 
-      this.country=new Country()
-      this.country.flagImage="olympicGames.png"
-      this.country.countryName="srbiija"
-      this.country.numberOfAthletes=25
+      // this.country=new Country()
+      // this.country.flagImage="olympicGames.png"
+      // this.country.countryName="srbiija"
+      // this.country.numberOfAthletes=25
 
-      this.countries.push(this.country)
+      // this.countries.push(this.country)
 
-      console.log(this.countries[0].flagImage)
+      // console.log(this.countries[0].flagImage)
+
+      this.countryService.getAllCountries().subscribe((countries: Country[]) => {
+        if (countries) {
+          this.countries = countries;
+          console.log(this.countries[0].countryName);
+        }
+      });
 
     }
   

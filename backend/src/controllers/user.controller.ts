@@ -44,10 +44,10 @@ export class userController {
     let username = req.body.username;
     let password = req.body.password;
     let newPassword = req.body.newPassword;
-
+    console.log(req.body)
     Users.updateOne(
       { password: password, username: username },
-      { password: newPassword },
+      { $set: {password: newPassword}  },
       (err, user) => {
         if (err) console.log(err);
         else res.json(user);

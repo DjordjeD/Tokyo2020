@@ -15,20 +15,20 @@ export class competitorController {
     let countryName = req.body.countryName;
     let sportName = req.body.sportName;
     let disciplineName = req.body.disciplineName;
-    let sex = req.body.sex;
+    let sex:string = req.body.sex;
     let medalWinner = req.body.medalWinner;
 
     if(name == null) name="";
 
     if(surname==null) surname ="";
     // if(sportName==undefined) sportName ="";
-     if(sex=='') sex ="";
+     if(sex.length==0) sex ="";
     // if(disciplineName==undefined) disciplineName ="";
      if(countryName==null) countryName ="";
 
      //if(medalWinner == null) 
 
-    console.log("search_competitors");
+    //console.log("search_competitors");
     console.log(req.body);
 
 

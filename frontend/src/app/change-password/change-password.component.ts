@@ -29,11 +29,13 @@ export class ChangePasswordComponent implements OnInit {
     this.userService.getUser(this.form.getRawValue().username, this.form.getRawValue().password).subscribe((user: User)=>{
       if(user)
       { 
-        if(this.form.getRawValue().password!=this.form.getRawValue().newPassword)
-        { this.error="passwords do not match"}
+        if(this.form.getRawValue().password==this.form.getRawValue().newPassword)
+        { this.error="New password cannot be the same as the old password"}
         else
         {
-          this.userService.changePassword(user.username,user.password,this.form.getRawValue().newPassword)
+          this.userService.changePassword(user.username,user.password,this.form.getRawValue().newPassword).subscribe((user:User) => {
+            console.log(user);
+          })
           this.router.navigate(['login']);
         }
         //localStorage.setItem("user", JSON.stringify(user));

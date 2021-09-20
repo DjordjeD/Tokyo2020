@@ -48,7 +48,8 @@ class userController {
             let username = req.body.username;
             let password = req.body.password;
             let newPassword = req.body.newPassword;
-            user_1.default.updateOne({ password: password, username: username }, { password: newPassword }, (err, user) => {
+            console.log(req.body);
+            user_1.default.updateOne({ password: password, username: username }, { $set: { password: newPassword } }, (err, user) => {
                 if (err)
                     console.log(err);
                 else

@@ -28,13 +28,13 @@ class competitorController {
             if (surname == null)
                 surname = "";
             // if(sportName==undefined) sportName ="";
-            if (sex == '')
+            if (sex.length == 0)
                 sex = "";
             // if(disciplineName==undefined) disciplineName ="";
             if (countryName == null)
                 countryName = "";
             //if(medalWinner == null) 
-            console.log("search_competitors");
+            //console.log("search_competitors");
             console.log(req.body);
             competitor_1.default.find({
                 name: { $regex: name.toString() },

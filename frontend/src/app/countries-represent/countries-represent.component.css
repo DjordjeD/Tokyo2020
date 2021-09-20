@@ -13,3 +13,7 @@
 {
     margin: 0px 2px 0px 2px;
 }
+.span3 {  
+  height: 650px !important;
+  overflow: scroll;
+}

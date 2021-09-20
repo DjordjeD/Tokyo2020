@@ -54,6 +54,7 @@ export class HomePageComponent implements OnInit {
         if (competitors) {
           this.competitors = competitors;
           this.allCompetitors = competitors;
+        
         }
       });
 
@@ -84,7 +85,7 @@ export class HomePageComponent implements OnInit {
       )
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
-          if (this.disciplineName != '') {
+          if (this.disciplineName !=null) {
             let sorted: Array<Competitor> = [];
 
             console.log(this.disciplineName);
@@ -106,6 +107,7 @@ export class HomePageComponent implements OnInit {
             }
             this.competitors = sorted;
           } else {
+            if(competitors)
             this.competitors = competitors;
           }
         }

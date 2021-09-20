@@ -25,7 +25,7 @@ export class sportController {
     this.bool=true;
     let sportName = req.body.sportName;
     
-    //res.json({"message":"kurac"})
+  
     Sports.findOne(
       { 'disciplines.disciplineName': req.body.disciplineName },
       (err, result) => {
