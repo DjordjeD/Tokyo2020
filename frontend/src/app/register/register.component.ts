@@ -46,21 +46,23 @@ export class RegisterComponent implements OnInit {
     else this.isDelegate=false;
 
     if(this.form.getRawValue().password==this.form.getRawValue().repeatPassword){
-      console.log(this.countryName)
+      //console.log(this.countryName)
     this.userService.register(this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value,
     this.countryName,this.form.getRawValue().name, this.form.getRawValue().surname,this.form.getRawValue().email,this.isDelegate).subscribe((user: User)=>{
       if(user)
       { 
-        localStorage.setItem("registeredUser", JSON.stringify(user));
+        localStorage.setItem("currentUser", JSON.stringify(user));
         console.log("dodat user");
-
-        this.router.navigate(['/']);
+        if (user.isDelegate)
+        this.router.navigate(['/delegate']);
+        if (!user.isDelegate)
+        this.router.navigate(['/nationalDelegation']);
       }
     })
    }
    else 
    {
-     this.error="passwords dont match";
+     this.error="Passwords don't match";
    }
   }
   

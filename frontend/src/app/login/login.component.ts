@@ -17,29 +17,36 @@ export class LoginComponent implements OnInit {
   constructor(private userService:UserService,private router: Router) { }
 
   ngOnInit(): void {
+    this.currentUser= JSON.parse(localStorage.getItem('currentUser')|| '{}')
   }
 
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
+  currentUser:User
   floatLabelControl = new FormControl('auto');
   message: string ;
   //this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value
   submit() {
-    this.userService.login(this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value).subscribe((user: User)=>{
+    var isDelegate:boolean;
+    if(this.floatLabelControl.value=="delegate") isDelegate=true;
+    else isDelegate=false;
+    this.userService.login(this.form.getRawValue().username, this.form.getRawValue().password,isDelegate ).subscribe((user: User)=>{
       if(user)
       { 
         localStorage.setItem("currentUser", JSON.stringify(user));
-
-        if(user.username="admin"){
-        this.router.navigate['organizer'];
+        
+        if(user.username=="admin"){
+        this.router.navigate(['/organizer']);
+       
         }
         else if(user.isDelegate)
         {
-          this.router.navigate(['delegatePage'])
+          this.router.navigate(['/delegatePage'])
         }
-        else this.router.navigate(['nationalDelegation'])
+        else this.router.navigate(['/nationalDelegation'])
+
         console.log(user.password)
       }
       else{

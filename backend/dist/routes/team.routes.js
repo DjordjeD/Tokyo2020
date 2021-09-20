@@ -8,6 +8,6 @@ const team_controller_1 = require("../controllers/team.controller");
 const teamRouter = express_1.default.Router();
 teamRouter
     .route("/getAllTeams")
-    .post((req, res) => new team_controller_1.teamController().getAllTeams(req, res));
+    .get((req, res) => new team_controller_1.teamController().getAllTeams(req, res));
 exports.default = teamRouter;
 //# sourceMappingURL=team.routes.js.map

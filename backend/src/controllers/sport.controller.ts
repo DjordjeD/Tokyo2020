@@ -9,41 +9,44 @@ export class sportController {
       else res.json(sport);
     });
   };
-
+  bool:boolean
   addDiscipline = (req: express.Request, res: express.Response) => {
     //todos
     console.log("addDiscipline")
     let disciplineType1 = {
-      sportName: req.body.sportName,
-      disciplineName: req.body.disciplineName,
-      individual: req.body.type,
-      min: req.body.min,
-      max: req.body.max,
+      discipline:{
+        disciplineName: req.body.disciplineName,
+        sportName: req.body.sportName,
+        individual: req.body.type,
+        min: req.body.min,
+        max: req.body.max
+      }
     };
-    let bool = true;
+    this.bool=true;
     let sportName = req.body.sportName;
-    res.json({"message":"kurac"})
-    // Sports.findOne(
-    //   { 'disciplines.disciplineName': req.body.disciplineName },
-    //   (err, result) => {
-    //     if (err) console.log(err);
-    //     else if (!result) {
-    //       console.log("nema ove discipline");
-    //       bool = false;
-    //     }
-    //   }
-    // );
-    console.log("addDiscipline");
-    // if (bool) {
-    //   Sports.collection.updateOne(
-    //     { sportName: sportName },
-    //     { $push: { disciplines: disciplineType1 } },
-    //     (err, result) => {
-    //       if (err) console.log(err);
-    //       else res.json(result);
-    //     }
-    //   );
-    // }
+    
+    //res.json({"message":"kurac"})
+    Sports.findOne(
+      { 'disciplines.disciplineName': req.body.disciplineName },
+      (err, result) => {
+        if (err) console.log(err);
+        else if (!result) {
+          console.log("nema ove discipline");
+          this.bool = false;
+        }
+      }
+    );
+   // console.log("addDiscipline");
+    if (this.bool==true) {
+      Sports.collection.updateOne(
+        { sportName: sportName },
+        { $push: { disciplines: disciplineType1 } },
+        (err, result) => {
+          if (err) console.log(err);
+          else res.json(result);
+        }
+      );
+    }
   };
 
   addSport = (req: express.Request, res: express.Response) => {

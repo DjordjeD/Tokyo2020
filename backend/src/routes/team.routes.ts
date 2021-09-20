@@ -5,6 +5,6 @@ const teamRouter = express.Router();
 
 teamRouter
   .route("/getAllTeams")
-  .post((req, res) => new teamController().getAllTeams(req, res));
+  .get((req, res) => new teamController().getAllTeams(req, res));
 
 export default teamRouter;

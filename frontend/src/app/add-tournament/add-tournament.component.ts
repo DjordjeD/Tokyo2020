@@ -63,10 +63,16 @@ export class AddTournamentComponent implements OnInit {
       this.sportService.addDiscipline(this.sportName,this.disciplineFormControl.value,this.individualFormControl.value,this.minimumPlayersForm.value,this.maximumPlayersForm.value)
   }
 
-  editTournament()
+  editTournament(tournament:Tournaments)
   {
-    //localStorage.setItem('currentTournament',JSON.stringify(this.currentTournament));
+    console.log(tournament.sportName);
+    this.currentTournament=tournament;
+    localStorage.setItem('currentTournament',JSON.stringify(this.currentTournament));
     this.router.navigate(['/editTournament'])
+  }
+
+  trackByIndex(index: number, obj: any): any {
+    return index;
   }
 
   login() {

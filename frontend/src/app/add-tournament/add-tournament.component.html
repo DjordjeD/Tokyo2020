@@ -16,9 +16,9 @@
         <div>
             <button mat-menu-item color="primary" (click)="home()">Home </button>
         </div>
-        <div>
+        <!-- <div>
             <button mat-menu-item color="primary" (click)="editTournament()">Edit Tournament</button>
-        </div>
+        </div> -->
 
 
 
@@ -55,13 +55,8 @@
                 <mat-label>Sport Name</mat-label>
                 <input matInput [formControl]="nameFormControl" placeholder="Name">
             </mat-form-field>
-
-
             <button mat-raised-button color="primary" (click)="addSport()">Search</button>
-
-
         </form>
-
     </mat-card-content>
     </mat-card> -->
 
@@ -115,12 +110,9 @@
                         <mat-label>Minimum players</mat-label>
                         <input matInput [formControl]="minimumPlayersForm" placeholder="Name">
                     </mat-form-field>
-
                 </div>
-
             
                 <div *ngIf="individualFormControl.value=='team'">
-
                     <mat-form-field appearance="fill">
                         <mat-label>Maximum players</mat-label>
                         <input matInput [formControl]="maximumPlayersForm" placeholder="Name">
@@ -131,14 +123,11 @@
                 <!-- <mat-checkbox formControlName="locationFormControl">
                     Check me!
                 </mat-checkbox>
-
-
                 <mat-form-field>
                     <input matInput [matDatepicker]="picker" placeholder="Choose starting date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-
                 <mat-form-field>
                     <input matInput [matDatepicker]="picker" placeholder="Choose ending date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -218,12 +207,10 @@
 
                         </tr>
                     </thead>
-                    <!-- <tbody>
-
-                        <tr *ngFor='let t of tournaments; let index = index;' [(ngModel)]="tournaments[index]" name="currentTournament">
+                    <tbody>
+                        <tr *ngFor="let t of tournaments;let index = index; trackBy:trackByIndex;" >
                             <td>
                                 {{t.sportName}}
-
                             </td>
                             <td>
                                 {{t.disciplineName}}
@@ -232,12 +219,10 @@
                                 {{t.type}}
                             </td>
                             <td>
-                                <button mat-raised-button color="primary" (click)="editTournament()">Edit</button>
+                                <button mat-raised-button color="primary"  (click)="editTournament(tournaments[index])">Edit</button>
                             </td>
-
                         </tr>
-
-                    </tbody> -->
+                    </tbody>
                 </table>
             </div>
         </div>

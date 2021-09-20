@@ -36,7 +36,7 @@ export class OrganizerComponent implements OnInit {
   sportName: string;
   min: number;
   max: number;
-  sports: Sport[];
+  sports: Array<Sport>=[];
   type: boolean;
 
   addDiscipline() {
@@ -56,12 +56,17 @@ export class OrganizerComponent implements OnInit {
       this.type,
       this.min,
       this.max
-    );
+    ).subscribe((sports: Sport) => {
+      if (sports) {
+        console.log("dodata disciplina")
+
+      }
+    });;
 
     console.log("front")
-    // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    // this.router.onSameUrlNavigation = 'reload';
-    // this.router.navigate(['/organizer']);
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate(['/organizer']);
   }
 
   login() {

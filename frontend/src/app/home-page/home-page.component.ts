@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit {
   surnameFormControl = new FormControl('');
   ngOnInit(): void {
     this.currentUser = JSON.parse(
-      localStorage.getItem('registeredUser') || '{}'
+      localStorage.getItem('currentUser') || '{}'
     );
    console.log(this.currentUser.name);
     if (this.currentUser == null) this.registered = false;

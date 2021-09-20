@@ -1,14 +1,14 @@
 <mat-toolbar color="primary">
 
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
 
 
-        <div>
-            <button mat-menu-item color="primary" (click)="addSport()">Add a new Sport </button>
-        </div>
-<!-- 
+    <div>
+      <button mat-menu-item color="primary" (click)="addSport()">Add a new Sport </button>
+    </div>
+    <!-- 
         <div>
             <button mat-menu-item color="primary" (click)="addTournament()">Add a Tournament</button>
         </div>
@@ -20,186 +20,228 @@
 
 
 
-    </mat-menu>
-    <span class="example-spacer"></span>
+  </mat-menu>
+  <span class="example-spacer"></span>
 
-    <div class="buttons-row">
+  <div class="buttons-row">
 
-        
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="home()">
-            Back
-        </button>
-    </div>
+
+    <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+      (click)="home()">
+      Back
+    </button>
+  </div>
 
 
 </mat-toolbar>
 
-<!-- <h2>{{currentTournament.sportName}} {{currentTournament.disciplineName}} <span class="badge bg-info"></span></h2> -->
+<h2> Sport name and Discipline name <span class="badge bg-info"></span></h2>
+<h3>Sport:{{currentTournament.sportName}} Discipline: {{currentTournament.disciplineName}} <span
+    class="badge bg-info"></span></h3>
 
 
 
-<h2> Ime sporta i discipline <span class="badge bg-info"></span></h2>
-<mat-grid-list cols="2" rowHeight="120px:100px">
-  <mat-grid-tile center="top">
+<mat-grid-list cols="2" rowHeight="4:2">
+  <mat-grid-tile >
     <mat-card>
       <mat-card-title>Select Delegate</mat-card-title>
       <mat-card-content>
-          <form> 
-  
-  
-              <mat-form-field appearance="fill">
-                  <mat-label>Delegate</mat-label>
-                  <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
-                      <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
-                          {{delegate.name}} {{delegate.surname}} 
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </form>
-  
-          <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        <form>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label>Delegate</mat-label>
+            <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
+              <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
+                {{delegate.name}} {{delegate.surname}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <p *ngIf="error" class="error">
+          {{ error }}
+        </p>
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
           (click)="selectDelegate()">
-          Select delegate 
-          </button>
-  
-  
+          Select delegate
+        </button>
+
+        
+       
       </mat-card-content>
-  </mat-card> 
+    </mat-card>
   </mat-grid-tile>
+
   <mat-grid-tile>
     <mat-card>
       <mat-card-title>
-          Select players/teams:
+        Select players/teams:
       </mat-card-title>
       <mat-card-content>
-         <!-- <form *ngIf="currentTournament.individual"> 
+        <!-- (change)="valueChange(model.units,unit,$event)" -->
+
+       
+
+        <form *ngIf="currentTournament.individual"> 
+          <div *ngFor="let a of athletes">
+
+            <mat-checkbox [checked]="a.checked" >
+                 {{ a.name }} {{a.surname}} : {{a.country.countryName}}
+            </mat-checkbox>                        
+          </div>
+        </form>
+<!-- 
+        <form *ngIf="!currentTournament.individual"> 
+
+        </form> -->
+        
+        <div *ngFor="let t of teams">
+
+          <mat-checkbox [checked]="t.checkedTeam" >
+              {{t.teamName}}
+          </mat-checkbox>                        
+        </div>
+        
+
+        <!-- 
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Athlete</mat-label>
+            <mat-checkbox [(ngModel)]="athletes" name="athlete" placeholder="athlete">
+                <mat-option *ngFor="let a of currentTournament.competitors" [value]="a.name">
+                    {{a.name}} {{a.surname}} 
+                </mat-option>
+            </mat-checkbox>
+        </mat-form-field>
   
-  
-              <mat-form-field appearance="fill">
-                  <mat-label>Athlete</mat-label>
-                  <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
-                      <mat-option *ngFor="let a of athletes" [value]="a.name">
-                          {{a.name}} {{a.surname}} 
-                      </mat-option>
-                  </mat-select>
-              </mat-form-field>
-          </form> -->
-  
-  
-          <!-- <form *ngIf="!currentTournament.individual"> 
+          <form *ngIf="!currentTournament.individual"> 
   
   
               <mat-form-field appearance="fill">
                   <mat-label>Teams</mat-label>
-                  <mat-select [(ngModel)]="athletes" name="athlete" placeholder="athlete">
-                      <mat-option *ngFor="let a of athletes" [value]="a.name">
-                          {{a.name}} {{a.surname}} 
+                  <mat-checkbox [(ngModel)]="teams" name="athlete" placeholder="athlete">
+                      <mat-option *ngFor="let a of currentTournament.teams" [value]="a.teamName">
+                          {{a.teamName}}
                       </mat-option>
-                  </mat-select>
+                  </mat-checkbox>
               </mat-form-field>
               
           </form> -->
+
+          <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+          (click)="saveTournament()" color="primary">
+          Save Changes
+          </button>
+  
       </mat-card-content>
     </mat-card>
-        
+
   </mat-grid-tile>
+
+  <!-- <mat-grid-tile>
+    <mat-card>
+      <mat-card-title>
+        Select players/teams:
+      </mat-card-title>
+      <mat-card-content>
+        
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile> -->
+
 </mat-grid-list>
 
-<br>
 
 
-<button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-(click)="saveTournament()">
-Save Changes
-</button>
-
-
-
-
-
-<!-- 
 <div class="container" *ngIf="currentTournament.individual">
-    <h5>Athletes</h5>
+  <h5>Athletes</h5>
 
-        <div class="row">
-          <div class="col-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Surname</th>
-                  <th scope="col">Country</th>
-                  <th scope="col">Sex</th>
-                  <th scope="col">Sport</th>
-                  <th scope="col">Disciplines</th>
-                  <th scope="col">Medal Winner</th>
-    
-                </tr>
-              </thead>
-              <tbody>
-    
-                <tr *ngFor='let c of currentTournament.competitors'>
-                  <td>
-                    {{c.name}}
-    
-                  </td>
-                  <td>
-                    {{c.surname}}
-                  </td>
-                  <td>
-                    {{c.country.countryName}}
-                  </td>
-                  <td>
-                    {{c.sex}}
-                  </td>
-                  <td>
-                    {{c.competesIn[0].sportName}}
-                  </td>
-                  <td>
-                    <div *ngFor='let d of c.competesIn'>
-                      {{d.disciplineName}}
-                    </div>
-                  </td>
-                  <td>
-                    {{c.medalWinner}}
-                  </td>
-    
-    
-                </tr>
-    
-              </tbody>
-            </table>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Country</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Sport</th>
+            <th scope="col">Disciplines</th>
+            <th scope="col">Medal Winner</th>
 
-      </div>
-</div> -->
+          </tr>
+        </thead>
+        <tbody>
 
-<!-- 
-<div class="container" *ngIf="!currentTournament.individual">
-    <h5>Teams</h5>
+          <tr *ngFor='let c of currentTournament.competitors'>
+            <td>
+              {{c.name}}
 
-        <div class="row">
-          <div class="col-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-    
-                  <th scope="col">Country</th>
-                  <th scope="col">Discipline</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor='let t of currentTournament.teams'>
-                    <td>
-                        {{t.teamName}} 
-                    </td>
+            </td>
+            <td>
+              {{c.surname}}
+            </td>
+            <td>
+              {{c.country.countryName}}
+            </td>
+            <td>
+              {{c.sex}}
+            </td>
+            <td>
+              {{c.competesIn[0].sportName}}
+            </td>
+            <td>
+              <div *ngFor='let d of c.competesIn'>
+                {{d.disciplineName}}
+              </div>
+            </td>
+            <td>
+              {{c.medalWinner}}
+            </td>
 
-                </tr>
-    
-              </tbody>
-            </table>
 
-      </div>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
 </div>
- -->
+
+
+
+<div class="container" *ngIf="!currentTournament.individual">
+  <h5>Teams</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+
+            <th scope="col">Team name</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let t of currentTournament.teams'>
+            <td>
+              {{t.teamName}}
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 

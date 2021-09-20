@@ -25,13 +25,14 @@ export class userController {
       else res.json(user);
     });
   };
+  
   login = (req: express.Request, res: express.Response) => {
     let username = req.body.username;
     let password = req.body.password;
-    let type = req.body.type;
+    let isDelegate = req.body.type;
 
     Users.findOne(
-      { password: password, username: username, type: type },
+      { password: password, username: username, isDelegate: isDelegate },
       (err, user) => {
         if (err) console.log(err);
         else res.json(user);

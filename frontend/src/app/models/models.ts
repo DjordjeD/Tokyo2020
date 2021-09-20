@@ -34,6 +34,7 @@ export class Competitor {
   country: Country;
   competesIn: DisciplineType[];
   medalWinner: boolean;
+  checked:boolean;
 }
 
 export class DisciplineType {
@@ -81,6 +82,7 @@ export class Team {
   teamName: string;
   teamMembers: Competitor[];
   groupPoints: number;
+  checkedTeam: boolean;
 }
 
 export class Sport {

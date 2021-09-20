@@ -36,8 +36,8 @@ class userController {
         this.login = (req, res) => {
             let username = req.body.username;
             let password = req.body.password;
-            let type = req.body.type;
-            user_1.default.findOne({ password: password, username: username, type: type }, (err, user) => {
+            let isDelegate = req.body.type;
+            user_1.default.findOne({ password: password, username: username, isDelegate: isDelegate }, (err, user) => {
                 if (err)
                     console.log(err);
                 else

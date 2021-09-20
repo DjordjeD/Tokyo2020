@@ -15,6 +15,37 @@ import { RecordsComponent } from './records/records.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // {
+  //   path: 'home',
+  //   component: HomePageComponent,
+  //   children: [
+  //     { path: 'medalsRepresent', component: MedalsRepresentComponent },
+  //     { path: 'countriesRepresent', component: CountriesRepresentComponent },
+  //   ],
+  // },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'register', component: RegisterComponent },
+  // { path: 'changePassword', component: ChangePasswordComponent },
+  // {
+  //   path: 'organizer',
+  //   component: OrganizerComponent,
+  //   children: [
+  //     { path: 'addSport', component: AddSportComponent },
+  //     {
+  //       path: 'addTournament',
+  //       component: AddTournamentComponent,
+  //       children: [
+  //         { path: 'editTournament', component: EditTournamentComponent },
+  //       ],
+  //     },
+  //     { path: 'records', component: RecordsComponent },
+  //   ],
+  // },
+
+  // { path: 'delegatePage', component: DelegatePageComponent },
+  // { path: 'nationalDelegation', component: NationalDelegationComponent },
+
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginComponent },
@@ -29,6 +60,8 @@ const routes: Routes = [
   {path:'records',component: RecordsComponent},
   {path:'delegatePage',component: DelegatePageComponent},
   {path:'nationalDelegation',component: NationalDelegationComponent }
+
+
 ];
 
 @NgModule({

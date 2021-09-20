@@ -30,4 +30,15 @@ export class CompetitorService {
     return this.http.post(`http://localhost:4000/competitors/searchCompetitors`,data);
   }
 
+  getCompetitorsByDiscipline(disciplineName):any
+  {
+    const data = {
+ 
+      disciplineName: disciplineName,
+    
+    }
+
+    return this.http.post(`http://localhost:4000/competitors/getCompetitorsByDiscipline`,data);
+  }
+
 }

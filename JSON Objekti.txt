@@ -18,58 +18,57 @@
 
 //sports
 {
-	"sportName": "basketball",
-	"disciplines": [
-		{
-			"discipline": 
-			{
-				"disciplineName": "basketball",
-				"sportName":"basketball",
-				"type": "team",
-				"min":5,
-				"max":12
-			}
-			"medals": [
-				{
-					"athlete": {
-						"name": "Nikola",
-						"surname": "Jokic",
-						"sex": "man",
-						"country": {
-							"countryName": "srbija",
-							"flagImage": "srpskazastava.jpg",
-							"numberOfAthletes": 25
-						},
-						"competesIn": [
-							{
-								"disciplineName": "basketball",
-								"sportName": "basketball",
-								"individual": false,
-								"min": 5,
-								"max": 12
-							},
-							{
-								"disciplineName": "basket3x3",
-								"sportName": "basketball",
-								"individual": false,
-								"min": 5,
-								"max": 12
-							}
-						],
-						"medalWinner": true
-					},
-					"team": [],
-					"country": {
-						"countryName": "srbija",
-						"flagImage": "srpskazastava.jpg",
-						"numberOfAthletes": 25
-					},
-					"type": "golden"
-				}
-			]
-		}
-
-	]
+    "_id" : ObjectId("61379b98fbae030f71f8bb75"),
+    "sportName" : "Basketball",
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "Basketball",
+                "sportName" : "Basketball",
+                "type" : "team",
+                "min" : 5,
+                "max" : 12
+            },
+            "medals" : [ 
+                {
+                    "athlete" : {
+                        "name" : "Nikola",
+                        "surname" : "Jokic",
+                        "sex" : "man",
+                        "country" : {
+                            "countryName" : "srbija",
+                            "flagImage" : "srpskazastava.jpg",
+                            "numberOfAthletes" : 25
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : 5,
+                                "max" : 12
+                            }, 
+                            {
+                                "disciplineName" : "Basket3x3",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : 5,
+                                "max" : 12
+                            }
+                        ],
+                        "medalWinner" : true
+                    },
+                    "team" : [],
+                    "country" : {
+                        "countryName" : "srbija",
+                        "flagImage" : "srpskazastava.jpg",
+                        "numberOfAthletes" : 25
+                    },
+                    "type" : "golden"
+                }
+            ]
+        }
+    ]
 }
 
 //discipline
@@ -110,7 +109,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 }
 
 //records
@@ -160,7 +160,8 @@
 				"max": 12
 			}
 		],
-		"medalWinner": true
+		"medalWinner": true,
+		"checked": false
 	},
 	"team": [],
 	"country": {
@@ -213,7 +214,8 @@
 						"max": 12
 					}
 				],
-				"medalWinner": true
+				"medalWinner": true,
+				"checked": false
 			},
 			{
 				"name": "Nikola",
@@ -239,7 +241,8 @@
 						"max": 12
 					}
 				],
-				"medalWinner": true
+				"medalWinner": true,
+				"checked": false
 			}
 
 		],
@@ -269,7 +272,8 @@
 				"max": 12
 			}
 		],
-		"medalWinner": true
+		"medalWinner": true,
+		"checked": false
 	}],
 	"groupPhaseEvents": [{
 
@@ -300,7 +304,8 @@
 							"max": 12
 						}
 					],
-					"medalWinner": true
+					"medalWinner": true,
+					"checked": false
 				},
 				{
 					"name": "Nikola",
@@ -326,7 +331,8 @@
 							"max": 12
 						}
 					],
-					"medalWinner": true
+					"medalWinner": true,
+					"checked": false
 				}
 
 			]
@@ -357,7 +363,8 @@
 							"max": 12
 						}
 					],
-					"medalWinner": true
+					"medalWinner": true,
+					"checked": false
 				},
 				{
 					"name": "Nikola",
@@ -383,7 +390,8 @@
 							"max": 12
 						}
 					],
-					"medalWinner": true
+					"medalWinner": true,
+					"checked": false
 				}
 
 			]
@@ -422,7 +430,8 @@
 						"max": 12
 					}
 				],
-				"medalWinner": true
+				"medalWinner": true,
+				"checked": false
 			},
 			"result": "240m"
 		}],
@@ -450,7 +459,8 @@
 					"max": 12
 				}
 			],
-			"medalWinner": true
+			"medalWinner": true,
+			"checked": false
 		},
 		"silverMedal": {
 			"name": "Nikola",
@@ -476,7 +486,8 @@
 					"max": 12
 				}
 			],
-			"medalWinner": true
+			"medalWinner": true,
+			"checked": false
 		},
 		"bronzeMedal": {
 			"name": "Nikola",
@@ -502,7 +513,8 @@
 					"max": 12
 				}
 			],
-			"medalWinner": true
+			"medalWinner": true,
+			"checked": false
 		},
 		"time": "10",
 		"date": "2012-04-23T18:25:43.511Z",
@@ -559,7 +571,8 @@
 						"max": 12
 					}
 				],
-				"medalWinner": true
+				"medalWinner": true,
+				"checked": false
 			},
 			"result": "240m"
 		}
@@ -589,7 +602,8 @@
 				"max": 12
 			}
 		],
-		"medalWinner": true
+		"medalWinner": true,
+		"checked": false
 	},
 	"silverMedal": {
 		"name": "Nikola",
@@ -616,7 +630,8 @@
 				"max": 12
 			}
 		],
-		"medalWinner": true
+		"medalWinner": true,
+		"checked": false
 	},
 	"bronzeMedal": {
 		
@@ -644,7 +659,8 @@
 				"max": 12
 			}
 		],
-		"medalWinner": true
+		"medalWinner": true,
+		"checked": false
 	},
 	"time":"10",
 	"date":"2012-04-23T18:25:43.511Z",
@@ -683,7 +699,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 },
 	{
 	"name": "Nikola",
@@ -710,7 +727,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 }
 	
 	]},
@@ -741,7 +759,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 },
 	{
 	"name": "Nikola",
@@ -768,7 +787,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 }
 	
 	]},
@@ -812,7 +832,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 },
 	{
 	"name": "Nikola",
@@ -839,7 +860,8 @@
 			"max": 12
 		}
 	],
-	"medalWinner": true
+	"medalWinner": true,
+	"checked": false
 }
 	
 	],

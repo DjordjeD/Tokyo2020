@@ -30,6 +30,7 @@ import { EditTournamentComponent } from './edit-tournament/edit-tournament.compo
 import { RecordsComponent } from './records/records.component';
 import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
 import { DelegatePageComponent } from './delegate-page/delegate-page.component';
+import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent],
   imports: [
@@ -48,7 +49,8 @@ import { DelegatePageComponent } from './delegate-page/delegate-page.component';
     MatFormFieldModule,
     MatRadioModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCheckboxModule
  
   ],
   providers: [],

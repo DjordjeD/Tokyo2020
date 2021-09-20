@@ -22,8 +22,9 @@ export class SportService {
     return this.http.post(`http://localhost:4000/sports/addSport`, data);
   }
 
-  addDiscipline(sportName, disciplineName, type, min, max) {
+  addDiscipline(sportName, disciplineName, type, min, max):any {
     const data = {
+
       sportName: sportName,
       disciplineName: disciplineName,
       type: type,
@@ -33,6 +34,6 @@ export class SportService {
 
 
     console.log(data);
-    return this.http.post(`http://localhost:4000/sports/addDiscipline`, data);
+    return this.http.post(`${this.uri}/sports/addDiscipline`, data);
   }
 }
