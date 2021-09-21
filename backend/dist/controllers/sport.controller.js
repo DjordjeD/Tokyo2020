@@ -24,28 +24,28 @@ class sportController {
                     sportName: req.body.sportName,
                     individual: req.body.type,
                     min: req.body.min,
-                    max: req.body.max
-                }
+                    max: req.body.max,
+                },
             };
             this.bool = true;
             let sportName = req.body.sportName;
-            sport_1.default.findOne({ 'disciplines.disciplineName': req.body.disciplineName }, (err, result) => {
+            sport_1.default.findOne({ "disciplines.disciplineName": req.body.disciplineName }, (err, result) => {
                 if (err)
                     console.log(err);
-                else if (!result) {
-                    console.log("nema ove discipline");
-                    this.bool = false;
+                if (result) {
+                    console.log("disciplina vec postoji");
+                    res.json(result);
+                }
+                else {
+                    sport_1.default.collection.updateOne({ sportName: sportName }, { $push: { disciplines: disciplineType1 } }, (err, result) => {
+                        if (err)
+                            console.log(err);
+                        else
+                            res.json(result);
+                    });
                 }
             });
             // console.log("addDiscipline");
-            if (this.bool == true) {
-                sport_1.default.collection.updateOne({ sportName: sportName }, { $push: { disciplines: disciplineType1 } }, (err, result) => {
-                    if (err)
-                        console.log(err);
-                    else
-                        res.json(result);
-                });
-            }
         };
         this.addSport = (req, res) => {
             //todos
@@ -56,13 +56,14 @@ class sportController {
             sport_1.default.findOne({ sportName: req.body.sportName }, (err, result) => {
                 if (err)
                     console.log(err);
+                if (result) {
+                    res.json(result);
+                }
                 else {
-                    if (!result) {
-                        let newSport = new sport_1.default(smthn);
-                        newSport.save().then(() => {
-                            res.json(newSport);
-                        });
-                    }
+                    let newSport = new sport_1.default(smthn);
+                    newSport.save().then(() => {
+                        res.json(newSport);
+                    });
                 }
             });
         };

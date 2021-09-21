@@ -1,4 +1,4 @@
-.example-spacer {
+/* .example-spacer {
     flex: 1 1 auto;
   }
   section {
@@ -30,11 +30,11 @@ mat-card {
   min-width: 300px;
 }
 
-mat-card-title,
+ mat-card-title,
 mat-card-content {
   display: flex;
   justify-content: center;
-}
+} 
 
 .error {
   padding: 16px;
@@ -42,6 +42,14 @@ mat-card-content {
   color: white;
   background-color: red;
 }
+
+.message {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: green;
+}
+
 
 .button {
   display: flex;
@@ -65,4 +73,41 @@ mat-card-content {
 
 .example-container .mat-radio-button {
   margin: 0 12px;
+} */
+
+
+.distance-buttons
+{
+    margin: 0px 10px 0px 10px;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.message {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: green;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+section {
+  display: table;
+}
+
+mat-card {
+  width: calc(100% - 70px);
+  height: calc(100% - 70px);
+}
+
+.span3 {  
+  height: 220px !important;
+  overflow: scroll;
 }

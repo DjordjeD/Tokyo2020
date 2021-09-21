@@ -65,7 +65,7 @@ export class EditTournamentComponent implements OnInit {
       this.teamService.getAllTeams().subscribe((timovi:Team[])=>{
         if(timovi)
         {
-         
+          //this.teams=timovi;
             for (let index = 0; index < timovi.length; index++) {
 
                var split = timovi[index].teamName.split(" of ",2)
@@ -106,6 +106,7 @@ export class EditTournamentComponent implements OnInit {
   tournaments: Array<Tournaments>
   
   error:string;
+  message:string=""
 
   allCompetitors:Array<Competitor>
   selectedCompetitors:Array<Competitor>=[]
@@ -115,6 +116,7 @@ export class EditTournamentComponent implements OnInit {
   
   selectDelegate()
   {
+    this.message =""
     this.error="";
     var cnt=0;
     for (let i = 0; i < this.tournaments.length; i++) {
@@ -126,6 +128,8 @@ export class EditTournamentComponent implements OnInit {
     }
     if(cnt>=3) this.error="Delegate can't be assigned"
     else this.currentTournament.delegate=this.delegate;
+    this.message="Delegate Selected " + this.delegate.name
+    console.log(this.delegate.name)
   }
 
   login() {
@@ -155,9 +159,11 @@ export class EditTournamentComponent implements OnInit {
   }
 
   saveTournament() {
-
+    
+    console.log(this.currentTournament.teams[0].teamName)
+    console.log(this.currentTournament.delegate.name)
     if(this.error!="Delegate can't be assigned")
-    this.tournamentService.saveTournament(this.currentTournament).subscribe((msg:any)=>{
+    this.tournamentService.updateTournament(this.currentTournament).subscribe((msg:any)=>{
       console.log(msg);
     })
   }
@@ -168,18 +174,12 @@ export class EditTournamentComponent implements OnInit {
   }
 
 
-  register() {
-    this.router.navigate(['/register']);
-  }
+  
 
-  changePassword() {
-    this.router.navigate(['/changePassword']);
+  back() {
+    this.router.navigate(['/addTournament'])
   }
-
-  medalsRepresent() {
-    this.router.navigate(['medalsRepresent'])
-  }
-
+  
   home(){
     this.router.navigate([''])
   }

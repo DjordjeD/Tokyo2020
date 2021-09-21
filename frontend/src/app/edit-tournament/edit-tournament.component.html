@@ -19,7 +19,6 @@
  -->
 
 
-
   </mat-menu>
   <span class="example-spacer"></span>
 
@@ -27,7 +26,7 @@
 
 
     <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-      (click)="home()">
+      (click)="back()">
       Back
     </button>
   </div>
@@ -42,7 +41,7 @@
 
 
 <mat-grid-list cols="2" rowHeight="4:2">
-  <mat-grid-tile >
+  <mat-grid-tile>
     <mat-card>
       <mat-card-title>Select Delegate</mat-card-title>
       <mat-card-content>
@@ -52,14 +51,18 @@
           <mat-form-field appearance="fill">
             <mat-label>Delegate</mat-label>
             <mat-select [(ngModel)]="delegate" name="delegate" placeholder="delegate">
-              <mat-option *ngFor="let delegate of delegates" [value]="delegate.username">
-                {{delegate.name}} {{delegate.surname}}
+              <mat-option *ngFor="let d of delegates" [value]="d.username" [value]="d">
+                {{d.name}} {{d.surname}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </form>
+
         <p *ngIf="error" class="error">
           {{ error }}
+        </p>
+        <p *ngIf="message.length!=0" class="message">
+          {{ message }}
         </p>
 
         <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
@@ -67,8 +70,8 @@
           Select delegate
         </button>
 
-        
-       
+
+
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
@@ -81,74 +84,46 @@
       <mat-card-content>
         <!-- (change)="valueChange(model.units,unit,$event)" -->
 
-       
 
-        <form *ngIf="currentTournament.individual"> 
-          <div *ngFor="let a of athletes">
 
-            <mat-checkbox [checked]="a.checked" >
-                 {{ a.name }} {{a.surname}} : {{a.country.countryName}}
-            </mat-checkbox>                        
-          </div>
-        </form>
-<!-- 
-        <form *ngIf="!currentTournament.individual"> 
-
-        </form> -->
+        <form *ngIf="currentTournament.individual">
         
+        </form>
+
+        <form *ngIf="!currentTournament.individual">
+         
+        </form>
+
+
+        <div *ngFor="let a of athletes">
+
+          <mat-checkbox [checked]="a.checked">
+            {{ a.name }} {{a.surname}} : {{a.country.countryName}}
+          </mat-checkbox>
+        </div>
+
         <div *ngFor="let t of teams">
 
-          <mat-checkbox [checked]="t.checkedTeam" >
-              {{t.teamName}}
-          </mat-checkbox>                        
+          <mat-checkbox [checked]="t.checkedTeam">
+            {{t.teamName}}
+          </mat-checkbox>
         </div>
-        
 
-        <!-- 
-        
-        <mat-form-field appearance="fill">
-            <mat-label>Athlete</mat-label>
-            <mat-checkbox [(ngModel)]="athletes" name="athlete" placeholder="athlete">
-                <mat-option *ngFor="let a of currentTournament.competitors" [value]="a.name">
-                    {{a.name}} {{a.surname}} 
-                </mat-option>
-            </mat-checkbox>
-        </mat-form-field>
-  
-          <form *ngIf="!currentTournament.individual"> 
-  
-  
-              <mat-form-field appearance="fill">
-                  <mat-label>Teams</mat-label>
-                  <mat-checkbox [(ngModel)]="teams" name="athlete" placeholder="athlete">
-                      <mat-option *ngFor="let a of currentTournament.teams" [value]="a.teamName">
-                          {{a.teamName}}
-                      </mat-option>
-                  </mat-checkbox>
-              </mat-form-field>
-              
-          </form> -->
 
-          <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
           (click)="saveTournament()" color="primary">
           Save Changes
-          </button>
-  
+        </button>
+
       </mat-card-content>
     </mat-card>
 
   </mat-grid-tile>
 
-  <!-- <mat-grid-tile>
-    <mat-card>
-      <mat-card-title>
-        Select players/teams:
-      </mat-card-title>
-      <mat-card-content>
-        
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile> -->
+
 
 </mat-grid-list>
 
@@ -213,35 +188,31 @@
 
 
 <div class="container" *ngIf="!currentTournament.individual">
-  <h5>Teams</h5>
+  <h5>Teams in the tournament</h5>
 
   <div class="row">
     <div class="col-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
+      <div class="span3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+  
+              <th scope="col">Team name</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let t of currentTournament.teams'>
+              <td>
+                {{t.teamName}}
+              </td>
+  
+            </tr>
+  
+          </tbody>
+        </table>
 
-            <th scope="col">Team name</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let t of currentTournament.teams'>
-            <td>
-              {{t.teamName}}
-            </td>
-
-          </tr>
-
-        </tbody>
-      </table>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-

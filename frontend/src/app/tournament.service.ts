@@ -25,4 +25,8 @@ export class TournamentService {
   saveTournament(tournament: Tournaments): Observable<any> {
     return this.http.post(`http://localhost:4000/tournaments/saveTournament`,tournament);
   }
+
+  updateTournament(tournament: Tournaments): Observable<any> {
+    return this.http.post(`http://localhost:4000/tournaments/updateTournament`,tournament);
+  }
 }

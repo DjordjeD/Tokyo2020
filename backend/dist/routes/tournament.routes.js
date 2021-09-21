@@ -12,5 +12,8 @@ tournamentRouter
 tournamentRouter
     .route("/saveTournament")
     .post((req, res) => new tournament_controller_1.tournamentController().saveTournament(req, res));
+tournamentRouter
+    .route("/updateTournament")
+    .post((req, res) => new tournament_controller_1.tournamentController().updateTournament(req, res));
 exports.default = tournamentRouter;
 //# sourceMappingURL=tournament.routes.js.map

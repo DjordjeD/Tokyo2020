@@ -59,7 +59,9 @@ export class OrganizerComponent implements OnInit {
     ).subscribe((sports: Sport) => {
       if (sports) {
         console.log("dodata disciplina")
-
+      }
+      else{
+        console.log("disciplina vec postoji")
       }
     });;
 

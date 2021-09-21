@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem("currentUser", JSON.stringify(user));
         console.log("dodat user");
         if (user.isDelegate)
-        this.router.navigate(['/delegate']);
+        this.router.navigate(['/delegatePage']);
         if (!user.isDelegate)
         this.router.navigate(['/nationalDelegation']);
       }

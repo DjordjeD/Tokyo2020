@@ -31,6 +31,8 @@ import { RecordsComponent } from './records/records.component';
 import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
 import { DelegatePageComponent } from './delegate-page/delegate-page.component';
 import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepicker, MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 @NgModule({
   declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent],
   imports: [
@@ -50,7 +52,10 @@ import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
     MatRadioModule,
     MatSelectModule,
     MatGridListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+   
  
   ],
   providers: [],

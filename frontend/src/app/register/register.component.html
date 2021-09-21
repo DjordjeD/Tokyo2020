@@ -62,7 +62,7 @@
                 <br>
                 <mat-form-field appearance="fill">
                     <mat-label>Country</mat-label>
-                    <mat-select [(ngModel)]="countryName" name="country">
+                    <mat-select [(ngModel)]="countryName" name="country" >
                       <mat-option *ngFor="let country of countries" [value]="country.countryName">
                         {{country.countryName}}
                       </mat-option>

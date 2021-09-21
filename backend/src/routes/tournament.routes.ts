@@ -12,4 +12,9 @@ tournamentRouter
   .route("/saveTournament")
   .post((req, res) => new tournamentController().saveTournament(req, res));
 
+  tournamentRouter
+  .route("/updateTournament")
+  .post((req, res) => new tournamentController().updateTournament(req, res));
+
+
 export default tournamentRouter;

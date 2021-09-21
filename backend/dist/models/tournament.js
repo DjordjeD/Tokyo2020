@@ -81,9 +81,9 @@ let Tournaments = new Schema({
     },
     ongoing: {
         type: "Boolean",
-    },
+    }
 }, {
-    versionKey: false
+    versionKey: false,
 });
 exports.default = mongoose_1.default.model("Tournaments", Tournaments, "Tournaments");
 //# sourceMappingURL=tournament.js.map

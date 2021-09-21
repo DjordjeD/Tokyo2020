@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -7,6 +7,10 @@ import { Country, Format, Sport, Tournaments } from '../models/models';
 import { SportService } from '../sport.service';
 import { TournamentService } from '../tournament.service';
 
+export class Location{
+  location: string
+  checked: boolean
+}
 
 @Component({
   selector: 'app-add-tournament',
@@ -25,6 +29,7 @@ export class AddTournamentComponent implements OnInit {
   ) {}
 
     ngOnInit(): void {
+
 
       this.sportService.getAllSports().subscribe((sports: Sport[]) => {
         if (sports) {
@@ -50,12 +55,26 @@ export class AddTournamentComponent implements OnInit {
   teamsGroupFormControl = new FormControl('',Validators.required);
   groupsFormControl = new FormControl('',Validators.required);
   
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
+  locations:Array<Location>=[{location:"Saporo Arena",checked:false},{location:"Olympic Stadium",checked:false}, 
+  {location:"Nippon Budokan",checked:false} ,
+  {location:"Ariake Tennis Park",checked:false}, 
+  {location:"Tatsumi Waterpolo Centre",checked:false} , 
+  {location:"Saitama Super Arena",checked:false} , 
+  {location:"Asaka Shooting Range",checked:false}]
+
+  selectedLocations:Array<string>=[]
+
   disciplineName: string
   resultFormat:string
   countries: Country[];
   registered:boolean
   sportName: string
   sports:Sport[];
+  newTournament:Tournaments
   currentTournament: Tournaments
   tournaments: Array<Tournaments>
   format: Format
@@ -81,7 +100,44 @@ export class AddTournamentComponent implements OnInit {
 
 
   addTournament() {
-    this.router.navigate(['/addTournament']);
+
+      this.newTournament= new Tournaments();
+
+      this.newTournament.sportName=this.sportName;
+      this.newTournament.disciplineName=this.disciplineName;
+      if(this.individualFormControl.value=="team") this.newTournament.individual=false;
+      else if(this.individualFormControl.value=="individual") this.newTournament.individual=true;
+      this.newTournament.type=this.typeFormControl.value
+
+      for (let i = 0; i < this.locations.length; i++) {
+          if(this.locations[i].checked==true) this.selectedLocations.push(this.locations[i].location)
+  
+      }
+
+      this.newTournament.location= this.selectedLocations;
+      this.newTournament.dateBegin=this.range.getRawValue().start;
+      this.newTournament.dateEnd= this.range.getRawValue().end;
+
+      if(this.roundsFormControl.value ==null) this.newTournament.format.numberOfRounds=1;
+      else this.newTournament.format.numberOfRounds= this.roundsFormControl.value
+
+      if(this.individualFormControl.value=="team")
+      {
+          this.newTournament.format.numberOfGroups= this.groupsFormControl.value;
+          this.newTournament.format.numberOfTeamsInGroup= this.teamsGroupFormControl.value;
+      }
+
+      this.newTournament.format.resultFormat=this.resultFormat;
+
+
+      this.newTournament.started=true;
+      this.newTournament.ongoing=true;
+    
+      this.tournamentService.saveTournament(this.newTournament).subscribe((msg:any) => {
+
+        console.log(msg);
+      })
+
   }
 
 

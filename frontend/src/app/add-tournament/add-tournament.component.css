@@ -9,7 +9,24 @@
     margin: 8px 8px 8px 0;
 }
 
+
+
 .distance-buttons
 {
     margin: 0px 10px 0px 10px;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+mat-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+ 
+}
+
+.span3 {  
+  height: 220px !important;
+  overflow: scroll;
 }
