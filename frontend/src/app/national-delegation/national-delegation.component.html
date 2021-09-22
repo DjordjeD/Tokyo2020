@@ -1,50 +1,50 @@
 <mat-toolbar color="primary">
 
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
 
 
-        <div>
-            <button mat-menu-item color="primary" (click)="overviewSports()">See all Sports</button>
-        </div>
-
-        <div>
-            <button mat-menu-item color="primary" (click)="overviewAthletesBySport()">Overview Athletes by sport</button>
-        </div>
-
-        <div>
-            <button mat-menu-item color="primary" (click)="addTeam()">Overview Athletes by sport</button>
-        </div>
-
-
-        <div>
-            <button mat-menu-item color="primary" (click)="home()">Home </button>
-        </div>
-      
-
-
-
-
-    </mat-menu>
-    <span class="example-spacer"></span>
-
-
-
-
-    <div class="buttons-row">
-
-
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="changePassword()">
-            Change password
-        </button>
-        
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="home()">
-            Back
-        </button>
+    <div>
+      <button mat-menu-item color="primary" (click)="overviewSports()">Overview Sports</button>
     </div>
+
+    <div>
+      <button mat-menu-item color="primary" (click)="overviewAthletesBySport()">Overview Athletes by sport</button>
+    </div>
+
+    <div>
+      <button mat-menu-item color="primary" (click)="addTeam()">Assign Athletes to Team</button>
+    </div>
+
+
+    <div>
+      <button mat-menu-item color="primary" (click)="home()">Home </button>
+    </div>
+
+
+
+
+
+  </mat-menu>
+  <span class="example-spacer"></span>
+
+
+
+
+  <div class="buttons-row">
+
+
+    <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+      (click)="changePassword()">
+      Change password
+    </button>
+
+    <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+      (click)="home()">
+      Back
+    </button>
+  </div>
 
 
 </mat-toolbar>
@@ -54,130 +54,130 @@
 <br>
 
 <mat-card>
-    <mat-card-title>Add a new Athlete</mat-card-title>
-    <mat-card-content>
-        <form> 
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-10">
-                    
-                <mat-form-field>
-                  <input type="text" matInput placeholder="Name" [(ngModel)]="name" name="name">
-              </mat-form-field>
-        
+  <mat-card-title>Add a new Athlete</mat-card-title>
+  <mat-card-content>
+    <form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
 
-          
-              <mat-form-field>
-                  <input type="text" matInput placeholder="Surname" [(ngModel)]="surname" name="surname">
-              </mat-form-field>
-          
+            <mat-form-field>
+              <input type="text" matInput placeholder="Name" [(ngModel)]="name" name="name">
+            </mat-form-field>
 
+
+
+            <mat-form-field>
+              <input type="text" matInput placeholder="Surname" [(ngModel)]="surname" name="surname">
+            </mat-form-field>
+
+
+
+
+
+
+            <mat-form-field appearance="fill">
+              <mat-label>Discipline</mat-label>
+              <mat-select [formControl]="disciplineFormControl" multiple>
+                <mat-optgroup *ngFor="let sport of sports" [label]="sport.sportName">
+                  <mat-option *ngFor="let d of sport.disciplines"
+                    [value]="d">
+                    {{d.discipline.disciplineName}}
+                  </mat-option>
+                </mat-optgroup>
+              </mat-select>
+            </mat-form-field>
+
+            <label style="color: blue">Sex: </label>
+            <mat-radio-group [formControl]="typeFormControl" style="margin-right: 20px;">
+              <mat-radio-button value="man">Man</mat-radio-button>
+              <mat-radio-button value="woman">Woman</mat-radio-button>
+
+            </mat-radio-group>
+
+            
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
+
+      <button classs="distance-buttons" color="primary" mat-raised-button
+        aria-label="Example icon-button with share icon" (click)="addAthlete()">
+        Add Athlete
+      </button>
+          </div>
+  
+        </div>
+      </div>
      
 
-       
-            
-              <mat-form-field appearance="fill">
-                <mat-label>Discipline</mat-label>
-                <mat-select [formControl]="disciplineFormControl" multiple>
-                  <mat-optgroup *ngFor="let sport of sports" [label]="sport.sportName"> 
-                    <mat-option *ngFor="let discipline of sport.disciplines" [value]="discipline.discipline.disciplineName">
-                      {{discipline.discipline.disciplineName}}
-                    </mat-option>
-                  </mat-optgroup>
-                </mat-select>
-              </mat-form-field>
-
-        
-                  </div>
-                  <div class="col-md-2">
-                    
-                    <label>Sex</label>
-                    <mat-radio-group [formControl]="typeFormControl">
-                      <mat-radio-button value="man">Man</mat-radio-button>
-                      <mat-radio-button value="woman">Woman</mat-radio-button>
-                     
-                    </mat-radio-group>
-                  </div>
-                </div>
-              </div>
-           
-               
-                
-              
-              
-         
-  
-
-            <p *ngIf="error" class="error">
-                {{ error }}
-            </p>
-
-            <button classs="distance-buttons" color="primary" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="addAthlete()">
-            Add Athlete
-        </button>
-
-        </form>
 
 
-        
-    </mat-card-content>
+
+
+
+
+
+    </form>
+
+
+
+  </mat-card-content>
 </mat-card>
 
 <br>
 <div class="span3">
-  
+
   <div class="container">
-      <h5>All players</h5>
-      <div class="row">
-        <div class="col-12">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Surname</th>
-                <th scope="col">Country</th>
-                <th scope="col">Sex</th>
-                <th scope="col">Sport</th>
-                <th scope="col">Disciplines</th>
-                <th scope="col">Medal Winner</th>
-  
-              </tr>
-            </thead>
-            <tbody>
-  
-              <tr *ngFor='let c of competitors'>
-                <td>
-                  {{c.name}}
-  
-                </td>
-                <td>
-                  {{c.surname}}
-                </td>
-                <td>
-                  {{c.country.countryName}}
-                </td>
-                <td>
-                  {{c.sex}}
-                </td>
-                <td>
-                  {{c.competesIn[0].sportName}}
-                </td>
-                <td>
-                  <div *ngFor='let d of c.competesIn'>
-                    {{d.disciplineName}}
-                  </div>
-                </td>
-                <td>
-                  {{c.medalWinner}}
-                </td>
-  
-  
-              </tr>
-  
-            </tbody>
-          </table>
-        </div>
+    <h5>All players</h5>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Country</th>
+              <th scope="col">Sex</th>
+              <th scope="col">Sport</th>
+              <th scope="col">Disciplines</th>
+              <th scope="col">Medal Winner</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor='let c of competitors'>
+              <td>
+                {{c.name}}
+
+              </td>
+              <td>
+                {{c.surname}}
+              </td>
+              <td>
+                {{c.country.countryName}}
+              </td>
+              <td>
+                {{c.sex}}
+              </td>
+              <td>
+                {{c.competesIn[0].sportName}}
+              </td>
+              <td>
+                <div *ngFor='let d of c.competesIn'>
+                  {{d.disciplineName}}
+                </div>
+              </td>
+              <td>
+                {{c.medalWinner}}
+              </td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
 </div>

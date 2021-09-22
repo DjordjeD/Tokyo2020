@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Competitor } from './models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CompetitorService {
   constructor(private http: HttpClient) { }
 
   getAllCompetitors():any {
-    console.log('getAllCompetitors front ')
+   // console.log('getAllCompetitors front ')
     return this.http.get(`http://localhost:4000/competitors/getAllCompetitors`);
   }
 
@@ -40,5 +41,11 @@ export class CompetitorService {
 
     return this.http.post(`http://localhost:4000/competitors/getCompetitorsByDiscipline`,data);
   }
+
+  addCompetitor(competitor)
+  {
+    return this.http.post(`http://localhost:4000/competitors/addCompetitor`,competitor)
+  }
+
 
 }

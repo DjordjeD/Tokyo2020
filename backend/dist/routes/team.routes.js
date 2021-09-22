@@ -9,5 +9,8 @@ const teamRouter = express_1.default.Router();
 teamRouter
     .route("/getAllTeams")
     .get((req, res) => new team_controller_1.teamController().getAllTeams(req, res));
+teamRouter
+    .route("/addTeam")
+    .get((req, res) => new team_controller_1.teamController().addTeam(req, res));
 exports.default = teamRouter;
 //# sourceMappingURL=team.routes.js.map

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddSportComponent } from './add-sport/add-sport.component';
+import { AddTeamComponent } from './add-team/add-team.component';
 import { AddTournamentComponent } from './add-tournament/add-tournament.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CountriesRepresentComponent } from './countries-represent/countries-represent.component';
@@ -11,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
 import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
 import { OrganizerComponent } from './organizer/organizer.component';
+import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/overview-athletes-by-sport.component';
+import { OverviewSportsComponent } from './overview-sports/overview-sports.component';
 import { RecordsComponent } from './records/records.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -59,7 +62,10 @@ const routes: Routes = [
   {path:'editTournament', component: EditTournamentComponent},
   {path:'records',component: RecordsComponent},
   {path:'delegatePage',component: DelegatePageComponent},
-  {path:'nationalDelegation',component: NationalDelegationComponent }
+  {path:'nationalDelegation',component: NationalDelegationComponent },
+  {path:'overviewSports',component:OverviewSportsComponent},
+  {path:'overviewAthletesBySport',component:OverviewAthletesBySportComponent},
+  {path:'addTeam',component: AddTeamComponent},
 
 
 ];

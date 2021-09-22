@@ -15,6 +15,25 @@ class teamController {
                     res.json(team);
             });
         };
+        this.addTeam = (req, res) => {
+            let newTeam = new team_1.default(req.body);
+            newTeam.save().then(() => res.json(newTeam));
+        };
+        this.updateTeam = (req, res) => {
+            let newTeam = new team_1.default(req.body);
+            let options = {
+                projection: { _id: 0 },
+                upsert: true,
+                returnOriginal: false,
+            };
+            team_1.default.collection.findOneAndReplace({ teamName: req.body.teamName }, newTeam, options, (err, data) => {
+                if (err)
+                    console.log(err + "ERROR");
+                else
+                    res.json({ msg: "dodat" });
+                console.log(data);
+            });
+        };
     }
 }
 exports.teamController = teamController;

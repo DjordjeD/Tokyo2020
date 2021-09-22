@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Team } from './models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class TeamService {
   getAllTeams():any {
     
     return this.http.get(`http://localhost:4000/teams/getAllTeams`);
+  }
+
+  addTeam(team:Team):any {
+    return this.http.get(`http://localhost:4000/teams/addTeam`);
   }
 
 }

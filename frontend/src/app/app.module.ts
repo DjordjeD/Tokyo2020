@@ -33,8 +33,11 @@ import { DelegatePageComponent } from './delegate-page/delegate-page.component';
 import {MatCheckbox, MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepicker, MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { OverviewSportsComponent } from './overview-sports/overview-sports.component';
+import { AddTeamComponent } from './add-team/add-team.component';
+import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/overview-athletes-by-sport.component';
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

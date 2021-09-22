@@ -1,6 +1,6 @@
 import express from "express";
 import Competitors from "../models/competitor";
-
+import Countries from "../models/country";
 export class competitorController {
   getAllCompetitors = (req: express.Request, res: express.Response) => {
     Competitors.find({}, (err, competitor) => {
@@ -51,5 +51,24 @@ export class competitorController {
     );
   };
 
+
+  
+  addCompetitor = (req: express.Request, res: express.Response) => {
+    
+     let newSport= new Competitors(req.body);
+    
+
+    newSport.save().then(() => {
+      res.json(newSport);
+    });
+    console.log(req.body.country.countryName)
+    Countries.findOneAndUpdate({countryName:req.body.country.countryName},{ $inc:{ numberOfAthletes:1}},(err, data) => {
+      if(err) {
+        console.log(err)
+      }
+    }
+    )
+  }
+ 
 
 }

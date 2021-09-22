@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.competitorController = void 0;
 const competitor_1 = __importDefault(require("../models/competitor"));
+const country_1 = __importDefault(require("../models/country"));
 class competitorController {
     constructor() {
         this.getAllCompetitors = (req, res) => {
@@ -47,6 +48,18 @@ class competitorController {
                     console.log(err);
                 else {
                     res.json(competitor);
+                }
+            });
+        };
+        this.addCompetitor = (req, res) => {
+            let newSport = new competitor_1.default(req.body);
+            newSport.save().then(() => {
+                res.json(newSport);
+            });
+            console.log(req.body.country.countryName);
+            country_1.default.findOneAndUpdate({ countryName: req.body.country.countryName }, { $inc: { numberOfAthletes: 1 } }, (err, data) => {
+                if (err) {
+                    console.log(err);
                 }
             });
         };

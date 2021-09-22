@@ -12,5 +12,8 @@ competitorRouter
 competitorRouter
     .route('/searchCompetitors')
     .post((req, res) => new competitor_controller_1.competitorController().searchCompetitors(req, res));
+competitorRouter
+    .route('/addCompetitor')
+    .post((req, res) => new competitor_controller_1.competitorController().addCompetitor(req, res));
 exports.default = competitorRouter;
 //# sourceMappingURL=competitor.routes.js.map
