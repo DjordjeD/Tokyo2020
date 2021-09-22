@@ -1,1 +1,86 @@
-<p>overview-athletes-by-sport works!</p>
+
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+  
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="addTeam()">Add Athletes to team</button> 
+      </div>
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="overviewAthletesBySport()">Overview Athletes by sport</button>
+      </div>
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="nationalDelegate()">Add new Athletes</button>
+      </div>
+  
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="home()">Home </button>
+      </div>
+  
+  
+  
+  
+  
+    </mat-menu>
+    <span class="example-spacer"></span>
+  
+  
+  
+  
+    <div class="buttons-row">
+  
+  
+      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        (click)="changePassword()">
+        Change password
+      </button>
+  
+      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        (click)="back()">
+        Back
+      </button>
+    </div>
+  
+  
+  </mat-toolbar>
+  <br>
+<h2>Total number of athletes for Country: {{currentUser.nationality}} is {{totalNumber}}</h2>
+  <br>
+  <div class="span3">
+      
+      <div class="container">
+        <h5>Overview of Athletes by Sport for Country: {{currentUser.nationality}}</h5>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">SportName</th>
+                  <th scope="col">Number of Athletes</th>
+    
+                </tr>
+              </thead>
+              <tbody>
+    
+                <tr *ngFor='let s of sportNumber'>
+                  <td>
+                    {{s[0]}}
+                  </td>
+                  <td>
+                    {{s[1]}}
+                  </td>
+              
+                </tr>
+    
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -36,6 +36,10 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { OverviewSportsComponent } from './overview-sports/overview-sports.component';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/overview-athletes-by-sport.component';
+//import {NgbdTableCompleteModule} from './app/table-complete.module';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 @NgModule({
   declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent],
   imports: [
@@ -58,6 +62,9 @@ import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/o
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatPaginatorModule,
+   
+    //NgbdTableCompleteModule
    
  
   ],

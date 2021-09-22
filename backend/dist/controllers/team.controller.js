@@ -17,6 +17,7 @@ class teamController {
         };
         this.addTeam = (req, res) => {
             let newTeam = new team_1.default(req.body);
+            console.log(req.body);
             newTeam.save().then(() => res.json(newTeam));
         };
         this.updateTeam = (req, res) => {

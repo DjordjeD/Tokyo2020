@@ -11,6 +11,9 @@ teamRouter
     .get((req, res) => new team_controller_1.teamController().getAllTeams(req, res));
 teamRouter
     .route("/addTeam")
-    .get((req, res) => new team_controller_1.teamController().addTeam(req, res));
+    .post((req, res) => new team_controller_1.teamController().addTeam(req, res));
+teamRouter
+    .route("/updateTeam")
+    .post((req, res) => new team_controller_1.teamController().updateTeam(req, res));
 exports.default = teamRouter;
 //# sourceMappingURL=team.routes.js.map

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -40,6 +41,14 @@ export class HomePageComponent implements OnInit {
   medalWinnerFormControl = new FormControl('');
   nameFormControl = new FormControl('');
   surnameFormControl = new FormControl('');
+
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  
+
   ngOnInit(): void {
     this.currentUser = JSON.parse(
       localStorage.getItem('currentUser') || '{}'

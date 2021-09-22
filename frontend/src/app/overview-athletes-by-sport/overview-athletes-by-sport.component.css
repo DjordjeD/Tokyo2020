@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  section {
+    display: table;
+  }
+
+.buttons-row{
+    margin: 8px 8px 8px 0;
+}
+
+.distance-buttons
+{
+    margin: 0px 10px 0px 10px;
+}
+
+.span3 {  
+  height: 600px !important;
+  overflow: scroll;
+}
+
+
+mat-form-field {
+  margin-right: 12px;
+}

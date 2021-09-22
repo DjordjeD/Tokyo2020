@@ -159,7 +159,7 @@ export class NationalDelegationComponent implements OnInit {
     this.router.navigate(['']);
   }
   back() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/nationalDelegation']);
   }
   changePassword() {
     this.router.navigate(['/changePassword']);

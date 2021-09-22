@@ -11,6 +11,8 @@ export class teamController {
 
   addTeam = (req: express.Request, res: express.Response) => {
     let newTeam = new Teams(req.body);
+    console.log(req.body)
+    
     newTeam.save().then(() => res.json(newTeam));
   };
 

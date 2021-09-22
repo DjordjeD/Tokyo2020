@@ -9,7 +9,11 @@ teamRouter
 
   teamRouter
   .route("/addTeam")
-  .get((req, res) => new teamController().addTeam(req, res));
+  .post((req, res) => new teamController().addTeam(req, res));
+  
+  teamRouter
+  .route("/updateTeam")
+  .post((req, res) => new teamController().updateTeam(req, res));
 
 
 export default teamRouter;

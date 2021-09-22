@@ -48,3 +48,7 @@
 {
     margin: 0px 2px 0px 2px;
 }
+.span3 {  
+  height: 350px !important;
+  overflow: scroll;
+}

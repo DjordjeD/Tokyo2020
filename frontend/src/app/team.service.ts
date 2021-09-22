@@ -16,7 +16,12 @@ export class TeamService {
   }
 
   addTeam(team:Team):any {
-    return this.http.get(`http://localhost:4000/teams/addTeam`);
+    return this.http.post(`http://localhost:4000/teams/addTeam`,team);
   }
+
+  updateTeam(team:Team):any {
+    return this.http.post(`http://localhost:4000/teams/updateTeam`,team);
+  }
+
 
 }
