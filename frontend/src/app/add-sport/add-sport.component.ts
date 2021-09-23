@@ -39,6 +39,7 @@ export class AddSportComponent implements OnInit {
     })
   }
 
+
   back(): void {
     this.router.navigate(['/organizer'])
   }

@@ -50,50 +50,32 @@
   </mat-toolbar>
 
   <div class="container">
-    <h5>All Sports</h5>
+    <h5>All Disciplines</h5>
     <div class="row">
       <div class="col-12">
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">SportName</th>
+              <th scope="col">Discipline Name</th>
 
             </tr>
           </thead>
-
           <tbody >
            
-            <tr *ngFor='let s of sports let index = index; trackBy:trackByIndex; '>
-           <td>
-             {{s.sportName}}
-
-           </td>
-           <td>
-            <button mat-raised-button color="primary"  (click)="viewDisciplines(sports[index].sportName)" >View Disciplines</button>
-           </td>
-           
-           
-         </tr>
-
-         
-        
-       </tbody>
-          <!-- <tbody *ngFor='let s of sports'>
-           
-               <tr *ngFor='let d of s.disciplines'>
+               <tr *ngFor='let d of sport.disciplines  let index = index; trackBy:trackByIndex; '>
               <td>
                 {{d.discipline.disciplineName}}
 
               </td>
               <td>
-                <button mat-raised-button color="primary"  (click)="viewAthletesByDiscipline(d.discipline)" >View Athletes</button>
+                <button mat-raised-button color="primary"  (click)="viewAthletesByDiscipline(sport.disciplines[index].discipline)" >View Athletes</button>
               </td>
               
             </tr>
 
             
            
-          </tbody> -->
+          </tbody>
         </table>
       </div>
     </div>

@@ -17,13 +17,12 @@ import { SportService } from '../sport.service';
 import { TeamService } from '../team.service';
 import { TournamentService } from '../tournament.service';
 
-
 @Component({
-  selector: 'app-overview-sports',
-  templateUrl: './overview-sports.component.html',
-  styleUrls: ['./overview-sports.component.css']
+  selector: 'app-overview-disciplines',
+  templateUrl: './overview-disciplines.component.html',
+  styleUrls: ['./overview-disciplines.component.css'],
 })
-export class OverviewSportsComponent implements OnInit {
+export class OverviewDisciplinesComponent implements OnInit {
   constructor(
     private router: Router,
     private competitorService: CompetitorService,
@@ -33,32 +32,34 @@ export class OverviewSportsComponent implements OnInit {
     private teamService: TeamService
   ) {}
 
+  sport: Sport;
+  sportName: any;
   ngOnInit(): void {
+    this.sportName = localStorage.getItem('sportName')
+    console.log(this.sportName);
     this.sportService.getAllSports().subscribe((sports: Sport[]) => {
       if (sports) {
-        this.sports = sports;
-      }
-    });
-
-    this.countryService.getAllCountries().subscribe((countries: Country[]) => {
-      if (countries) {
-        this.countries = countries;
-       
+        for (let i = 0; i < sports.length; i++) {
+          if ((sports[i].sportName == this.sportName)) {
+            this.sport = sports[i];
+            //console.log(this.sport);
+          }
+        }
       }
     });
   }
-  sports: Sport[]=[];
+  sports: Sport[] = [];
   countries: Country[] = [];
 
-  
   trackByIndex(index: number, obj: any): any {
     return index;
   }
 
-  viewDisciplines(sportName:string){
-        console.log(sportName)
-        localStorage.setItem('sportName', sportName)
-        this.router.navigate(['overviewDisciplines'])
+
+  viewAthletesByDiscipline(discipline) {
+    localStorage.setItem('discipline', JSON.stringify(discipline));
+    console.log(discipline);
+    this.router.navigate(['viewAthletesByDiscipline']);
   }
 
   addTeam() {

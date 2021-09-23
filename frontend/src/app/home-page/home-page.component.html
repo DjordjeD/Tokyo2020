@@ -38,7 +38,7 @@
 </mat-toolbar>
 
 
-<div class="container">
+<div class="container" style="height:275px">
   <mat-card>
     <mat-card-title>Search</mat-card-title>
     <mat-card-content>
@@ -113,16 +113,60 @@
 <div class="container">
   
     <div class="d-flex justify-content-between p-2">
-      <mat-paginator
-      [length]="length"
-      [pageSize]="pageSize"
-      [pageSizeOptions]="pageSizeOptions"
-      aria-label="Select page">
-    </mat-paginator>
-    
+      <mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+</mat-paginator>
+  
   </div>
+  <h5>Search Results:</h5>
+  <div class="span3">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="surname">
+        <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="country">
+        <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.country.countryName}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="sex">
+        <mat-header-cell *matHeaderCellDef> Sex </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.sex}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="competesIn">
+        <mat-header-cell *matHeaderCellDef> Disciplines </mat-header-cell>
+        <mat-cell *matCellDef="let competitor"> 
+          <ng-container *ngFor="let discipline of competitor.competesIn">
+              {{discipline.disciplineName}}  
+              <br>
+          </ng-container>
+      </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="medalWinner">
+        <mat-header-cell *matHeaderCellDef> Medal Winner </mat-header-cell>
+        <mat-cell *matCellDef="let competitor"> {{competitor.medalWinner}}</mat-cell>
+       
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 
-  <h5>Search results</h5>
+  </div>
+  <!-- <h5>Search results</h5>
   <div class="row">
     <div class="col-12">
       <div class="span3">
@@ -176,5 +220,5 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

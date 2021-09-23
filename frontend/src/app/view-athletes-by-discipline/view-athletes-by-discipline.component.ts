@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -17,13 +19,13 @@ import { SportService } from '../sport.service';
 import { TeamService } from '../team.service';
 import { TournamentService } from '../tournament.service';
 
-
 @Component({
-  selector: 'app-overview-sports',
-  templateUrl: './overview-sports.component.html',
-  styleUrls: ['./overview-sports.component.css']
+  selector: 'app-view-athletes-by-discipline',
+  templateUrl: './view-athletes-by-discipline.component.html',
+  styleUrls: ['./view-athletes-by-discipline.component.css']
 })
-export class OverviewSportsComponent implements OnInit {
+export class ViewAthletesByDisciplineComponent implements OnInit {
+
   constructor(
     private router: Router,
     private competitorService: CompetitorService,
@@ -33,22 +35,44 @@ export class OverviewSportsComponent implements OnInit {
     private teamService: TeamService
   ) {}
 
+
+  dataSource:any=[]
+  discipline:DisciplineType
+  @ViewChild(MatPaginator) paginator:MatPaginator
+
+  displayedColumns: string[] = ['name', 'surname','country','sex','competesIn','medalWinner'];
+
   ngOnInit(): void {
-    this.sportService.getAllSports().subscribe((sports: Sport[]) => {
-      if (sports) {
-        this.sports = sports;
+
+
+    this.competitorService
+    .getAllCompetitors()
+    .subscribe((competitors: Competitor[]) => {
+      if (competitors) {
+        this.discipline=JSON.parse(localStorage.getItem('discipline') || '{}')
+        for (let i = 0; i < competitors.length; i++) {
+          
+          for (let j = 0; j < competitors[i].competesIn.length; j++) {
+            
+            if(competitors[i].competesIn[j].disciplineName==this.discipline.disciplineName)
+            {
+              this.competitors.push(competitors[i]);
+            }
+            
+          }
+          
+        }
+       
+        this.dataSource = new MatTableDataSource<Competitor>(this.competitors);
+        this.dataSource.paginator = this.paginator;
       }
     });
 
-    this.countryService.getAllCountries().subscribe((countries: Country[]) => {
-      if (countries) {
-        this.countries = countries;
-       
-      }
-    });
+   
   }
   sports: Sport[]=[];
   countries: Country[] = [];
+  competitors:Competitor[] = [];
 
   
   trackByIndex(index: number, obj: any): any {

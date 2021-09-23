@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { PageEvent } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -42,12 +43,17 @@ export class HomePageComponent implements OnInit {
   nameFormControl = new FormControl('');
   surnameFormControl = new FormControl('');
 
+  displayedColumns: string[] = ['name', 'surname','country','sex','competesIn','medalWinner'];
+
   length = 100;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   // MatPaginator Output
-  
+  dataSource:any
+
+  @ViewChild(MatPaginator) paginator:MatPaginator
+
 
   ngOnInit(): void {
     this.currentUser = JSON.parse(
@@ -63,7 +69,8 @@ export class HomePageComponent implements OnInit {
         if (competitors) {
           this.competitors = competitors;
           this.allCompetitors = competitors;
-        
+          this.dataSource = new MatTableDataSource<Competitor>(this.competitors);
+          this.dataSource.paginator = this.paginator;
         }
       });
 
@@ -115,9 +122,12 @@ export class HomePageComponent implements OnInit {
               }
             }
             this.competitors = sorted;
+            this.dataSource=sorted;
           } else {
             if(competitors)
-            this.competitors = competitors;
+            {this.competitors = competitors;
+              this.dataSource=competitors;
+            }
           }
         }
       });

@@ -1,0 +1,107 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+  
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="addTeam()">Add Athletes to team</button> 
+      </div>
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="overviewAthletesBySport()">Overview Athletes by sport</button>
+      </div>
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="nationalDelegate()">Add new Athletes</button>
+      </div>
+  
+  
+      <div>
+        <button mat-menu-item color="primary" (click)="home()">Home </button>
+      </div>
+  
+  
+  
+  
+  
+    </mat-menu>
+    <span class="example-spacer"></span>
+  
+  
+  
+  
+    <div class="buttons-row">
+  
+  
+      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        (click)="changePassword()">
+        Change password
+      </button>
+  
+      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        (click)="back()">
+        Back
+      </button>
+    </div>
+  
+  
+  </mat-toolbar>
+
+  <div class="container">
+  
+    <div class="d-flex justify-content-between p-2">
+      <mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+  </mat-paginator>
+  
+  </div>
+  <h5>Search Results:</h5>
+  <div class="span3">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="surname">
+        <mat-header-cell *matHeaderCellDef> Surname </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.surname}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="country">
+        <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.country.countryName}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="sex">
+        <mat-header-cell *matHeaderCellDef> Sex </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.sex}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="competesIn">
+        <mat-header-cell *matHeaderCellDef> Disciplines </mat-header-cell>
+        <mat-cell *matCellDef="let competitor"> 
+          <ng-container *ngFor="let discipline of competitor.competesIn">
+              {{discipline.disciplineName}}  
+              <br>
+          </ng-container>
+      </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="medalWinner">
+        <mat-header-cell *matHeaderCellDef> Medal Winner </mat-header-cell>
+        <mat-cell *matCellDef="let competitor"> {{competitor.medalWinner}}</mat-cell>
+       
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+  </div>

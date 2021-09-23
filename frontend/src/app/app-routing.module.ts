@@ -13,9 +13,11 @@ import { MedalsRepresentComponent } from './medals-represent/medals-represent.co
 import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
 import { OrganizerComponent } from './organizer/organizer.component';
 import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/overview-athletes-by-sport.component';
+import { OverviewDisciplinesComponent } from './overview-disciplines/overview-disciplines.component';
 import { OverviewSportsComponent } from './overview-sports/overview-sports.component';
 import { RecordsComponent } from './records/records.component';
 import { RegisterComponent } from './register/register.component';
+import { ViewAthletesByDisciplineComponent } from './view-athletes-by-discipline/view-athletes-by-discipline.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -66,7 +68,8 @@ const routes: Routes = [
   {path:'overviewSports',component:OverviewSportsComponent},
   {path:'overviewAthletesBySport',component:OverviewAthletesBySportComponent},
   {path:'addTeam',component: AddTeamComponent},
-
+  {path:'overviewDisciplines',component:OverviewDisciplinesComponent},
+  {path:'viewAthletesByDiscipline',component:ViewAthletesByDisciplineComponent},
 
 ];
 

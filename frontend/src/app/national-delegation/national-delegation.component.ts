@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -29,6 +31,13 @@ export class NationalDelegationComponent implements OnInit {
     private tournamentService: TournamentService
   ) {}
 
+  dataSource:any
+
+  @ViewChild(MatPaginator) paginator:MatPaginator
+
+  displayedColumns: string[] = ['name', 'surname','country','sex','competesIn','medalWinner'];
+
+
   ngOnInit(): void {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     console.log(this.currentUser.nationality)
@@ -52,7 +61,8 @@ export class NationalDelegationComponent implements OnInit {
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
           this.competitors = competitors;
-         
+          this.dataSource = new MatTableDataSource<Competitor>(this.competitors);
+          this.dataSource.paginator = this.paginator;
         }
       });
 

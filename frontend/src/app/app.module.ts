@@ -38,10 +38,12 @@ import { AddTeamComponent } from './add-team/add-team.component';
 import { OverviewAthletesBySportComponent } from './overview-athletes-by-sport/overview-athletes-by-sport.component';
 //import {NgbdTableCompleteModule} from './app/table-complete.module';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatTableModule} from '@angular/material/table';
+import { OverviewDisciplinesComponent } from './overview-disciplines/overview-disciplines.component';
+import { ViewAthletesByDisciplineComponent } from './view-athletes-by-discipline/view-athletes-by-discipline.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent, OverviewDisciplinesComponent, ViewAthletesByDisciplineComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -63,6 +65,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDatepickerModule,
     MatNativeDateModule,
     MatPaginatorModule,
+    MatTableModule
    
     //NgbdTableCompleteModule
    
