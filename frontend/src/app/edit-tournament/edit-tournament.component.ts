@@ -69,14 +69,14 @@ export class EditTournamentComponent implements OnInit {
             for (let index = 0; index < timovi.length; index++) {
 
                var split = timovi[index].teamName.split(" of ",2)
-               console.log(this.currentTournament.disciplineName)
-               console.log(split[0])
+              // console.log(this.currentTournament.disciplineName)
+              // console.log(split[0])
                 if(this.currentTournament.disciplineName==split[0])
                 {
                   this.teams.push(timovi[index]);
                 }
                // this.teams.push(timovi[index]);
-                console.log(timovi[index].teamName)
+              //  console.log(timovi[index].teamName)
               
             }
         }
@@ -86,7 +86,7 @@ export class EditTournamentComponent implements OnInit {
       
 
     }
-  
+  delegateSelected:boolean=false;
   delegate:User
   delegates:Array<User>
   disciplineFormControl = new FormControl('',Validators.required);
@@ -95,8 +95,9 @@ export class EditTournamentComponent implements OnInit {
   minimumPlayersForm= new FormControl('',Validators.required);
   maximumPlayersForm= new FormControl('',Validators.required);
   roundsFormControl = new FormControl('');
-  teamsGroupFormControl = new FormControl('',Validators.required);
-  groupsFormControl = new FormControl('',Validators.required);
+  selectedTeamsForm = new FormControl('',Validators.required);
+  selectedAthletesForm= new FormControl('',Validators.required);
+  delegateForm = new FormControl('',Validators.required);
 
   athletes:Array<Competitor>=[]
   teams:Array<Team>=[]
@@ -119,7 +120,11 @@ export class EditTournamentComponent implements OnInit {
     this.message =""
     this.error="";
     var cnt=0;
+    this.delegate=this.delegateForm.value
+    console.log(this.delegate)
+    console.log(this.delegateForm.value)
     for (let i = 0; i < this.tournaments.length; i++) {
+      if(this.tournaments[i].delegate!=null)
       if(this.delegate.name==this.tournaments[i].delegate.name)
       {
         cnt++;
@@ -127,7 +132,9 @@ export class EditTournamentComponent implements OnInit {
       
     }
     if(cnt>=3) this.error="Delegate can't be assigned"
-    else this.currentTournament.delegate=this.delegate;
+    else {this.currentTournament.delegate=this.delegate;
+      this.delegateSelected=true;
+    }
     this.message="Delegate Selected " + this.delegate.name
     console.log(this.delegate.name)
   }
@@ -136,29 +143,32 @@ export class EditTournamentComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  addCompetitors() {
+  // addCompetitors() {
 
-    for (let index = 0; index < this.athletes.length; index++) {
-      if(this.athletes[index].checked==true)
-      this.selectedCompetitors.push(this.athletes[index]);
-    }
+  //   for (let index = 0; index < this.athletes.length; index++) {
+  //     if(this.athletes[index].checked==true)
+  //     this.selectedCompetitors.push(this.athletes[index]);
+  //   }
 
-    if(this.selectedCompetitors.length!=0)
-    this.currentTournament.competitors = this.selectedCompetitors;
-  }
+  //   if(this.selectedCompetitors.length!=0)
+  //   this.currentTournament.competitors = this.selectedCompetitors;
+  // }
 
-  addTeams() {
+  // addTeams() {
 
-    for (let index = 0; index < this.teams.length; index++) {
-      if(this.teams[index].checkedTeam==true)
-      this.selectedTeams.push(this.teams[index]);
-    }
+  //   for (let index = 0; index < this.teams.length; index++) {
+  //     if(this.teams[index].checkedTeam==true)
+  //     this.selectedTeams.push(this.teams[index]);
+  //   }
 
-    if(this.selectedTeams.length!=0)
-    this.currentTournament.teams = this.selectedTeams
-  }
+  //   if(this.selectedTeams.length!=0)
+  //   this.currentTournament.teams = this.selectedTeams
+  // }
 
   saveTournament() {
+    console.log(this.currentTournament.individual)
+    if(!this.currentTournament.individual) this.currentTournament.teams=this.selectedTeamsForm.value
+    else this.currentTournament.competitors= this.selectedAthletesForm.value;
     
     console.log(this.currentTournament.teams[0].teamName)
     console.log(this.currentTournament.delegate.name)

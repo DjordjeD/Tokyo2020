@@ -43,9 +43,10 @@ import { OverviewDisciplinesComponent } from './overview-disciplines/overview-di
 import { ViewAthletesByDisciplineComponent } from './view-athletes-by-discipline/view-athletes-by-discipline.component';
 import { AcceptUsersComponent } from './accept-users/accept-users.component';
 import { InsertResultsComponent } from './insert-results/insert-results.component';
+import { EditTimetableComponent } from './edit-timetable/edit-timetable.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent, OverviewDisciplinesComponent, ViewAthletesByDisciplineComponent, AcceptUsersComponent, InsertResultsComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent, OverviewDisciplinesComponent, ViewAthletesByDisciplineComponent, AcceptUsersComponent, InsertResultsComponent, EditTimetableComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

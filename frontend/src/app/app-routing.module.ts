@@ -7,8 +7,10 @@ import { AddTournamentComponent } from './add-tournament/add-tournament.componen
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CountriesRepresentComponent } from './countries-represent/countries-represent.component';
 import { DelegatePageComponent } from './delegate-page/delegate-page.component';
+import { EditTimetableComponent } from './edit-timetable/edit-timetable.component';
 import { EditTournamentComponent } from './edit-tournament/edit-tournament.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { InsertResultsComponent } from './insert-results/insert-results.component';
 import { LoginComponent } from './login/login.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
 import { NationalDelegationComponent } from './national-delegation/national-delegation.component';
@@ -72,6 +74,8 @@ const routes: Routes = [
   {path:'overviewDisciplines',component:OverviewDisciplinesComponent},
   {path:'viewAthletesByDiscipline',component:ViewAthletesByDisciplineComponent},
   {path:'acceptUsers',component:AcceptUsersComponent},
+  {path:'editTimetable',component:EditTimetableComponent},
+  {path:'insertResults',component:InsertResultsComponent},
 
 ];
 

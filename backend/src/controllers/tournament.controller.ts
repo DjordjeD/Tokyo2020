@@ -40,7 +40,7 @@ export class tournamentController {
   updateTournament = (req: express.Request, res: express.Response) => {
     //console.log(req.body);
     //"projection":{ "_id": 0},
-    var tournament = new Tournaments(req.body)
+    var tournament = req.body
     let options= {"projection":{ "_id": 0}, "upsert":true, returnOriginal: false}
     Tournaments.collection.findOneAndReplace({ sportName: req.body.sportName,
       disciplineName: req.body.disciplineName},tournament,options, (err,data) => {

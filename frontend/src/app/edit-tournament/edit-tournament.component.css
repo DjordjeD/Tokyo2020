@@ -108,6 +108,11 @@ mat-card {
 }
 
 .span3 {  
-  height: 220px !important;
+  height: 200px !important;
+  overflow: scroll;
+}
+
+.span4 {  
+  height: 120px !important;
   overflow: scroll;
 }

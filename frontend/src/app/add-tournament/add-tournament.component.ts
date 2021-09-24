@@ -54,6 +54,7 @@ export class AddTournamentComponent implements OnInit {
   roundsFormControl = new FormControl('');
   teamsGroupFormControl = new FormControl('',Validators.required);
   groupsFormControl = new FormControl('',Validators.required);
+  locationsForm = new FormControl('',Validators.required);
   
   range = new FormGroup({
     start: new FormControl(),
@@ -66,7 +67,7 @@ export class AddTournamentComponent implements OnInit {
   {location:"Saitama Super Arena",checked:false} , 
   {location:"Asaka Shooting Range",checked:false}]
 
-  selectedLocations:Array<string>=[]
+  
 
   disciplineName: string
   resultFormat:string
@@ -108,16 +109,10 @@ export class AddTournamentComponent implements OnInit {
       if(this.individualFormControl.value=="team") this.newTournament.individual=false;
       else if(this.individualFormControl.value=="individual") this.newTournament.individual=true;
       this.newTournament.type=this.typeFormControl.value
-
-      for (let i = 0; i < this.locations.length; i++) {
-          if(this.locations[i].checked==true) this.selectedLocations.push(this.locations[i].location)
-  
-      }
-
-      this.newTournament.location= this.selectedLocations;
+      this.newTournament.location= this.locationsForm.value;
       this.newTournament.dateBegin=this.range.getRawValue().start;
       this.newTournament.dateEnd= this.range.getRawValue().end;
-      
+      this.newTournament.format=new Format()
       if(this.roundsFormControl.value ==null) this.newTournament.format.numberOfRounds=1;
       else this.newTournament.format.numberOfRounds= this.roundsFormControl.value
 
@@ -126,15 +121,17 @@ export class AddTournamentComponent implements OnInit {
           this.newTournament.format.numberOfGroups= this.groupsFormControl.value;
           this.newTournament.format.numberOfTeamsInGroup= this.teamsGroupFormControl.value;
       }
-
+    
       this.newTournament.format.resultFormat=this.resultFormat;
 
-
+      
       this.newTournament.started=true;
       this.newTournament.ongoing=true;
+
+      console.log(this.newTournament)
     
       this.tournamentService.saveTournament(this.newTournament).subscribe((msg:any) => {
-
+        this.tournaments.push(this.newTournament)
         console.log(msg);
       })
 

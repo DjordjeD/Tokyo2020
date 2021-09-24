@@ -47,14 +47,14 @@ export class DelegatePageComponent implements OnInit {
       .subscribe((tournaments: Tournaments[]) => {
         if (tournaments) {
           
-          this.tournaments=tournaments;
-          // for (let i = 0; i < tournaments.length; i++) {
-          //   if(tournaments[i].delegate==this.currentUser)
-          //   {
-          //     this.tournaments.push(tournaments[i])
-          //   }
+         
+          for (let i = 0; i < tournaments.length; i++) {
+            if(tournaments[i].delegate.username==this.currentUser.username)
+            {
+              this.tournaments.push(tournaments[i])
+            }
 
-          // }
+          }
         }
       });
     
@@ -64,7 +64,7 @@ export class DelegatePageComponent implements OnInit {
   insertResults()
   {
     localStorage.setItem('currentTournament',JSON.stringify(this.tournamentFormControl.value))
-    this.router.navigate['/insertResults']
+    this.router.navigate(['/editTimetable'])
   }
 
   tournamentFormControl = new FormControl('', Validators.required);

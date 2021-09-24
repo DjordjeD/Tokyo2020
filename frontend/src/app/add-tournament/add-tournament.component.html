@@ -133,11 +133,13 @@
 
 
 
-
-                                <mat-form-field appearance="fill">
-                                    <mat-label>Number of Rounds</mat-label>
-                                    <input matInput [formControl]="roundsFormControl" placeholder="Rounds">
-                                </mat-form-field>
+                                <div *ngIf="individualFormControl.value=='individual'">
+                                    
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Number of Rounds</mat-label>
+                                        <input matInput [formControl]="roundsFormControl" placeholder="Rounds">
+                                    </mat-form-field>
+                                </div>
 
                                 <div *ngIf="individualFormControl.value=='team'">
                                     <mat-form-field appearance="fill">
@@ -180,20 +182,20 @@
                                     </mat-select>
                                 </mat-form-field>
 
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Select players to view/add to this team</mat-label>
+                                    <mat-select [formControl]="locationsForm" multiple>
+                    
+                                      <mat-option *ngFor="let c of locations" [value]="c.location">
+                                        {{c.location}} 
+                                      </mat-option>
+                    
+                                    </mat-select>
+                                  </mat-form-field>
+
 
                             </div>
-                            <div class="col-lg-2">
-                                <p style="color: blue">
-                                    Locations:
-                                </p>
-                                <div *ngFor="let l of locations">
-
-                                    <mat-checkbox [checked]="l.checked">
-                                        {{l.location}}
-                                    </mat-checkbox>
-                                </div>
-
-                            </div>
+               
 
                             <div class="col-lg-2">
                                 <button mat-raised-button color="primary" (click)="addTournament()">Add

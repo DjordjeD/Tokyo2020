@@ -11,6 +11,8 @@ export class Tournaments {
   competitors: Competitor[];
   groupPhaseEvents: GroupPhaseEvent[];
   individualEvents: IndividualEvent[];
+  group1: Team[];
+  group2: Team[];
   delegate: User;
   format:Format;
   started: boolean;
@@ -34,7 +36,7 @@ export class Competitor {
   country: Country;
   competesIn: DisciplineType[];
   medalWinner: boolean;
-  checked:boolean;
+  
 }
 
 export class DisciplineType {
@@ -82,7 +84,7 @@ export class Team {
   teamName: string;
   teamMembers: Competitor[];
   groupPoints: number;
-  checkedTeam: boolean;
+  
 }
 
 export class Sport {
@@ -102,10 +104,22 @@ export class Medal {
   type: string;
 }
 
-export interface Record {
+export class Record {
   discipline: DisciplineType;
   date: string;
   athleteName: string;
   athleteCountry: Country;
   result: string;
 }
+
+
+export class teamRound{
+  teamEvents: GroupPhaseEvent[]
+  ended:boolean
+}
+
+export class individualRound{
+  individualEvents: IndividualEvent[]
+  ended:boolean
+}
+

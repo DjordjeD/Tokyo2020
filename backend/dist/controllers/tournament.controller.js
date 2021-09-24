@@ -42,7 +42,7 @@ class tournamentController {
         this.updateTournament = (req, res) => {
             //console.log(req.body);
             //"projection":{ "_id": 0},
-            var tournament = new tournament_1.default(req.body);
+            var tournament = req.body;
             let options = { "projection": { "_id": 0 }, "upsert": true, returnOriginal: false };
             tournament_1.default.collection.findOneAndReplace({ sportName: req.body.sportName,
                 disciplineName: req.body.disciplineName }, tournament, options, (err, data) => {

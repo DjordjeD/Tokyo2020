@@ -44,7 +44,7 @@ export class ViewAthletesByDisciplineComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
     this.competitorService
     .getAllCompetitors()
     .subscribe((competitors: Competitor[]) => {
@@ -54,7 +54,7 @@ export class ViewAthletesByDisciplineComponent implements OnInit {
           
           for (let j = 0; j < competitors[i].competesIn.length; j++) {
             
-            if(competitors[i].competesIn[j].disciplineName==this.discipline.disciplineName)
+            if(competitors[i].competesIn[j].disciplineName==this.discipline.disciplineName && competitors[i].country.countryName== this.currentUser.nationality)
             {
               this.competitors.push(competitors[i]);
             }
@@ -73,7 +73,7 @@ export class ViewAthletesByDisciplineComponent implements OnInit {
   sports: Sport[]=[];
   countries: Country[] = [];
   competitors:Competitor[] = [];
-
+  currentUser: User;
   
   trackByIndex(index: number, obj: any): any {
     return index;

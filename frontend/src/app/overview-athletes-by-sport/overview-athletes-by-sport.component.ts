@@ -57,7 +57,15 @@ export class OverviewAthletesBySportComponent implements OnInit {
 
       this.competitorService.getAllCompetitors().subscribe((competitors: Competitor[]) => {
         if (competitors) {
-          this.competitors = competitors;
+
+          for (let i = 0; i < competitors.length; i++) {
+            
+            if(competitors[i].country.countryName==this.currentUser.nationality)
+            this.competitors.push(competitors[i]);
+            
+          }
+          
+
         }
 
 

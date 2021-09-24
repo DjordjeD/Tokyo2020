@@ -1,94 +1,92 @@
-
 <mat-toolbar color="primary">
 
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-  
-  
-   
-  
-      <div>
-        <button mat-menu-item color="primary" (click)="home()">Home </button>
-      </div>
-  
-  
-  
-  
-  
-    </mat-menu>
-    <span class="example-spacer"></span>
-  
-  
-  
-  
-    <div class="buttons-row">
-  
-  
-      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-        (click)="changePassword()">
-        Change password
-      </button>
-  
-      <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" style="margin-left: 10px;"
-        (click)="back()">
-        Back
-      </button>
-    </div>
-  
-  
-  </mat-toolbar>
-  
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
 
-  
+
+
+
+    <div>
+      <button mat-menu-item color="primary" (click)="home()">Home </button>
+    </div>
+
+
+
+
+
+  </mat-menu>
+  <span class="example-spacer"></span>
+
+
+
+
+  <div class="buttons-row">
+
+
+    <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+      (click)="changePassword()">
+      Change password
+    </button>
+
+    <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+      style="margin-left: 10px;" (click)="back()">
+      Back
+    </button>
+  </div>
+
+
+</mat-toolbar>
+
+
+
 <mat-card>
-    <h4 style="color:navy">National Delegation page</h4>
-    <mat-card-title>Select tournament for this delegate - Name:{{currentUser.name}}</mat-card-title>
-    <mat-card-content>
-      <form>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4">
-  
-           
-  
-              <mat-form-field appearance="fill">
-                <mat-label>Tournament</mat-label>
-                <mat-select [formControl]="tournamentFormControl">
-                  
-                    <mat-option *ngFor="let t of tournaments"
-                      [value]="">
-                      {{t.sportName}} {{t.disciplineName}}
-                    </mat-option>  
-                  
-                </mat-select>
-              </mat-form-field>
-  
-              
-        <p *ngIf="error" class="error">
-          {{ error }}
-        </p>
-  
-        <button classs="distance-buttons" color="primary" mat-raised-button
-          aria-label="Example icon-button with share icon" (click)="insertResults()">
-          InsertResults
-        </button>
-            </div>
-    
+  <h4 style="color:navy">National Delegation page</h4>
+  <mat-card-title>Select tournament for this delegate - Name:{{currentUser.name}}</mat-card-title>
+  <mat-card-content>
+    <form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+
+
+
+            <mat-form-field appearance="fill">
+              <mat-label>Tournament</mat-label>
+              <mat-select [formControl]="tournamentFormControl">
+
+                <mat-option *ngFor="let t of tournaments" [value]="t">
+                 Discipline: {{t.disciplineName}}
+                </mat-option>
+
+              </mat-select>
+            </mat-form-field>
+
+
+            <p *ngIf="error" class="error">
+              {{ error }}
+            </p>
+
+            <button classs="distance-buttons" color="primary" mat-raised-button
+              aria-label="Example icon-button with share icon" (click)="insertResults()">
+              Insert Results and Edit Timetable
+            </button>
           </div>
+
         </div>
-       
-  
-  
-  
-  
-  
-  
-  
-  
-      </form>
-  
-  
-  
-    </mat-card-content>
-  </mat-card>
+      </div>
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+  </mat-card-content>
+</mat-card>
