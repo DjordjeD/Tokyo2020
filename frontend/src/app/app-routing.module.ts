@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AcceptUsersComponent } from './accept-users/accept-users.component';
 import { AddSportComponent } from './add-sport/add-sport.component';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { AddTournamentComponent } from './add-tournament/add-tournament.component';
@@ -70,6 +71,7 @@ const routes: Routes = [
   {path:'addTeam',component: AddTeamComponent},
   {path:'overviewDisciplines',component:OverviewDisciplinesComponent},
   {path:'viewAthletesByDiscipline',component:ViewAthletesByDisciplineComponent},
+  {path:'acceptUsers',component:AcceptUsersComponent},
 
 ];
 

@@ -22,6 +22,13 @@
     background-color: red;
   }
 
+  .message {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: green;
+  }
+  
   .button {
     display: flex;
     justify-content: flex-end;

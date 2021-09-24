@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+    <div class="buttons-row">
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="back()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+<br>
+<h2> Number of pending requests is {{userRequests.length}}</h2>
+<mat-card>
+    <mat-card-title>Accept User Requests</mat-card-title>
+    <mat-card-content>
+        <form>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+
+                        <mat-form-field appearance="fill" style=" margin-right: 20px;">
+                            <mat-label style="width:500px">Select users to accept</mat-label>
+                            <mat-select [formControl]="selectedUsersForm" multiple style="width:500px">
+
+                                <mat-option *ngFor="let c of userRequests" [value]="c" style="width:500px">
+                                   Username: {{c.username}} Name:{{c.name}} Surname:{{c.surname}} Delegate:{{c.isDelegate}} 
+                                </mat-option>
+
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <p *ngIf="error" class="error">
+                                {{ error }}
+                            </p>
+                
+                            <button classs="distance-buttons" color="primary" mat-raised-button
+                                aria-label="Example icon-button with share icon" (click)="acceptUsers()">
+                                Accept Users
+                            </button>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+                
+                
+             
+            </div>
+
+
+
+
+
+        </form>
+
+
+
+    </mat-card-content>
+</mat-card>

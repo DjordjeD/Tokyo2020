@@ -1,17 +1,48 @@
+<mat-toolbar color="primary">
+
+
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+
+
+      <div>
+          <button mat-menu-item color="primary" (click)="back()" >Back to organizer</button>
+      </div>
+
+
+
+
+
+  </mat-menu>
+  <span class="example-spacer"></span>
+
+
+
+
+  <div class="buttons-row">
+
+
+    <button mat-raised-button   (click)="back()" >Back to organizer</button>
+      
+  
+  </div>
+
+
+</mat-toolbar>
 <br>
 <div class="container">
     <mat-card>
       <mat-card-title>Add a new Sport</mat-card-title>
       <mat-card-content>
-        <form>
+        <form >
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput [formControl]="nameFormControl" placeholder="Name">
           </mat-form-field>
     
        
-          <button mat-raised-button color="primary"  (click)="addSport()" >Add</button>
-          <button mat-raised-button color="primary"  (click)="back()" >Back to organizer</button>
+          <button mat-raised-button color="primary"  (click)="addSport()" style="margin-right: 10px;" >Add</button>
+          <button mat-raised-button color="primary"  (click)="back()" style="margin-right: 10px;" >Back to organizer</button>
          
         </form>
     

@@ -8,7 +8,13 @@ const user_controller_1 = require("../controllers/user.controller");
 const userRouter = express_1.default.Router();
 userRouter
     .route("/getAllUsers")
-    .post((req, res) => new user_controller_1.userController().getAllUsers(req, res));
+    .get((req, res) => new user_controller_1.userController().getAllUsers(req, res));
+userRouter
+    .route("/getAllUserRequests")
+    .get((req, res) => new user_controller_1.userController().getAllUserRequests(req, res));
+userRouter
+    .route("/acceptUser")
+    .post((req, res) => new user_controller_1.userController().acceptUser(req, res));
 userRouter
     .route("/getDelegates")
     .get((req, res) => new user_controller_1.userController().getDelegates(req, res));

@@ -1,0 +1,32 @@
+.distance-buttons
+{
+    margin: 0px 10px 0px 10px;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.message {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: green;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+section {
+  display: table;
+}
+
+
+.span3 {  
+  height: 220px !important;
+  overflow: scroll;
+}
+

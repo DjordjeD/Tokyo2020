@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService:UserService, private router:Router, private countryService:CountryService) { }
 
   ngOnInit(): void {
-
+    this.message=""
     this.countryService.getAllCountries().subscribe((countries: Country[]) => {
       if (countries) {
         this.countries = countries;
@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
   });
   isDelegate:boolean
   floatLabelControl = new FormControl('auto', Validators.required);
-  message: string ;
+  message: string;
   //this.form.getRawValue().username, this.form.getRawValue().password, this.floatLabelControl.value
   submit() {
     if(this.floatLabelControl.value=="delegate") this.isDelegate=true;
@@ -53,10 +53,10 @@ export class RegisterComponent implements OnInit {
       { 
         localStorage.setItem("currentUser", JSON.stringify(user));
         console.log("dodat user");
-        if (user.isDelegate)
-        this.router.navigate(['/delegatePage']);
-        if (!user.isDelegate)
-        this.router.navigate(['/nationalDelegation']);
+        this.message="User request added"
+      }
+      else{
+        this.error="Unsuccesfull adition"
       }
     })
    }

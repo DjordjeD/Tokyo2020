@@ -17,3 +17,7 @@
   height: 400px !important;
   overflow: scroll;
 }
+
+mat-form-field {
+  margin-right: 12px;
+}

@@ -72,7 +72,10 @@
                 <p *ngIf="error" class="error">
                     {{ error }}
                 </p>
-        
+                <p *ngIf="message.length!=0" class="message">
+                    {{ message }}
+                  </p>
+          
                 <div class="button">
                     <button mat-raised-button color="primary"  (click)="submit()" >Register</button>
                 </div>

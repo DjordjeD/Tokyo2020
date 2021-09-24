@@ -1,5 +1,7 @@
 import express from "express";
+import user from "../models/user";
 import Users from "../models/user";
+import UserRequests from "../models/userRequest";
 
 export class userController {
   getAllUsers = (req: express.Request, res: express.Response) => {
@@ -9,6 +11,12 @@ export class userController {
     });
   };
 
+  getAllUserRequests = (req: express.Request, res: express.Response) => {
+    UserRequests.find({}, (err, user) => {
+      if (err) console.log(err);
+      else res.json(user);
+    });
+  };
   getDelegates = (req: express.Request, res: express.Response) => {
     Users.find({ isDelegate: true }, (err, user) => {
       if (err) console.log(err);
@@ -25,7 +33,7 @@ export class userController {
       else res.json(user);
     });
   };
-  
+
   login = (req: express.Request, res: express.Response) => {
     let username = req.body.username;
     let password = req.body.password;
@@ -44,10 +52,10 @@ export class userController {
     let username = req.body.username;
     let password = req.body.password;
     let newPassword = req.body.newPassword;
-    console.log(req.body)
+    console.log(req.body);
     Users.updateOne(
       { password: password, username: username },
-      { $set: {password: newPassword}  },
+      { $set: { password: newPassword } },
       (err, user) => {
         if (err) console.log(err);
         else res.json(user);
@@ -64,17 +72,8 @@ export class userController {
     let name = req.body.name;
     let surname = req.body.surname;
     //console.log("register");
-    
-    let newUser = new Users(req.body);
 
-    Users.findOne(
-      { password: password, username: username, isDelegate: isDelegate, nationality: nationality},
-      (err, user) => {
-        if (user) {
-          res.json({ message: "user already registered" });
-        }
-      }
-    );
+    let newUser = new UserRequests(req.body);
 
     newUser
       .save()
@@ -85,34 +84,41 @@ export class userController {
         console.log(err);
         res.status(400).json({ message: err });
       });
+  };
 
-    //   Users.findOne(
-    //     { password: password, username: username, isDelegate: isDelegate },
-    //     (err, user) => {
-    //       if (user) {
-    //         let newUser = new Users(req.body);
-    //        // if(isDelegate==false && newUser.isDelegate==false) slucaj kada hocu nacionalu delegaciju da doodam
+  acceptUser = (req: express.Request, res: express.Response) => {
+    let username = req.body.username;
+    let password = req.body.password;
 
-    //         if(user == null)
-    //         {
-    //           newUser
-    //           .save()
-    //           .then(() => {
-    //             res.status(200).json({ message: "ok" });
-    //           })
-    //           .catch((err) => {
-    //             console.log(err);
-    //             res.status(400).json({ message: err });
-    //           });
-    //         }
-    //         else {
-    //           res.json({ message: "Korisnik vec postoji" });
-    //         }
+    let isDelegate = req.body.isDelegate;
+    let nationality = req.body.nationality;
+    let name = req.body.name;
+    let surname = req.body.surname;
 
-    //       } else {
-    //         res.json({ message: err });
-    //       }
-    //     }
-    //   );
+    UserRequests.collection.findOneAndDelete(
+      {
+        username: username,
+        password: password,
+        isDelegate: isDelegate,
+        nationality: nationality,
+      },
+      (err, user) => {
+        if (err) console.log(err);
+        else console.log("obrisan");
+      }
+    );
+    //console.log("register");
+
+    let newUser = new Users(req.body);
+
+    newUser
+      .save()
+      .then(() => {
+        res.status(200).json(newUser);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(400).json({ message: err });
+      });
   };
 }

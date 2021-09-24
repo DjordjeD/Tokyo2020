@@ -41,9 +41,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import { OverviewDisciplinesComponent } from './overview-disciplines/overview-disciplines.component';
 import { ViewAthletesByDisciplineComponent } from './view-athletes-by-discipline/view-athletes-by-discipline.component';
+import { AcceptUsersComponent } from './accept-users/accept-users.component';
+import { InsertResultsComponent } from './insert-results/insert-results.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent, OverviewDisciplinesComponent, ViewAthletesByDisciplineComponent],
+  declarations: [AppComponent, HomePageComponent, RegisterComponent, LoginComponent, ChangePasswordComponent, OrganizerComponent, MedalsRepresentComponent, CountriesRepresentComponent, AddSportComponent, AddTournamentComponent, EditTournamentComponent, RecordsComponent, NationalDelegationComponent, DelegatePageComponent, OverviewSportsComponent, AddTeamComponent, OverviewAthletesBySportComponent, OverviewDisciplinesComponent, ViewAthletesByDisciplineComponent, AcceptUsersComponent, InsertResultsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

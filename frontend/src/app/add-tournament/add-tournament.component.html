@@ -10,7 +10,7 @@
         </div>
 
         <div>
-            <button mat-menu-item color="primary" (click)="addTournament()">Add a Tournament</button>
+            <button mat-menu-item color="primary" (click)="back()">Add a discipline</button>
         </div>
 
         <div>
@@ -33,13 +33,13 @@
     <div class="buttons-row">
 
 
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+        <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
             (click)="changePassword()">
             Change password
         </button>
 
-        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="home()">
+        <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="back()">
             Back
         </button>
     </div>
@@ -62,11 +62,12 @@
 
 
 <div class="container-fluid">
+    
     <div class="row">
         <mat-card>
-            <mat-card-title>Add a new Tournament structure </mat-card-title>
+            <mat-card-title style="margin-left: 25px;">Add a new Tournament structure </mat-card-title>
             <mat-card-content>
-
+                <br>
                 <form class="mat-form-field">
 
                     <div class="container">
@@ -214,6 +215,7 @@
             </mat-card-content>
         </mat-card>
     </div>
+
     <h4>View and edit which Teams/Individuals play at which tournament and assign delegates by pressing on the button in
         the table</h4>
     <div class="row">

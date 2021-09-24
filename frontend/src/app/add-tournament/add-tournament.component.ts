@@ -117,7 +117,7 @@ export class AddTournamentComponent implements OnInit {
       this.newTournament.location= this.selectedLocations;
       this.newTournament.dateBegin=this.range.getRawValue().start;
       this.newTournament.dateEnd= this.range.getRawValue().end;
-
+      
       if(this.roundsFormControl.value ==null) this.newTournament.format.numberOfRounds=1;
       else this.newTournament.format.numberOfRounds= this.roundsFormControl.value
 
@@ -143,6 +143,10 @@ export class AddTournamentComponent implements OnInit {
 
   addSport() {
     this.router.navigate(['/addSport']);
+  }
+
+  back() {
+    this.router.navigate(['/organizer']);
   }
 
 

@@ -61,4 +61,17 @@ export class UserService {
 
     return this.http.get(`${this.uri}/users/getDelegates`);
   }
+
+  getAllUserRequests():any{
+
+
+    return this.http.get(`${this.uri}/users/getAllUserRequests`);
+  }
+
+
+  
+  acceptUser(user):any{
+
+    return this.http.post(`${this.uri}/users/acceptUser`,user);
+  }
 }

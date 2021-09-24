@@ -5,7 +5,16 @@ const userRouter = express.Router();
 
   userRouter
   .route("/getAllUsers")
-  .post((req, res) => new userController().getAllUsers(req, res));
+  .get((req, res) => new userController().getAllUsers(req, res));
+
+  userRouter
+  .route("/getAllUserRequests")
+  .get((req, res) => new userController().getAllUserRequests(req, res));
+
+  userRouter
+  .route("/acceptUser")
+  .post((req, res) => new userController().acceptUser(req, res));
+
 
   userRouter
   .route("/getDelegates")

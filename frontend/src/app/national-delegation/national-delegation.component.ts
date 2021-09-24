@@ -60,7 +60,13 @@ export class NationalDelegationComponent implements OnInit {
       .getAllCompetitors()
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
-          this.competitors = competitors;
+          for (let i = 0; i < competitors.length; i++) {
+              if(competitors[i].country.countryName==this.currentUser.nationality)
+              {
+                this.competitors.push(competitors[i]);
+              }
+          }
+         
           this.dataSource = new MatTableDataSource<Competitor>(this.competitors);
           this.dataSource.paginator = this.paginator;
         }
@@ -84,7 +90,7 @@ export class NationalDelegationComponent implements OnInit {
   error: string;
   disciplineName: string;
   resultFormat: string;
-  competitors: Array<Competitor>;
+  competitors: Array<Competitor>=[]
 
   sports: Sport[];
   currentTournament: Tournaments;
@@ -169,7 +175,8 @@ export class NationalDelegationComponent implements OnInit {
     this.router.navigate(['']);
   }
   back() {
-    this.router.navigate(['/nationalDelegation']);
+    this.router.navigate(['']);
+    //potencijalno brisanje
   }
   changePassword() {
     this.router.navigate(['/changePassword']);

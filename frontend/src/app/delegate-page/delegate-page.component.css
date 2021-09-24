@@ -1,0 +1,62 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .demo-table {
+    width: 100%;
+  }
+
+  .container {
+    padding: 2rem 0rem;
+  }
+  
+  h4 {
+    margin: 2rem 0rem 1rem;
+  }
+
+  .distance-buttons
+{
+    margin: 0px 2px 0px 2px;
+}
+.span3 {  
+  height: 300px !important;
+  overflow: scroll;
+}
+
+mat-label{
+  color:navy
+}
+
+mat-form-field {
+  margin-right: 12px;
+}

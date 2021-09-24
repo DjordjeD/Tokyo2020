@@ -87,6 +87,7 @@ export class AddTeamComponent implements OnInit {
   selectDiscipline() {
     this.disciplineSelected = true;
     this.disciplineName = this.disciplineFormControl.value;
+   
     this.selectedAthletes = [];
     this.eliminateAlreadyInTeam = [];
     
@@ -95,16 +96,16 @@ export class AddTeamComponent implements OnInit {
       if (teams) {
         for (let i = 0; i < teams.length; i++) {
           var name = teams[i].teamName.split(' of ', 2);
-          console.log(name[0] + 'kita');
-          console.log(this.disciplineName + 'kita');
-          if (this.disciplineName == name[0]) {
+          console.log(name[0]);
+          console.log(this.disciplineName);
+          if (this.disciplineName == name[0] && this.currentUser.nationality==name[1]) {
             this.currentTeam = teams[i];
             this.newTeam=false;
           }
         }
       }
 
-      console.log("Current team " + this.currentTeam);
+      console.log(this.currentTeam);
       for (let i = 0; i < this.competitors.length; i++) {
         let found = false;
         for (let j = 0; j < this.currentTeam.teamMembers.length; j++) {
@@ -143,14 +144,15 @@ export class AddTeamComponent implements OnInit {
 
     console.log(this.currentTeam);
     if(this.newTeam)
-    this.teamService.addTeam(this.currentTeam).subscribe((msg: any) => {
-      console.log(msg);
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.router.onSameUrlNavigation = 'reload';
-      this.router.navigate(['/addTeam']);
-
-    });
-
+    {
+      this.teamService.addTeam(this.currentTeam).subscribe((msg: any) => {
+        console.log(msg);
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate(['/addTeam']);
+  
+      });
+    }
     else{ 
       this.teamService.updateTeam(this.currentTeam).subscribe((msg: any) => {
         console.log(msg);

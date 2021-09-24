@@ -14,11 +14,14 @@
         </div>
 
         <div>
-            <button mat-menu-item color="primary" (click)="home()">Home </button>
+            <button mat-menu-item color="primary" (click)="acceptUserRequests()">Accept User Requests </button>
+        </div>
+        <div>
+            <button mat-menu-item color="primary" (click)="records()">Records </button>
         </div>
 
         <div>
-            <button mat-menu-item color="primary" (click)="records()">Records </button>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
         </div>
 
 
@@ -37,17 +40,17 @@
             (click)="changePassword()">
             Change password
         </button>
-        
+
         <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-            (click)="home()">
+            style="margin-left: 10px; " (click)="home()">
             Back
         </button>
     </div>
 
 
 </mat-toolbar>
-<br>
-<h2 > Organizer Page <span class="badge bg-info"></span></h2>
+
+
 
 <!-- < <mat-card>
     <mat-card-title>Insert a new Sport</mat-card-title>
@@ -66,9 +69,11 @@
 
     </mat-card-content>
     </mat-card> -->
-    <br>
+<br>
 
+<div class="container">
     <mat-card>
+        <h2> Organizer Page <span class="badge bg-info"></span></h2>
         <mat-card-title>Insert A New Discipline</mat-card-title>
         <mat-card-content>
             <form>
@@ -90,8 +95,8 @@
 
                 <label> Team Sport? </label>
                 <mat-radio-group [formControl]="individualFormControl">
-                  <mat-radio-button value="team">Yes</mat-radio-button>
-                  <mat-radio-button value="individual">No</mat-radio-button>
+                    <mat-radio-button value="team">Yes</mat-radio-button>
+                    <mat-radio-button value="individual">No</mat-radio-button>
                 </mat-radio-group>
 
                 <div *ngIf="individualFormControl.value=='team'">
@@ -102,7 +107,7 @@
 
                 </div>
 
-            
+
                 <div *ngIf="individualFormControl.value=='team'">
 
                     <mat-form-field appearance="fill">
@@ -110,10 +115,11 @@
                         <input matInput [formControl]="maximumPlayersForm" placeholder="Name">
                     </mat-form-field>
                 </div>
-               
 
 
-                <button mat-raised-button color="primary" (click)="addDiscipline()">Insert</button>
+
+                <button mat-raised-button color="primary" (click)="addDiscipline()"
+                    style="margin-left: 12px">Insert</button>
 
 
             </form>
@@ -121,14 +127,17 @@
         </mat-card-content>
     </mat-card>
 
+</div>
 
-    <br>
-    
-    <div class="container">
-        <h5>Disciplines</h5>
-        <div class="row">
-            <div class="col-12">
-                <div class="span3">
+
+
+<br>
+
+<div class="container">
+    <h5>Disciplines</h5>
+    <div class="row">
+        <div class="col-12">
+            <div class="span3">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -139,14 +148,14 @@
                     </thead>
                     <tbody *ngFor="let s of sports">
 
-                 
+
 
                         <tr *ngFor='let d of s.disciplines'>
                             <td>
                                 {{d.discipline.sportName}}
 
                             </td>
-                        
+
                             <td>
                                 {{d.discipline.disciplineName}}
                             </td>
@@ -154,12 +163,12 @@
 
                         </tr>
 
-     
+
 
 
                     </tbody>
                 </table>
-                </div>
             </div>
         </div>
     </div>
+</div>

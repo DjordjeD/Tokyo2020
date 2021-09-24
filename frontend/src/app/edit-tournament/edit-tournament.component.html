@@ -34,13 +34,14 @@
 
 </mat-toolbar>
 
-<h2> Sport name and Discipline name <span class="badge bg-info"></span></h2>
-<h3>Sport:{{currentTournament.sportName}} Discipline: {{currentTournament.disciplineName}} <span
+
+<h3 style="margin-left: 35px;">Sport:{{currentTournament.sportName}} Discipline: {{currentTournament.disciplineName}} <span
     class="badge bg-info"></span></h3>
 
 
 
 <mat-grid-list cols="2" rowHeight="4:2">
+  
   <mat-grid-tile>
     <mat-card>
       <mat-card-title>Select Delegate</mat-card-title>
@@ -66,7 +67,7 @@
         </p>
 
         <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
-          (click)="selectDelegate()">
+          (click)="selectDelegate()" color="primary">
           Select delegate
         </button>
 
@@ -110,7 +111,7 @@
         </div>
 
 
-
+        <br>
 
 
         <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"

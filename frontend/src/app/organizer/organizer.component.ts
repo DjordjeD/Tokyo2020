@@ -71,6 +71,10 @@ export class OrganizerComponent implements OnInit {
     this.router.navigate(['/organizer']);
   }
 
+  acceptUserRequests(){
+    this.router.navigate(['/acceptUsers']);
+  }
+
   login() {
     this.router.navigate(['/login']);
   }
