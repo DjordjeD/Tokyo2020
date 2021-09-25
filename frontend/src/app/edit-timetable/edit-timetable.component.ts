@@ -47,26 +47,48 @@ export class EditTimetableComponent implements OnInit {
   numberShuffle12: Array<number> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   numberShuffle8: Array<number> = [0, 1, 2, 3, 4, 5, 6, 7];
   numberShuffle4: Array<number> = [0, 1, 2, 3];
-  groupRoundsEnded: Array<Boolean> = [true, false, false, false, false, false];
-  quarterFinalsStarted: boolean = false;
-  semiFinalsStarted: boolean = false;
-  thirdPlaceStarted: boolean = false;
-  finalsStarted: boolean = false;
+
+  // quarterFinalsStarted: boolean = false;
+  // semiFinalsStarted: boolean = false;
+  // thirdPlaceStarted: boolean = false;
+  // finalsStarted: boolean = false;
   selectedGroups: boolean = false;
   ngOnInit(): void {
+
+    // var tmp =  JSON.parse(
+    //   localStorage.getItem('currentEvent') || '{}'
+    // );
+    
+
     this.currentTournament = JSON.parse(
       localStorage.getItem('currentTournament') || '{}'
     );
+    
+    
+    // this.tournamentService.updateTournament(this.currentTournament).subscribe((msg:any) => {
+    //   console.log(msg)
+    // })
+
     console.log(this.currentTournament)
+
     if (this.currentTournament.group1==undefined) {
+
+      this.currentTournament.groupRoundsEnded=[true, false, false, false, false, false];
+      this.currentTournament.quarterFinalsStarted  = false;
+      this.currentTournament.semiFinalsStarted = false;
+      this.currentTournament.thirdPlaceStarted = false;
+      this.currentTournament.finalsStarted= false;
+     
+
       this.shuffleArray(this.numberShuffle12);
+
       for (let i = 0; i <= 5; i++) {
         this.group1.push(this.currentTournament.teams[this.numberShuffle12[i]]);
       }
       for (let i = 6; i <= 11; i++) {
         this.group2.push(this.currentTournament.teams[this.numberShuffle12[i]]);
       }
-      console.log(this.group1);
+     // console.log(this.group1);
       //console.log(this.group2)
       this.currentTournament.group1 = this.group1;
       this.currentTournament.group2 = this.group2;
@@ -77,7 +99,7 @@ export class EditTimetableComponent implements OnInit {
       this.group2= this.currentTournament.group2;
       this.shuffle()
     }
-   
+    console.log(this.currentTournament)
   }
 
   shuffle() {
@@ -92,27 +114,41 @@ export class EditTimetableComponent implements OnInit {
         this.currentTournament.sportName == 'Waterpolo'
       ) {
         if (this.currentTournament.teams.length == 12) {
-          //let rounds = Math.ceil(this.group1.length / 2);
+         
+          if(this.currentTournament.groupRounds==null){
+            var temp=Array.from( this.group1);
+            var temp2= Array.from(this.group2);
           for (let i = 0; i < 5; i++) {
             let round = new teamRound();
             let events = new Array<GroupPhaseEvent>();
 
             round.ended = false;
 
-            for (let event of this.matchParticipants(this.group1))
+            for (let event of this.matchParticipants(temp))
               events.push(event);
 
             //console.log(round);
 
-            for (let event of this.matchParticipants(this.group2))
+            for (let event of this.matchParticipants(temp2))
               events.push(event);
 
             round.teamEvents = events;
 
             this.groupRounds.push(round);
-            this.group1 = this.rotateArray(this.group1);
-            this.group2 = this.rotateArray(this.group2);
+            temp= this.rotateArray(temp);
+            temp2= this.rotateArray(temp2);
+            
+            console.log(this.groupRounds)
           }
+        
+          this.currentTournament.groupRounds=this.groupRounds;
+         // localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
+        }
+        else{
+          this.groupRounds=this.currentTournament.groupRounds;
+        }
+          
+        console.log(this.currentTournament)
         } else if (this.currentTournament.teams.length == 8) {
         } else if (this.currentTournament.teams.length == 4) {
         }
@@ -126,12 +162,62 @@ export class EditTimetableComponent implements OnInit {
   }
 
   finishedEditingRound(index) {
-    this.groupRoundsEnded[index + 1] = true;
+    this.currentTournament.groupRoundsEnded[index + 1] = true;
+
+    for (let i = 0; i < this.groupRounds[index].teamEvents.length; i++) {
+        if(this.groupRounds[index].teamEvents[i].winner==1)
+        {
+          for (let j = 0; j < this.group1.length; j++) {
+
+            if(this.group1[j].teamName== this.groupRounds[index].teamEvents[i].homeTeam.teamName)
+            {
+              this.group1[j].groupPoints+=2;
+            }
+            
+          }
+          for (let j = 0; j < this.group2.length; j++) {
+
+            if(this.group2[j].teamName== this.groupRounds[index].teamEvents[i].homeTeam.teamName)
+            {
+              this.group2[j].groupPoints+=2;
+            }
+            
+          }
+        }
+        else if(this.groupRounds[index].teamEvents[i].winner==2)
+        {
+          for (let j = 0; j < this.group1.length; j++) {
+
+            if(this.group1[j].teamName== this.groupRounds[index].teamEvents[i].awayTeam.teamName)
+            {
+              this.group1[j].groupPoints+=2;
+            }
+            
+          }
+          for (let j = 0; j < this.group2.length; j++) {
+
+            if(this.group2[j].teamName== this.groupRounds[index].teamEvents[i].awayTeam.teamName)
+            {
+              this.group2[j].groupPoints+=2;
+            }
+            
+          }
+        }
+
+        this.currentTournament.group1=this.group1;
+        this.currentTournament.group2=this.group2;
+
+    }
+
+    this.tournamentService.updateTournament(this.currentTournament).subscribe((msg: any)=>{
+      console.log(msg);
+    })
     if (index == 4) this.playoffs();
   }
 
   playoffs() {
-    this.quarterFinalsStarted = true;
+    this.currentTournament.quarterFinalsStarted = true;
+    if(this.currentTournament.quarterFinals==null){
     this.group1.sort((obj1, obj2) => {
       if (obj1.groupPoints > obj2.groupPoints) {
         return 1;
@@ -167,36 +253,44 @@ export class EditTimetableComponent implements OnInit {
 
       this.quarterFinals.push(event);
     }
+    this.currentTournament.quarterFinals=this.quarterFinals;
+    }
   }
 
  
   finishQuarterFinals() {
     //obrada
-    var event1 = new GroupPhaseEvent();
-    if (this.quarterFinals[0].winner == 1)
-      event1.homeTeam = this.quarterFinals[0].homeTeam;
-    else event1.homeTeam = this.quarterFinals[0].awayTeam;
+    if(this.currentTournament.semiFinals==null) {
 
-    if (this.quarterFinals[3].winner == 1)
-      event1.awayTeam = this.quarterFinals[3].homeTeam;
-    else event1.awayTeam = this.quarterFinals[3].awayTeam;
-
-    var event2 = new GroupPhaseEvent();
-
-    if (this.quarterFinals[1].winner == 1)
-      event1.homeTeam = this.quarterFinals[1].homeTeam;
-    else event1.homeTeam = this.quarterFinals[1].awayTeam;
-
-    if (this.quarterFinals[2].winner == 1)
-      event1.awayTeam = this.quarterFinals[2].homeTeam;
-    else event1.awayTeam = this.quarterFinals[2].awayTeam;
-
-    this.semiFinals.push(event1);
-    this.semiFinals.push(event2);
-    this.semiFinalsStarted = true;
+      var event1 = new GroupPhaseEvent();
+      if (this.quarterFinals[0].winner == 1)
+        event1.homeTeam = this.quarterFinals[0].homeTeam;
+      else event1.homeTeam = this.quarterFinals[0].awayTeam;
+  
+      if (this.quarterFinals[3].winner == 1)
+        event1.awayTeam = this.quarterFinals[3].homeTeam;
+      else event1.awayTeam = this.quarterFinals[3].awayTeam;
+  
+      var event2 = new GroupPhaseEvent();
+  
+      if (this.quarterFinals[1].winner == 1)
+        event1.homeTeam = this.quarterFinals[1].homeTeam;
+      else event1.homeTeam = this.quarterFinals[1].awayTeam;
+  
+      if (this.quarterFinals[2].winner == 1)
+        event1.awayTeam = this.quarterFinals[2].homeTeam;
+      else event1.awayTeam = this.quarterFinals[2].awayTeam;
+  
+      this.semiFinals.push(event1);
+      this.semiFinals.push(event2);
+      this.currentTournament.semiFinalsStarted = true;
+      this.currentTournament.semiFinals=this.semiFinals;
+    }
+    this.currentTournament.semiFinalsStarted = true;
   }
   finishSemiFinals() {
-    var finals = new GroupPhaseEvent();
+    if(this.currentTournament.teamThird==null ){
+      var finals = new GroupPhaseEvent();
 
     var thirdPlace = new GroupPhaseEvent();
     if (this.semiFinals[0].winner == 1) {
@@ -217,12 +311,16 @@ export class EditTimetableComponent implements OnInit {
 
     this.teamFinals = finals;
     this.teamThird = thirdPlace;
-    this.thirdPlaceStarted=true;
+    this.currentTournament.thirdPlaceStarted=true;
+    this.currentTournament.teamFinals = this.teamFinals;
+    this.currentTournament.teamThird=this.teamThird;
+    }
+    this.currentTournament.thirdPlaceStarted=true;
   }
 
   finishThirdPlace() {
 
-    this.finalsStarted=true;
+    this.currentTournament.finalsStarted=true;
   }
 
   finishFinals() {
@@ -231,15 +329,68 @@ export class EditTimetableComponent implements OnInit {
   }
 
   showEdits(index): boolean {
-    if (this.groupRoundsEnded[index] == true) return true;
+    if (this.currentTournament.groupRoundsEnded[index] == true) return true;
     else return false;
   }
 
-  editEvent(event) {
-    localStorage.setItem('currentEvent', JSON.stringify(event));
+  editGroupEvent(event,indexRound,index) {
+
+    var tmp = {
+      event: event,
+      index: index,
+      indexRound: indexRound
+    }
+    localStorage.setItem('currentEvent', JSON.stringify(tmp));
+    localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
     this.router.navigate(['/insertResults'])
 
   }
+
+  editQuarterFinals(event,index) {
+    
+    var tmp = {
+      event: event,
+      index: index,
+      part: "quarter"
+    }
+    localStorage.setItem('currentEvent', JSON.stringify(tmp));
+    localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
+    this.router.navigate(['/insertResults'])
+  }
+
+  editSemiFinals(event,index) {
+    var tmp = {
+      event: event,
+      index: index,
+      part: "semi"
+    }
+    localStorage.setItem('currentEvent', JSON.stringify(tmp));
+    localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
+    this.router.navigate(['/insertResults'])
+  }
+
+  editFinals(event) {
+    var tmp = {
+      event: event,
+     
+      part: "finals"
+    }
+    localStorage.setItem('currentEvent', JSON.stringify(tmp));
+    localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
+    this.router.navigate(['/insertResults'])
+  }
+
+  editThird(event) {
+    var tmp = {
+      event: event,
+     
+      part: "third"
+    }
+    localStorage.setItem('currentEvent', JSON.stringify(tmp));
+    localStorage.setItem('currentTournament', JSON.stringify(this.currentTournament))
+    this.router.navigate(['/insertResults'])
+  }
+
 
   matchParticipants(participants: Array<Team>) {
     let events = new Array<GroupPhaseEvent>();
@@ -261,7 +412,7 @@ export class EditTimetableComponent implements OnInit {
         events.push(event);
       }
     }
-    console.log(events);
+    //console.log(events);
     return events;
   }
 

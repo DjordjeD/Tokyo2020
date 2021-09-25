@@ -113,7 +113,7 @@
                                         <td>
                                             <button mat-raised-button color="primary"
                                                 [disabled]="!showEdits(indexRound)"
-                                                (click)="editEvent(groupRounds[indexRound].teamEvents[index])">Edit</button>
+                                                (click)="editGroupEvent(groupRounds[indexRound].teamEvents[index],indexRound,index)">Edit</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -130,7 +130,7 @@
         <br>
     </div>
     <br>
-    <div class="span3" *ngIf="quarterFinalsStarted">
+    <div class="span3" *ngIf="currentTournament.quarterFinalsStarted">
         Playoffs: <button mat-raised-button color="primary" (click)="finishQuarterFinals()">Finish Quarter
             Finals</button>
         <div class="row">
@@ -185,7 +185,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editEvent(quarterFinals[index])">Edit</button>
+                                            (click)="editQuarterFinals(quarterFinals[index],index)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -200,7 +200,7 @@
 
     </div>
     <br>
-    <div class="span3" *ngIf="semiFinalsStarted">
+    <div class="span3" *ngIf="currentTournament.semiFinalsStarted">
         Playoffs: <button mat-raised-button color="primary" (click)="finishSemiFinals()">Finish Semi Finals</button>
         <div class="row">
             <div class="container">
@@ -254,7 +254,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editEvent(semiFinals[index])">Edit</button>
+                                            (click)="editSemiFinals(semiFinals[index],index)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -269,7 +269,7 @@
 
     </div>
     <br>
-    <div class="span3" *ngIf="thirdPlaceStarted">
+    <div class="span3" *ngIf="currentTournament.thirdPlaceStarted">
         Playoffs: <button mat-raised-button color="primary" (click)="finishThirdPlace()">Finish Third Place</button>
         <div class="row">
             <div class="container">
@@ -323,7 +323,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editEvent(teamThird)">Edit</button>
+                                            (click)="editThird(teamThird)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -338,7 +338,7 @@
 
     </div>
     <br>
-    <div class="span3" *ngIf="finalsStarted">
+    <div class="span3" *ngIf="currentTournament.finalsStarted">
         Playoffs: <button mat-raised-button color="primary" (click)="finishFinals()">Finish Finals END TOURNAMENT</button>
         <div class="row">
             <div class="container">
@@ -392,7 +392,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editEvent(teamFinals)">Edit</button>
+                                            (click)="editFinals(teamFinals)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>

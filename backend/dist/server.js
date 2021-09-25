@@ -15,6 +15,8 @@ const record_routes_1 = __importDefault(require("./routes/record.routes"));
 const competitor_routes_1 = __importDefault(require("./routes/competitor.routes"));
 const team_routes_1 = __importDefault(require("./routes/team.routes"));
 const app = express_1.default();
+app.use(express_1.default.json({ limit: '50mb' }));
+app.use(express_1.default.urlencoded({ limit: '50mb' }));
 app.use(cors_1.default());
 app.use(body_parser_1.default.json());
 // app.use((req, res, next) => {

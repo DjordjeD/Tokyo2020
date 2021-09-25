@@ -63,6 +63,7 @@ export class DelegatePageComponent implements OnInit {
 
   insertResults()
   {
+    
     localStorage.setItem('currentTournament',JSON.stringify(this.tournamentFormControl.value))
     this.router.navigate(['/editTimetable'])
   }

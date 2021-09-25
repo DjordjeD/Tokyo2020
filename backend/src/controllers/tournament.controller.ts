@@ -41,12 +41,19 @@ export class tournamentController {
     //console.log(req.body);
     //"projection":{ "_id": 0},
     var tournament = req.body
+    delete tournament._id;
+    //console.log(tournament);
     let options= {"projection":{ "_id": 0}, "upsert":true, returnOriginal: false}
     Tournaments.collection.findOneAndReplace({ sportName: req.body.sportName,
       disciplineName: req.body.disciplineName},tournament,options, (err,data) => {
         if(err) console.log(err + "ERROR");
         else res.json({msg:"dodat"})
-        console.log(data)
+        //console.log(data)
       })
     }
-  }
+
+
+ 
+
+  
+}
