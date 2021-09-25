@@ -86,7 +86,7 @@
 
                                     <tr
                                         *ngFor="let event of groupRounds[indexRound].teamEvents ;let index = index; trackBy:trackByIndex;">
-                                        <td>
+                                        <td  >
                                             {{event.homeTeam.teamName}}
                                         </td>
                                         <td>
@@ -158,7 +158,7 @@
                             <tbody>
 
 
-                                <tr *ngFor="let event of  quarterFinals;let index = index; trackBy:trackByIndex;">
+                                <tr *ngFor="let event of  currentTournament.quarterFinals;let index = index; trackBy:trackByIndex;">
                                     <td>
                                         {{event.homeTeam.teamName}}
                                     </td>
@@ -185,7 +185,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editQuarterFinals(quarterFinals[index],index)">Edit</button>
+                                            (click)="editQuarterFinals(currentTournament.quarterFinals[index],index)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>

@@ -216,51 +216,51 @@ export class EditTimetableComponent implements OnInit {
   }
 
   playoffs() {
-    this.currentTournament.quarterFinalsStarted = true;
-    if(this.currentTournament.quarterFinals==null){
-    this.group1.sort((obj1, obj2) => {
-      if (obj1.groupPoints > obj2.groupPoints) {
-        return 1;
-      }
+    if(this.currentTournament.quarterFinals==null  || this.currentTournament.quarterFinals.length == 0 ){
+      this.group1.sort((obj1, obj2) => {
+        if (obj1.groupPoints > obj2.groupPoints) {
+          return 1;
+        }
 
-      if (obj1.groupPoints < obj2.groupPoints) {
+        if (obj1.groupPoints < obj2.groupPoints) {
         return -1;
       }
-
+      
       return 0;
     });
     this.group2.sort((obj1, obj2) => {
       if (obj1.groupPoints > obj2.groupPoints) {
         return 1;
       }
-
+      
       if (obj1.groupPoints < obj2.groupPoints) {
         return -1;
       }
-
+      
       return 0;
     });
-
+    
     for (let i = 0; i < this.group1.length - 2; i++) {
       this.playoffGroup1.push(this.group1[i]);
       this.playoffGroup2.push(this.group2[i]);
     }
-
+    
     for (let i = 0, j = this.playoffGroup1.length; i < 4; i++, j--) {
       var event = new GroupPhaseEvent();
       event.homeTeam = this.playoffGroup1[i];
       event.awayTeam = this.playoffGroup2[j];
-
+      
       this.quarterFinals.push(event);
     }
     this.currentTournament.quarterFinals=this.quarterFinals;
-    }
   }
-
- 
+  this.currentTournament.quarterFinalsStarted = true;
+  }
+  
+  
   finishQuarterFinals() {
     //obrada
-    if(this.currentTournament.semiFinals==null) {
+    if(this.currentTournament.semiFinals==null || this.currentTournament.semiFinals.length == 0) {
 
       var event1 = new GroupPhaseEvent();
       if (this.quarterFinals[0].winner == 1)
@@ -289,7 +289,7 @@ export class EditTimetableComponent implements OnInit {
     this.currentTournament.semiFinalsStarted = true;
   }
   finishSemiFinals() {
-    if(this.currentTournament.teamThird==null ){
+    if(this.currentTournament.teamThird==null  ){
       var finals = new GroupPhaseEvent();
 
     var thirdPlace = new GroupPhaseEvent();
