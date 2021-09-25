@@ -10,6 +10,8 @@ import { DelegatePageComponent } from './delegate-page/delegate-page.component';
 import { EditTimetableComponent } from './edit-timetable/edit-timetable.component';
 import { EditTournamentComponent } from './edit-tournament/edit-tournament.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { IndividualEditTimetableComponent } from './individual-edit-timetable/individual-edit-timetable.component';
+import { InsertResultsIndividualComponent } from './insert-results-individual/insert-results-individual.component';
 import { InsertResultsComponent } from './insert-results/insert-results.component';
 import { LoginComponent } from './login/login.component';
 import { MedalsRepresentComponent } from './medals-represent/medals-represent.component';
@@ -76,6 +78,8 @@ const routes: Routes = [
   {path:'acceptUsers',component:AcceptUsersComponent},
   {path:'editTimetable',component:EditTimetableComponent},
   {path:'insertResults',component:InsertResultsComponent},
+  {path:'individualEditTimetable',component:IndividualEditTimetableComponent},
+  {path:'insertResultsIndividual',component:InsertResultsIndividualComponent},
 
 ];
 

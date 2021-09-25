@@ -227,7 +227,7 @@
                             <tbody>
 
 
-                                <tr *ngFor="let event of  semiFinals;let index = index; trackBy:trackByIndex;">
+                                <tr *ngFor="let event of  currentTournament.semiFinals;let index = index; trackBy:trackByIndex;">
                                     <td>
                                         {{event.homeTeam.teamName}}
                                     </td>
@@ -254,7 +254,7 @@
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editSemiFinals(semiFinals[index],index)">Edit</button>
+                                            (click)="editSemiFinals(currentTournament.semiFinals[index],index)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -298,32 +298,32 @@
 
                                 <tr >
                                     <td>
-                                        {{teamThird.homeTeam.teamName}}
+                                        {{currentTournament.teamThird.homeTeam.teamName}}
                                     </td>
                                     <td>
-                                        {{teamThird.awayTeam.teamName}}
+                                        {{currentTournament.teamThird.awayTeam.teamName}}
                                     </td>
                                     <td>
-                                        {{teamThird.resultHome}}
+                                        {{currentTournament.teamThird.resultHome}}
                                     </td>
                                     <td>
-                                        {{teamThird.resultAway}}
+                                        {{currentTournament.teamThird.resultAway}}
                                     </td>
                                     <td>
-                                        {{teamThird.time}}
+                                        {{currentTournament.teamThird.time}}
                                     </td>
                                     <td>
-                                        {{teamThird.date}}
+                                        {{currentTournament.teamThird.date}}
                                     </td>
                                     <td>
-                                        {{teamThird.location}}
+                                        {{currentTournament.teamThird.location}}
                                     </td>
                                     <td>
-                                        {{teamThird.winner}}
+                                        {{currentTournament.teamThird.winner}}
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editThird(teamThird)">Edit</button>
+                                            (click)="editThird(currentTournament.teamThird)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -367,32 +367,32 @@
 
                                 <tr >
                                     <td>
-                                        {{teamFinals.homeTeam.teamName}}
+                                        {{currentTournament.teamFinals.homeTeam.teamName}}
                                     </td>
                                     <td>
-                                        {{teamFinals.awayTeam.teamName}}
+                                        {{currentTournament.teamFinals.awayTeam.teamName}}
                                     </td>
                                     <td>
-                                        {{teamFinals.resultHome}}
+                                        {{currentTournament.teamFinals.resultHome}}
                                     </td>
                                     <td>
-                                        {{teamFinals.resultAway}}
+                                        {{currentTournament.teamFinals.resultAway}}
                                     </td>
                                     <td>
-                                        {{teamFinals.time}}
+                                        {{currentTournament.teamFinals.time}}
                                     </td>
                                     <td>
-                                        {{teamFinals.date}}
+                                        {{currentTournament.teamFinals.date}}
                                     </td>
                                     <td>
-                                        {{teamFinals.location}}
+                                        {{currentTournament.teamFinals.location}}
                                     </td>
                                     <td>
-                                        {{teamFinals.winner}}
+                                        {{currentTournament.teamFinals.winner}}
                                     </td>
                                     <td>
                                         <button mat-raised-button color="primary"
-                                            (click)="editFinals(teamFinals)">Edit</button>
+                                            (click)="editFinals(currentTournament.teamFinals)">Edit</button>
                                     </td>
                                 </tr>
                             </tbody>

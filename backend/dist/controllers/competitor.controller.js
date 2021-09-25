@@ -63,6 +63,16 @@ class competitorController {
                 }
             });
         };
+        this.medalWinner = (req, res) => {
+            //console.log(req.body)
+            competitor_1.default.findOneAndUpdate({ name: req.body.name, surname: req.body.surname, sex: req.body.sex }, { $set: { medalWinner: true } }, (err, data) => {
+                if (err) {
+                    console.log(err);
+                }
+                else
+                    res.json({ msg: "dodat" });
+            });
+        };
     }
 }
 exports.competitorController = competitorController;

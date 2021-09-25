@@ -18,6 +18,10 @@ sportRouter
   .route("/getAllSports")
   .get((req, res) => new sportController().getAllSports(req, res));
 
+sportRouter
+  .route("/addMedal")
+  .post((req, res) => new sportController().addMedal(req, res));
+
 
 
 

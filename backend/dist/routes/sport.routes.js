@@ -15,5 +15,8 @@ sportRouter
 sportRouter
     .route("/getAllSports")
     .get((req, res) => new sport_controller_1.sportController().getAllSports(req, res));
+sportRouter
+    .route("/addMedal")
+    .post((req, res) => new sport_controller_1.sportController().addMedal(req, res));
 exports.default = sportRouter;
 //# sourceMappingURL=sport.routes.js.map

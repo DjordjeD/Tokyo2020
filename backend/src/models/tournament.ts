@@ -34,8 +34,11 @@ let Tournaments = new Schema(
     groupPhaseEvents: {
       type: ["Mixed"],
     },
-    individualEvents: {
-      type: ["Mixed"],
+    individualEvent: {
+      
+    },
+    knockout: {
+
     },
     delegate: {
       username: {

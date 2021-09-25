@@ -22,6 +22,12 @@ export class SportService {
     return this.http.post(`http://localhost:4000/sports/addSport`, data);
   }
 
+  addMedal(sport) {
+    console.log(sport)
+
+    return this.http.post(`http://localhost:4000/sports/addMedal`, sport);
+  }
+
   addDiscipline(sportName, disciplineName, type, min, max):any {
     const data = {
 

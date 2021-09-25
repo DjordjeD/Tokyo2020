@@ -36,9 +36,8 @@ let Tournaments = new Schema({
     groupPhaseEvents: {
         type: ["Mixed"],
     },
-    individualEvents: {
-        type: ["Mixed"],
-    },
+    individualEvent: {},
+    knockout: {},
     delegate: {
         username: {
             type: "String",
@@ -81,7 +80,39 @@ let Tournaments = new Schema({
     },
     ongoing: {
         type: "Boolean",
-    }
+    },
+    group1: {
+        type: ["Mixed"],
+    },
+    group2: {
+        type: ["Mixed"],
+    },
+    groupRounds: {
+        type: ["Mixed"],
+    },
+    quarterFinals: {
+        type: "Array",
+    },
+    semiFinals: {
+        type: "Array",
+    },
+    teamFinals: {},
+    teamThird: {},
+    groupRoundsEnded: {
+        type: ["Boolean"],
+    },
+    quarterFinalsStarted: {
+        type: "Boolean",
+    },
+    semiFinalsStarted: {
+        type: "Boolean",
+    },
+    thirdPlaceStarted: {
+        type: "Boolean",
+    },
+    finalsStarted: {
+        type: "Boolean",
+    },
 }, {
     versionKey: false,
 });

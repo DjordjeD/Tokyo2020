@@ -1,0 +1,151 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="overviewSports()">Overview Sports</button>
+        </div>
+
+        <div>
+            <button mat-menu-item color="primary" (click)="overviewAthletesBySport()">Overview Athletes by
+                sport</button>
+        </div>
+
+        <div>
+            <button mat-menu-item color="primary" (click)="addTeam()">Assign Athletes to Team</button>
+        </div>
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+
+
+
+    <div class="buttons-row">
+
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            (click)="changePassword()">
+            Change password
+        </button>
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            style="margin-left: 10px;" (click)="back()">
+            Log out/Home
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+
+<mat-card  >
+    <mat-card-title>Edit Location</mat-card-title>
+    <mat-card-content>
+        <div class="container">
+            <form >
+
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Time:" [(ngModel)]="time" name="time">
+                    </mat-form-field>
+                </p>
+    
+                <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="date" name="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+    
+                <mat-form-field appearance="fill">
+                    <mat-label>Location</mat-label>
+                    <mat-select [(ngModel)]="location" name="location" >
+                      <mat-option *ngFor="let l of this.currentTournament.location" [value]="l">
+                        {{l}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            
+
+    
+             
+    
+            </form>
+    
+    
+         
+        
+    
+
+                <div class="button">
+                    <button mat-raised-button color="primary"  (click)="addInfo()" [disabled]="!editTime"> Save</button>
+                </div>
+                <h5 *ngIf="!editTime" >Time location and date are alreay added</h5>
+         
+        </div>
+        
+      
+    </mat-card-content>
+</mat-card>
+
+
+<br>
+
+<div class="span3">
+   
+    <h4>Results:</h4>
+    <div class="row">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Athlete</th>
+                                <th scope="col" *ngFor="let column of headers"> {{column}}</th>
+                                <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            <tr *ngFor="let event of  currentTournament.individualEvent.results;let index = index; trackBy:trackByIndex;">
+                                <td>
+                                    {{event.athlete.name}}  {{event.athlete.surname}}
+                                </td>
+                                <td *ngFor="let column of event.results">
+                                    {{column}}
+                                </td>
+                              
+                                <td>
+                                    <button mat-raised-button color="primary"
+                                        (click)="editResults(currentTournament.individualEvent.results[index],index)">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" (click)="finishTournament()" [disabled]="!currentTournament.ongoing">Finish Tournament</button>
+    </div>
+
+</div>
+

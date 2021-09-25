@@ -9,8 +9,8 @@ export class Tournaments {
   location: string[];
   teams: Team[];
   competitors: Competitor[];
-
-  individualEvents: IndividualEvent[];
+  knockout: IndividualEvent;
+  individualEvent: IndividualEvent;
   delegate: User;
   format:Format;
   started: boolean;
@@ -90,7 +90,7 @@ export class IndividualEvent {
 
 export class Result {
   athlete: Competitor;
-  result: string;
+  results: string[];
 }
 
 export class Team {
@@ -112,7 +112,7 @@ export class Discipline {
 
 export class Medal {
   athlete: Competitor;
-  team: Team[];
+  team: Team;
   country: Country;
   type: string;
 }

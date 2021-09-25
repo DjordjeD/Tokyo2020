@@ -47,5 +47,9 @@ export class CompetitorService {
     return this.http.post(`http://localhost:4000/competitors/addCompetitor`,competitor)
   }
 
+  medalWinner(teamMember)
+  {
+    return this.http.post(`http://localhost:4000/competitors/medalWinner`,teamMember)
+  }
 
 }

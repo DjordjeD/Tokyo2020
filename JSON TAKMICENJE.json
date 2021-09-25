@@ -1390,14 +1390,6 @@
     "competitors" : [],
     "groupPhaseEvents" : [],
     "individualEvents" : [],
-    "sportName" : "Basketball",
-    "disciplineName" : "Basketball",
-    "individual" : false,
-    "type" : "man",
-    "dateBegin" : "2021-09-23T22:00:00.000Z",
-    "dateEnd" : "2021-09-29T22:00:00.000Z",
-    "started" : true,
-    "ongoing" : true,
     "group1" : [ 
         {
             "teamMembers" : [ 
@@ -1530,231 +1522,7 @@
             ],
             "_id" : "614b3e3becc5f01a8470086c",
             "teamName" : "Basketball of Serbia",
-            "groupPoints" : 8
-        }, 
-        {
-            "teamMembers" : [ 
-                {
-                    "country" : {
-                        "countryName" : "Germany",
-                        "flagImage" : "Germany.png",
-                        "numberOfAthletes" : 0
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d1087810af422a8177009",
-                    "name" : "Maxi",
-                    "surname" : "Kleber",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Germany",
-                        "flagImage" : "Germany.png",
-                        "numberOfAthletes" : 1
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d1093810af422a817700a",
-                    "name" : "Dennis",
-                    "surname" : "Schroeder",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Germany",
-                        "flagImage" : "Germany.png",
-                        "numberOfAthletes" : 2
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d10b0810af422a817700b",
-                    "name" : "Paul",
-                    "surname" : "Zipser",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Germany",
-                        "flagImage" : "Germany.png",
-                        "numberOfAthletes" : 3
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d10bb810af422a817700c",
-                    "name" : "Daniel",
-                    "surname" : "Theis",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Germany",
-                        "flagImage" : "Germany.png",
-                        "numberOfAthletes" : 4
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d10c7810af422a817700d",
-                    "name" : "Johannes",
-                    "surname" : "Thiemann",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }
-            ],
-            "_id" : "614d1a61810af422a8177034",
-            "teamName" : "Basketball of Germany",
-            "groupPoints" : 4
-        }, 
-        {
-            "teamMembers" : [ 
-                {
-                    "country" : {
-                        "countryName" : "Japan",
-                        "flagImage" : "Japan.png",
-                        "numberOfAthletes" : 0
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d11c1810af422a8177018",
-                    "name" : "Masashi",
-                    "surname" : "Kishimoto",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Japan",
-                        "flagImage" : "Japan.png",
-                        "numberOfAthletes" : 1
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d11cc810af422a8177019",
-                    "name" : "Makoto",
-                    "surname" : "Nagano",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Japan",
-                        "flagImage" : "Japan.png",
-                        "numberOfAthletes" : 2
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d11d3810af422a817701a",
-                    "name" : "Rui",
-                    "surname" : "Hachimura",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Japan",
-                        "flagImage" : "Japan.png",
-                        "numberOfAthletes" : 3
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d11e7810af422a817701b",
-                    "name" : "Naruto",
-                    "surname" : "Uzumaki",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Japan",
-                        "flagImage" : "Japan.png",
-                        "numberOfAthletes" : 4
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d11f3810af422a817701c",
-                    "name" : "Goku",
-                    "surname" : "Goku",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }
-            ],
-            "_id" : "614d1ad7810af422a8177038",
-            "teamName" : "Basketball of Japan",
-            "groupPoints" : 0
+            "groupPoints" : 10
         }, 
         {
             "teamMembers" : [ 
@@ -1866,6 +1634,230 @@
             ],
             "_id" : "614d1b76810af422a817703c",
             "teamName" : "Basketball of Brazil",
+            "groupPoints" : 6
+        }, 
+        {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Italy",
+                        "flagImage" : "Italy.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0b7b810af422a8176ff6",
+                    "name" : "Allesandro",
+                    "surname" : "Gentile",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Italy",
+                        "flagImage" : "Italy.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0b86810af422a8176ff7",
+                    "name" : "Marco",
+                    "surname" : "Belinelli",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Italy",
+                        "flagImage" : "Italy.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0b9d810af422a8176ff8",
+                    "name" : "Danilo",
+                    "surname" : "Gallinari",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Italy",
+                        "flagImage" : "Italy.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0bb8810af422a8176ff9",
+                    "name" : "Luigi",
+                    "surname" : "Datome",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Italy",
+                        "flagImage" : "Italy.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0bcd810af422a8176ffa",
+                    "name" : "Daniel",
+                    "surname" : "Hackett",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1b5c810af422a817703b",
+            "teamName" : "Basketball of Italy",
+            "groupPoints" : 6
+        }, 
+        {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Germany",
+                        "flagImage" : "Germany.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d1087810af422a8177009",
+                    "name" : "Maxi",
+                    "surname" : "Kleber",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Germany",
+                        "flagImage" : "Germany.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d1093810af422a817700a",
+                    "name" : "Dennis",
+                    "surname" : "Schroeder",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Germany",
+                        "flagImage" : "Germany.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d10b0810af422a817700b",
+                    "name" : "Paul",
+                    "surname" : "Zipser",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Germany",
+                        "flagImage" : "Germany.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d10bb810af422a817700c",
+                    "name" : "Daniel",
+                    "surname" : "Theis",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Germany",
+                        "flagImage" : "Germany.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d10c7810af422a817700d",
+                    "name" : "Johannes",
+                    "surname" : "Thiemann",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1a61810af422a8177034",
+            "teamName" : "Basketball of Germany",
             "groupPoints" : 4
         }, 
         {
@@ -1984,8 +1976,8 @@
             "teamMembers" : [ 
                 {
                     "country" : {
-                        "countryName" : "Italy",
-                        "flagImage" : "Italy.png",
+                        "countryName" : "Japan",
+                        "flagImage" : "Japan.png",
                         "numberOfAthletes" : 0
                     },
                     "competesIn" : [ 
@@ -1997,16 +1989,16 @@
                             "max" : "12"
                         }
                     ],
-                    "_id" : "614d0b7b810af422a8176ff6",
-                    "name" : "Allesandro",
-                    "surname" : "Gentile",
+                    "_id" : "614d11c1810af422a8177018",
+                    "name" : "Masashi",
+                    "surname" : "Kishimoto",
                     "sex" : "man",
                     "medalWinner" : false
                 }, 
                 {
                     "country" : {
-                        "countryName" : "Italy",
-                        "flagImage" : "Italy.png",
+                        "countryName" : "Japan",
+                        "flagImage" : "Japan.png",
                         "numberOfAthletes" : 1
                     },
                     "competesIn" : [ 
@@ -2018,16 +2010,16 @@
                             "max" : "12"
                         }
                     ],
-                    "_id" : "614d0b86810af422a8176ff7",
-                    "name" : "Marco",
-                    "surname" : "Belinelli",
+                    "_id" : "614d11cc810af422a8177019",
+                    "name" : "Makoto",
+                    "surname" : "Nagano",
                     "sex" : "man",
                     "medalWinner" : false
                 }, 
                 {
                     "country" : {
-                        "countryName" : "Italy",
-                        "flagImage" : "Italy.png",
+                        "countryName" : "Japan",
+                        "flagImage" : "Japan.png",
                         "numberOfAthletes" : 2
                     },
                     "competesIn" : [ 
@@ -2039,16 +2031,16 @@
                             "max" : "12"
                         }
                     ],
-                    "_id" : "614d0b9d810af422a8176ff8",
-                    "name" : "Danilo",
-                    "surname" : "Gallinari",
+                    "_id" : "614d11d3810af422a817701a",
+                    "name" : "Rui",
+                    "surname" : "Hachimura",
                     "sex" : "man",
                     "medalWinner" : false
                 }, 
                 {
                     "country" : {
-                        "countryName" : "Italy",
-                        "flagImage" : "Italy.png",
+                        "countryName" : "Japan",
+                        "flagImage" : "Japan.png",
                         "numberOfAthletes" : 3
                     },
                     "competesIn" : [ 
@@ -2060,16 +2052,16 @@
                             "max" : "12"
                         }
                     ],
-                    "_id" : "614d0bb8810af422a8176ff9",
-                    "name" : "Luigi",
-                    "surname" : "Datome",
+                    "_id" : "614d11e7810af422a817701b",
+                    "name" : "Naruto",
+                    "surname" : "Uzumaki",
                     "sex" : "man",
                     "medalWinner" : false
                 }, 
                 {
                     "country" : {
-                        "countryName" : "Italy",
-                        "flagImage" : "Italy.png",
+                        "countryName" : "Japan",
+                        "flagImage" : "Japan.png",
                         "numberOfAthletes" : 4
                     },
                     "competesIn" : [ 
@@ -2081,19 +2073,243 @@
                             "max" : "12"
                         }
                     ],
-                    "_id" : "614d0bcd810af422a8176ffa",
-                    "name" : "Daniel",
-                    "surname" : "Hackett",
+                    "_id" : "614d11f3810af422a817701c",
+                    "name" : "Goku",
+                    "surname" : "Goku",
                     "sex" : "man",
                     "medalWinner" : false
                 }
             ],
-            "_id" : "614d1b5c810af422a817703b",
-            "teamName" : "Basketball of Italy",
-            "groupPoints" : 4
+            "_id" : "614d1ad7810af422a8177038",
+            "teamName" : "Basketball of Japan",
+            "groupPoints" : 0
         }
     ],
     "group2" : [ 
+        {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12b4810af422a8177022",
+                    "name" : "Joe",
+                    "surname" : "Ingles",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12c2810af422a8177023",
+                    "name" : "Patrick",
+                    "surname" : "Mills",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12cd810af422a8177024",
+                    "name" : "Jock",
+                    "surname" : "Landale",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12ee810af422a8177025",
+                    "name" : "Matthew",
+                    "surname" : "Dellavedova",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12fd810af422a8177026",
+                    "name" : "Aron",
+                    "surname" : "Baynes",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1afa810af422a8177039",
+            "teamName" : "Basketball of Australia",
+            "groupPoints" : 10
+        }, 
+        {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dbe810af422a8177004",
+                    "name" : "Marc",
+                    "surname" : "Gasol",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dc6810af422a8177005",
+                    "name" : "Pau",
+                    "surname" : "Gasol",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dd2810af422a8177006",
+                    "name" : "Ricky",
+                    "surname" : "Rubio",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0ddb810af422a8177007",
+                    "name" : "Rudy",
+                    "surname" : "Fernandez",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0de6810af422a8177008",
+                    "name" : "Sergio",
+                    "surname" : "Llull",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1b92810af422a817703d",
+            "teamName" : "Basketball of Spain",
+            "groupPoints" : 8
+        }, 
         {
             "teamMembers" : [ 
                 {
@@ -2204,7 +2420,7 @@
             ],
             "_id" : "614d1bc6810af422a817703e",
             "teamName" : "Basketball of Russia",
-            "groupPoints" : 2
+            "groupPoints" : 4
         }, 
         {
             "teamMembers" : [ 
@@ -2317,230 +2533,6 @@
             "_id" : "614d1638810af422a8177033",
             "teamName" : "Basketball of Netherlands",
             "groupPoints" : 4
-        }, 
-        {
-            "teamMembers" : [ 
-                {
-                    "country" : {
-                        "countryName" : "Spain",
-                        "flagImage" : "Spain.png",
-                        "numberOfAthletes" : 0
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d0dbe810af422a8177004",
-                    "name" : "Marc",
-                    "surname" : "Gasol",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Spain",
-                        "flagImage" : "Spain.png",
-                        "numberOfAthletes" : 1
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d0dc6810af422a8177005",
-                    "name" : "Pau",
-                    "surname" : "Gasol",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Spain",
-                        "flagImage" : "Spain.png",
-                        "numberOfAthletes" : 2
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d0dd2810af422a8177006",
-                    "name" : "Ricky",
-                    "surname" : "Rubio",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Spain",
-                        "flagImage" : "Spain.png",
-                        "numberOfAthletes" : 3
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d0ddb810af422a8177007",
-                    "name" : "Rudy",
-                    "surname" : "Fernandez",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Spain",
-                        "flagImage" : "Spain.png",
-                        "numberOfAthletes" : 4
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d0de6810af422a8177008",
-                    "name" : "Sergio",
-                    "surname" : "Llull",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }
-            ],
-            "_id" : "614d1b92810af422a817703d",
-            "teamName" : "Basketball of Spain",
-            "groupPoints" : 6
-        }, 
-        {
-            "teamMembers" : [ 
-                {
-                    "country" : {
-                        "countryName" : "Australia",
-                        "flagImage" : "Australia.png",
-                        "numberOfAthletes" : 0
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d12b4810af422a8177022",
-                    "name" : "Joe",
-                    "surname" : "Ingles",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Australia",
-                        "flagImage" : "Australia.png",
-                        "numberOfAthletes" : 1
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d12c2810af422a8177023",
-                    "name" : "Patrick",
-                    "surname" : "Mills",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Australia",
-                        "flagImage" : "Australia.png",
-                        "numberOfAthletes" : 2
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d12cd810af422a8177024",
-                    "name" : "Jock",
-                    "surname" : "Landale",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Australia",
-                        "flagImage" : "Australia.png",
-                        "numberOfAthletes" : 3
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d12ee810af422a8177025",
-                    "name" : "Matthew",
-                    "surname" : "Dellavedova",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }, 
-                {
-                    "country" : {
-                        "countryName" : "Australia",
-                        "flagImage" : "Australia.png",
-                        "numberOfAthletes" : 4
-                    },
-                    "competesIn" : [ 
-                        {
-                            "disciplineName" : "Basketball",
-                            "sportName" : "Basketball",
-                            "individual" : false,
-                            "min" : "5",
-                            "max" : "12"
-                        }
-                    ],
-                    "_id" : "614d12fd810af422a8177026",
-                    "name" : "Aron",
-                    "surname" : "Baynes",
-                    "sex" : "man",
-                    "medalWinner" : false
-                }
-            ],
-            "_id" : "614d1afa810af422a8177039",
-            "teamName" : "Basketball of Australia",
-            "groupPoints" : 8
         }, 
         {
             "teamMembers" : [ 
@@ -8689,12 +8681,12 @@
                         "teamName" : "Basketball of Germany",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-26T22:00:00.000Z",
+                    "time" : "12",
+                    "location" : "Saitama Super Arena",
+                    "resultAway" : "99",
+                    "resultHome" : "100",
+                    "winner" : 1
                 }, 
                 {
                     "homeTeam" : {
@@ -8921,12 +8913,12 @@
                         "teamName" : "Basketball of Italy",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-29T22:00:00.000Z",
+                    "time" : "14",
+                    "location" : "Olympic Stadium",
+                    "resultAway" : "99",
+                    "resultHome" : "88",
+                    "winner" : 2
                 }, 
                 {
                     "homeTeam" : {
@@ -9153,12 +9145,12 @@
                         "teamName" : "Basketball of USA",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-29T22:00:00.000Z",
+                    "time" : "15",
+                    "location" : "Saitama Super Arena",
+                    "resultAway" : "100",
+                    "resultHome" : "102",
+                    "winner" : 1
                 }, 
                 {
                     "homeTeam" : {
@@ -9385,12 +9377,12 @@
                         "teamName" : "Basketball of Netherlands",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-28T22:00:00.000Z",
+                    "time" : "14",
+                    "location" : "Saitama Super Arena",
+                    "resultAway" : "77",
+                    "resultHome" : "88",
+                    "winner" : 1
                 }, 
                 {
                     "homeTeam" : {
@@ -9617,12 +9609,12 @@
                         "teamName" : "Basketball of China",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-29T22:00:00.000Z",
+                    "time" : "18",
+                    "location" : "Saitama Super Arena",
+                    "resultAway" : "99",
+                    "resultHome" : "100",
+                    "winner" : 1
                 }, 
                 {
                     "homeTeam" : {
@@ -9849,28 +9841,1945 @@
                         "teamName" : "Basketball of Great Britain",
                         "groupPoints" : 0
                     },
-                    "date" : "",
-                    "time" : "",
-                    "location" : "",
-                    "resultAway" : "",
-                    "resultHome" : "",
-                    "winner" : 0
+                    "date" : "2021-09-29T22:00:00.000Z",
+                    "time" : "19",
+                    "location" : "Saitama Super Arena",
+                    "resultAway" : "99",
+                    "resultHome" : "105",
+                    "winner" : 1
                 }
             ]
         }
     ],
-    "quarterFinals" : [],
-    "semiFinals" : [],
+    "quarterFinals" : [ 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e2e0eaa4e3718e8c335",
+                        "name" : "Nikola",
+                        "surname" : "Jokic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e3b0eaa4e3718e8c336",
+                        "name" : "Boban",
+                        "surname" : "Marjanovic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e6f0eaa4e3718e8c337",
+                        "name" : "Bogdan",
+                        "surname" : "Bogdanovic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e790eaa4e3718e8c338",
+                        "name" : "Nikola",
+                        "surname" : "Dimitrijevic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e810eaa4e3718e8c339",
+                        "name" : "Luka",
+                        "surname" : "Doncic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 10
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a73ad075e1c399c66903c",
+                        "name" : "Nikola",
+                        "surname" : "Kalinic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614b3e3becc5f01a8470086c",
+                "teamName" : "Basketball of Serbia",
+                "groupPoints" : 10
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Netherlands",
+                            "flagImage" : "Netherlands.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d13b5810af422a817702c",
+                        "name" : "Yannick",
+                        "surname" : "Franke",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Netherlands",
+                            "flagImage" : "Netherlands.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d13c0810af422a817702d",
+                        "name" : "Jito",
+                        "surname" : "Kok",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Netherlands",
+                            "flagImage" : "Netherlands.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d13c8810af422a817702e",
+                        "name" : "Boy",
+                        "surname" : "van Villet",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Netherlands",
+                            "flagImage" : "Netherlands.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d13d6810af422a817702f",
+                        "name" : "Emmanuel",
+                        "surname" : "Kloof",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Netherlands",
+                            "flagImage" : "Netherlands.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d13e1810af422a8177030",
+                        "name" : "Joey",
+                        "surname" : "Franke",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1638810af422a8177033",
+                "teamName" : "Basketball of Netherlands",
+                "groupPoints" : 4
+            },
+            "resultHome" : "102",
+            "resultAway" : "99",
+            "date" : "2021-09-30T22:00:00.000Z",
+            "location" : "Saitama Super Arena",
+            "time" : "18",
+            "winner" : 1
+        }, 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d78810af422a8176fff",
+                        "name" : "Anderson",
+                        "surname" : "Varejao",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d84810af422a8177000",
+                        "name" : "Marcelo",
+                        "surname" : "Huertas",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d91810af422a8177001",
+                        "name" : "Leandro",
+                        "surname" : "Barbosa",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d9d810af422a8177002",
+                        "name" : "Bruno",
+                        "surname" : "Caboclo",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0da6810af422a8177003",
+                        "name" : "Augusto",
+                        "surname" : "Lima",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1b76810af422a817703c",
+                "teamName" : "Basketball of Brazil",
+                "groupPoints" : 6
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Russia",
+                            "flagImage" : "Russia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d121a810af422a817701d",
+                        "name" : "Andrei",
+                        "surname" : "Kirilenko",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Russia",
+                            "flagImage" : "Russia.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1228810af422a817701e",
+                        "name" : "Vitaly",
+                        "surname" : "Fridzon",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Russia",
+                            "flagImage" : "Russia.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1232810af422a817701f",
+                        "name" : "Nikita",
+                        "surname" : "Kurbanov",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Russia",
+                            "flagImage" : "Russia.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1289810af422a8177020",
+                        "name" : "Andrey",
+                        "surname" : "Zubkov",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Russia",
+                            "flagImage" : "Russia.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1291810af422a8177021",
+                        "name" : "Andrei",
+                        "surname" : "Sopin",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1bc6810af422a817703e",
+                "teamName" : "Basketball of Russia",
+                "groupPoints" : 4
+            },
+            "resultHome" : "99",
+            "resultAway" : "88",
+            "date" : "2021-09-30T22:00:00.000Z",
+            "location" : "Saitama Super Arena",
+            "time" : "20",
+            "winner" : 1
+        }, 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Italy",
+                            "flagImage" : "Italy.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0b7b810af422a8176ff6",
+                        "name" : "Allesandro",
+                        "surname" : "Gentile",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Italy",
+                            "flagImage" : "Italy.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0b86810af422a8176ff7",
+                        "name" : "Marco",
+                        "surname" : "Belinelli",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Italy",
+                            "flagImage" : "Italy.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0b9d810af422a8176ff8",
+                        "name" : "Danilo",
+                        "surname" : "Gallinari",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Italy",
+                            "flagImage" : "Italy.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0bb8810af422a8176ff9",
+                        "name" : "Luigi",
+                        "surname" : "Datome",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Italy",
+                            "flagImage" : "Italy.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0bcd810af422a8176ffa",
+                        "name" : "Daniel",
+                        "surname" : "Hackett",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1b5c810af422a817703b",
+                "teamName" : "Basketball of Italy",
+                "groupPoints" : 6
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dbe810af422a8177004",
+                        "name" : "Marc",
+                        "surname" : "Gasol",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dc6810af422a8177005",
+                        "name" : "Pau",
+                        "surname" : "Gasol",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dd2810af422a8177006",
+                        "name" : "Ricky",
+                        "surname" : "Rubio",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0ddb810af422a8177007",
+                        "name" : "Rudy",
+                        "surname" : "Fernandez",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0de6810af422a8177008",
+                        "name" : "Sergio",
+                        "surname" : "Llull",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1b92810af422a817703d",
+                "teamName" : "Basketball of Spain",
+                "groupPoints" : 8
+            },
+            "resultHome" : "97",
+            "resultAway" : "99",
+            "date" : "2021-09-30T22:00:00.000Z",
+            "location" : "Olympic Stadium",
+            "time" : "22",
+            "winner" : 2
+        }, 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Germany",
+                            "flagImage" : "Germany.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1087810af422a8177009",
+                        "name" : "Maxi",
+                        "surname" : "Kleber",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Germany",
+                            "flagImage" : "Germany.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d1093810af422a817700a",
+                        "name" : "Dennis",
+                        "surname" : "Schroeder",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Germany",
+                            "flagImage" : "Germany.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d10b0810af422a817700b",
+                        "name" : "Paul",
+                        "surname" : "Zipser",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Germany",
+                            "flagImage" : "Germany.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d10bb810af422a817700c",
+                        "name" : "Daniel",
+                        "surname" : "Theis",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Germany",
+                            "flagImage" : "Germany.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d10c7810af422a817700d",
+                        "name" : "Johannes",
+                        "surname" : "Thiemann",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1a61810af422a8177034",
+                "teamName" : "Basketball of Germany",
+                "groupPoints" : 4
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12b4810af422a8177022",
+                        "name" : "Joe",
+                        "surname" : "Ingles",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12c2810af422a8177023",
+                        "name" : "Patrick",
+                        "surname" : "Mills",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12cd810af422a8177024",
+                        "name" : "Jock",
+                        "surname" : "Landale",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12ee810af422a8177025",
+                        "name" : "Matthew",
+                        "surname" : "Dellavedova",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12fd810af422a8177026",
+                        "name" : "Aron",
+                        "surname" : "Baynes",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1afa810af422a8177039",
+                "teamName" : "Basketball of Australia",
+                "groupPoints" : 10
+            },
+            "resultHome" : "99",
+            "resultAway" : "100",
+            "date" : "2021-09-30T22:00:00.000Z",
+            "location" : "Olympic Stadium",
+            "time" : "19",
+            "winner" : 2
+        }
+    ],
+    "semiFinals" : [ 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e2e0eaa4e3718e8c335",
+                        "name" : "Nikola",
+                        "surname" : "Jokic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e3b0eaa4e3718e8c336",
+                        "name" : "Boban",
+                        "surname" : "Marjanovic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e6f0eaa4e3718e8c337",
+                        "name" : "Bogdan",
+                        "surname" : "Bogdanovic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e790eaa4e3718e8c338",
+                        "name" : "Nikola",
+                        "surname" : "Dimitrijevic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a6e810eaa4e3718e8c339",
+                        "name" : "Luka",
+                        "surname" : "Doncic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Serbia",
+                            "flagImage" : "Serbia.png",
+                            "numberOfAthletes" : 10
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614a73ad075e1c399c66903c",
+                        "name" : "Nikola",
+                        "surname" : "Kalinic",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614b3e3becc5f01a8470086c",
+                "teamName" : "Basketball of Serbia",
+                "groupPoints" : 10
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12b4810af422a8177022",
+                        "name" : "Joe",
+                        "surname" : "Ingles",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12c2810af422a8177023",
+                        "name" : "Patrick",
+                        "surname" : "Mills",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12cd810af422a8177024",
+                        "name" : "Jock",
+                        "surname" : "Landale",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12ee810af422a8177025",
+                        "name" : "Matthew",
+                        "surname" : "Dellavedova",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Australia",
+                            "flagImage" : "Australia.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d12fd810af422a8177026",
+                        "name" : "Aron",
+                        "surname" : "Baynes",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1afa810af422a8177039",
+                "teamName" : "Basketball of Australia",
+                "groupPoints" : 10
+            },
+            "resultHome" : "100",
+            "resultAway" : "98",
+            "date" : "2021-10-01T22:00:00.000Z",
+            "location" : "Saitama Super Arena",
+            "time" : "20",
+            "winner" : 1
+        }, 
+        {
+            "homeTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d78810af422a8176fff",
+                        "name" : "Anderson",
+                        "surname" : "Varejao",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d84810af422a8177000",
+                        "name" : "Marcelo",
+                        "surname" : "Huertas",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d91810af422a8177001",
+                        "name" : "Leandro",
+                        "surname" : "Barbosa",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0d9d810af422a8177002",
+                        "name" : "Bruno",
+                        "surname" : "Caboclo",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Brazil",
+                            "flagImage" : "Brazil.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0da6810af422a8177003",
+                        "name" : "Augusto",
+                        "surname" : "Lima",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1b76810af422a817703c",
+                "teamName" : "Basketball of Brazil",
+                "groupPoints" : 6
+            },
+            "awayTeam" : {
+                "teamMembers" : [ 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 0
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dbe810af422a8177004",
+                        "name" : "Marc",
+                        "surname" : "Gasol",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 1
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dc6810af422a8177005",
+                        "name" : "Pau",
+                        "surname" : "Gasol",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 2
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0dd2810af422a8177006",
+                        "name" : "Ricky",
+                        "surname" : "Rubio",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 3
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0ddb810af422a8177007",
+                        "name" : "Rudy",
+                        "surname" : "Fernandez",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }, 
+                    {
+                        "country" : {
+                            "countryName" : "Spain",
+                            "flagImage" : "Spain.png",
+                            "numberOfAthletes" : 4
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "Basketball",
+                                "sportName" : "Basketball",
+                                "individual" : false,
+                                "min" : "5",
+                                "max" : "12"
+                            }
+                        ],
+                        "_id" : "614d0de6810af422a8177008",
+                        "name" : "Sergio",
+                        "surname" : "Llull",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    }
+                ],
+                "_id" : "614d1b92810af422a817703d",
+                "teamName" : "Basketball of Spain",
+                "groupPoints" : 8
+            },
+            "resultHome" : "70",
+            "resultAway" : "76",
+            "date" : "2021-10-02T22:00:00.000Z",
+            "location" : "Olympic Stadium",
+            "time" : "20",
+            "winner" : 2
+        }
+    ],
     "groupRoundsEnded" : [ 
         true, 
         true, 
         true, 
         true, 
         true, 
-        false
+        true
     ],
-    "quarterFinalsStarted" : false,
-    "semiFinalsStarted" : false,
-    "thirdPlaceStarted" : false,
-    "finalsStarted" : false
+    "sportName" : "Basketball",
+    "disciplineName" : "Basketball",
+    "individual" : false,
+    "type" : "man",
+    "dateBegin" : "2021-09-23T22:00:00.000Z",
+    "dateEnd" : "2021-09-29T22:00:00.000Z",
+    "started" : true,
+    "ongoing" : true,
+    "quarterFinalsStarted" : true,
+    "semiFinalsStarted" : true,
+    "thirdPlaceStarted" : true,
+    "finalsStarted" : false,
+    "teamFinals" : {
+        "homeTeam" : {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a6e2e0eaa4e3718e8c335",
+                    "name" : "Nikola",
+                    "surname" : "Jokic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a6e3b0eaa4e3718e8c336",
+                    "name" : "Boban",
+                    "surname" : "Marjanovic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a6e6f0eaa4e3718e8c337",
+                    "name" : "Bogdan",
+                    "surname" : "Bogdanovic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a6e790eaa4e3718e8c338",
+                    "name" : "Nikola",
+                    "surname" : "Dimitrijevic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a6e810eaa4e3718e8c339",
+                    "name" : "Luka",
+                    "surname" : "Doncic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Serbia",
+                        "flagImage" : "Serbia.png",
+                        "numberOfAthletes" : 10
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614a73ad075e1c399c66903c",
+                    "name" : "Nikola",
+                    "surname" : "Kalinic",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614b3e3becc5f01a8470086c",
+            "teamName" : "Basketball of Serbia",
+            "groupPoints" : 10
+        },
+        "awayTeam" : {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dbe810af422a8177004",
+                    "name" : "Marc",
+                    "surname" : "Gasol",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dc6810af422a8177005",
+                    "name" : "Pau",
+                    "surname" : "Gasol",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0dd2810af422a8177006",
+                    "name" : "Ricky",
+                    "surname" : "Rubio",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0ddb810af422a8177007",
+                    "name" : "Rudy",
+                    "surname" : "Fernandez",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Spain",
+                        "flagImage" : "Spain.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0de6810af422a8177008",
+                    "name" : "Sergio",
+                    "surname" : "Llull",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1b92810af422a817703d",
+            "teamName" : "Basketball of Spain",
+            "groupPoints" : 8
+        }
+    },
+    "teamThird" : {
+        "homeTeam" : {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12b4810af422a8177022",
+                    "name" : "Joe",
+                    "surname" : "Ingles",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12c2810af422a8177023",
+                    "name" : "Patrick",
+                    "surname" : "Mills",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12cd810af422a8177024",
+                    "name" : "Jock",
+                    "surname" : "Landale",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12ee810af422a8177025",
+                    "name" : "Matthew",
+                    "surname" : "Dellavedova",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Australia",
+                        "flagImage" : "Australia.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d12fd810af422a8177026",
+                    "name" : "Aron",
+                    "surname" : "Baynes",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1afa810af422a8177039",
+            "teamName" : "Basketball of Australia",
+            "groupPoints" : 10
+        },
+        "awayTeam" : {
+            "teamMembers" : [ 
+                {
+                    "country" : {
+                        "countryName" : "Brazil",
+                        "flagImage" : "Brazil.png",
+                        "numberOfAthletes" : 0
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0d78810af422a8176fff",
+                    "name" : "Anderson",
+                    "surname" : "Varejao",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Brazil",
+                        "flagImage" : "Brazil.png",
+                        "numberOfAthletes" : 1
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0d84810af422a8177000",
+                    "name" : "Marcelo",
+                    "surname" : "Huertas",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Brazil",
+                        "flagImage" : "Brazil.png",
+                        "numberOfAthletes" : 2
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0d91810af422a8177001",
+                    "name" : "Leandro",
+                    "surname" : "Barbosa",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Brazil",
+                        "flagImage" : "Brazil.png",
+                        "numberOfAthletes" : 3
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0d9d810af422a8177002",
+                    "name" : "Bruno",
+                    "surname" : "Caboclo",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }, 
+                {
+                    "country" : {
+                        "countryName" : "Brazil",
+                        "flagImage" : "Brazil.png",
+                        "numberOfAthletes" : 4
+                    },
+                    "competesIn" : [ 
+                        {
+                            "disciplineName" : "Basketball",
+                            "sportName" : "Basketball",
+                            "individual" : false,
+                            "min" : "5",
+                            "max" : "12"
+                        }
+                    ],
+                    "_id" : "614d0da6810af422a8177003",
+                    "name" : "Augusto",
+                    "surname" : "Lima",
+                    "sex" : "man",
+                    "medalWinner" : false
+                }
+            ],
+            "_id" : "614d1b76810af422a817703c",
+            "teamName" : "Basketball of Brazil",
+            "groupPoints" : 6
+        }
+    }
 }

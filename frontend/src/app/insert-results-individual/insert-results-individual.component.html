@@ -1,0 +1,72 @@
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+
+
+
+    <div class="buttons-row">
+
+
+    
+
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon"
+            style="margin-left: 10px;" (click)="back()">
+            Back
+        </button>
+    </div>
+
+
+</mat-toolbar>
+
+
+
+<mat-card  >
+    <mat-card-title>Insert Results</mat-card-title>
+    <mat-card-content>
+        <div class="container">
+            <form >
+                
+                    <section *ngFor="let round of results; let index = index; trackBy:trackByIndex">
+                        
+                        <mat-label style="margin-right: 12px;">Format is {{currentTournament.format.resultFormat}}</mat-label>  
+                        <mat-form-field >
+                            <input  matInput placeholder="Result:" [(ngModel)]="results[index]" name="result_{{index}}" type="text">
+                        </mat-form-field>
+                    
+                    </section>
+               
+    
+    
+            </form>
+    
+
+    
+
+                <div class="button">
+                    <button mat-raised-button color="primary"  (click)="finishEditing()" > Save</button>
+                </div>
+                
+         
+        </div>
+        
+      
+    </mat-card-content>
+</mat-card>
+
+

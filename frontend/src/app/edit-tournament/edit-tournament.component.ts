@@ -167,10 +167,23 @@ export class EditTournamentComponent implements OnInit {
 
   saveTournament() {
     console.log(this.currentTournament.individual)
-    if(!this.currentTournament.individual) this.currentTournament.teams=this.selectedTeamsForm.value
-    else this.currentTournament.competitors= this.selectedAthletesForm.value;
+  
+    if (!this.currentTournament.individual) {
+      if (
+        this.selectedAthletesForm.value.length == 12 ||
+        this.selectedAthletesForm.value.length == 8 ||
+        this.selectedAthletesForm.value.length == 4 ||
+        this.selectedAthletesForm.value.length == 16
+      )
+        this.currentTournament.teams = this.selectedTeamsForm.value;
+      else {
+       this.error="Number of teams must be: 16 or 12 or 8 or 4 "
+      }
+    } else this.currentTournament.competitors = this.selectedAthletesForm.value;
+
+
     
-    console.log(this.currentTournament.teams[0].teamName)
+    
     console.log(this.currentTournament.delegate.name)
     if(this.error!="Delegate can't be assigned")
     this.tournamentService.updateTournament(this.currentTournament).subscribe((msg:any)=>{

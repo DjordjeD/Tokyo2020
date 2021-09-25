@@ -69,6 +69,19 @@ export class competitorController {
     }
     )
   }
+
+  medalWinner = (req: express.Request, res: express.Response) => {
+    
+    //console.log(req.body)
+    
+    Competitors.findOneAndUpdate({name:req.body.name, surname:req.body.surname, sex:req.body.sex}
+      ,{$set: {medalWinner:true}},(err, data) => {
+          if(err) {console.log(err)}
+          else res.json({ msg: "dodat"})
+      })
+
+ 
+  }
  
 
 }

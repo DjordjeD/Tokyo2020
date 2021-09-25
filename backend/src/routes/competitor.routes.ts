@@ -15,4 +15,8 @@ competitorRouter
   .route('/addCompetitor')
   .post((req, res) => new competitorController().addCompetitor(req, res));
 
+  competitorRouter
+  .route('/medalWinner')
+  .post((req, res) => new competitorController().medalWinner(req, res));
+
 export default competitorRouter;

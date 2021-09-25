@@ -179,11 +179,14 @@
                                         <mat-option value="M:CM">
                                             M:CM
                                         </mat-option>
+                                        <mat-option value="points">
+                                            Points
+                                        </mat-option>
                                     </mat-select>
                                 </mat-form-field>
 
                                 <mat-form-field appearance="fill">
-                                    <mat-label>Select players to view/add to this team</mat-label>
+                                    <mat-label>Select locations</mat-label>
                                     <mat-select [formControl]="locationsForm" multiple>
                     
                                       <mat-option *ngFor="let c of locations" [value]="c.location">

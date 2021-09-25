@@ -49,6 +49,7 @@ export class DelegatePageComponent implements OnInit {
           
          
           for (let i = 0; i < tournaments.length; i++) {
+            if(tournaments[i].delegate!=null)
             if(tournaments[i].delegate.username==this.currentUser.username)
             {
               this.tournaments.push(tournaments[i])

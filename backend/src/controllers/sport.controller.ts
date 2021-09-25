@@ -65,4 +65,17 @@ export class sportController {
       }
     });
   };
+
+
+  addMedal = (req: express.Request, res: express.Response) => {
+    //todos
+    let sport= req.body
+    delete sport._id
+    console.log(req.body)
+
+    Sports.collection.findOneAndReplace({sportName: req.body.sportName},sport,(err, data)=>{
+      if (err) console.log(err)
+      else res.json({msg: "dodata Medalja"})
+    })
+  };
 }
