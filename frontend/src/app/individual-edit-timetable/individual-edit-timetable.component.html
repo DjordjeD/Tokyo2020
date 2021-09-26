@@ -97,7 +97,7 @@
                     <button mat-raised-button color="primary"  (click)="addInfo()" [disabled]="!editTime"> Save</button>
                 </div>
                 <h5 *ngIf="!editTime" >Time location and date are alreay added</h5>
-                <h1 style="color:red" *ngIf="currentTournament.ongoing">TOURNAMENT ENDED</h1> 
+                <h1 style="color:red" *ngIf="!currentTournament.ongoing">TOURNAMENT ENDED</h1> 
          
         </div>
         

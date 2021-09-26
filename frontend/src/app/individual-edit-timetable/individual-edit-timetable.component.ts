@@ -154,6 +154,7 @@ export class IndividualEditTimetableComponent implements OnInit {
         this.currentTournament.individualEvent.results[1].athlete;
       this.currentTournament.individualEvent.bronzeMedal =
         this.currentTournament.individualEvent.results[2].athlete;
+
     } else if ((this.currentTournament.format.resultFormat = 'points')) {
       this.currentTournament.individualEvent.results.sort((obj1, obj2) => {
         var best1 = 0;
@@ -176,12 +177,16 @@ export class IndividualEditTimetableComponent implements OnInit {
 
         return 0;
       });
+
+      
       this.currentTournament.individualEvent.goldMedal =
         this.currentTournament.individualEvent.results[0].athlete;
       this.currentTournament.individualEvent.silverMedal =
         this.currentTournament.individualEvent.results[1].athlete;
       this.currentTournament.individualEvent.bronzeMedal =
         this.currentTournament.individualEvent.results[2].athlete;
+
+        
     }
 
     this.competitorService
@@ -202,7 +207,61 @@ export class IndividualEditTimetableComponent implements OnInit {
         console.log(msg);
       });
 
+      var gold = new Medal();
+
+      gold.athlete = this.currentTournament.individualEvent.goldMedal;
+      gold.type = 'gold';
+      gold.country = this.currentTournament.individualEvent.goldMedal.country;
+
+      var silver = new Medal();
+
+      silver.athlete = this.currentTournament.individualEvent.silverMedal;
+      silver.type = 'silver';
+      silver.country = this.currentTournament.individualEvent.silverMedal.country;
+
+      var bronze = new Medal();
+
+      bronze.athlete = this.currentTournament.individualEvent.bronzeMedal;
+      bronze.type = 'bronze';
+      bronze.country = this.currentTournament.individualEvent.bronzeMedal.country;
+
+      this.sportService.getAllSports().subscribe((sports: Sport[]) => {
+        if (sports) {
+          for (let i = 0; i < sports.length; i++) {
+            for (let j = 0; j < sports[i].disciplines.length; j++) {
+              if (
+                sports[i].disciplines[j].discipline.disciplineName ==
+                this.currentTournament.individualEvent.bronzeMedal.competesIn[0].disciplineName
+              ) {
+                if (sports[i].disciplines[j].medals == null) {
+                  sports[i].disciplines[j].medals = [];
+                }
+                sports[i].disciplines[j].medals.push(bronze);
+                sports[i].disciplines[j].medals.push(silver);
+                sports[i].disciplines[j].medals.push(gold);
+
+                this.sportService.addMedal(sports[i]).subscribe((msg: any) => {
+                  console.log(msg);
+                });
+              }
+
+            
+              
+            }
+          }
+        }
+      });
+
     this.currentTournament.ongoing = false;
+    
+
+    // this.tournamentService
+    // .updateTournament(this.currentTournament)
+    // .subscribe((msg: any) => {
+    //   console.log(msg);
+    // });
+
+
   }
   trackByIndex(index: number, obj: any): any {
     return index;
@@ -224,7 +283,7 @@ export class IndividualEditTimetableComponent implements OnInit {
     this.router.navigate(['']);
   }
   back() {
-    this.router.navigate(['/delegate']);
+    this.router.navigate(['/delegatePage']);
     //potencijalno brisanje
   }
   changePassword() {

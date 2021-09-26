@@ -53,18 +53,93 @@
 <h5>Assign Groups :</h5><button mat-raised-button color="primary" [disabled]="selectedGroups" (click)="shuffle()">Assign groups</button>
 <br>
 <h4>Edit Events</h4>
-<div class="span2">
-    <br>
-    <div *ngFor="let event of groupRounds;let indexRound = index; trackBy:trackByIndexRound;">
-        <div class="span3">
-            Round: {{indexRound}} <button mat-raised-button color="primary"
-                (click)="finishedEditingRound(indexRound)">Finish Editing Round</button>
+<div *ngIf="dataAvailable==true">
+    <div class="span2">
+        <br>
+        <div *ngFor="let event of groupRounds;let indexRound = index; trackBy:trackByIndexRound;">
+            <div class="span3">
+                Round: {{indexRound}} <button mat-raised-button color="primary"
+                    (click)="finishedEditingRound(indexRound)">Finish Editing Round</button>
+                <div class="row">
+                    <div class="container">
+    
+                        <div class="row">
+                            <div class="col-12">
+    
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Home team</th>
+                                            <th scope="col">Away team</th>
+                                            <th scope="col">Result home</th>
+                                            <th scope="col">Result away</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Winner</th>
+                                            <th scope="col">Edit</th>
+    
+    
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+    
+    
+                                        <tr
+                                            *ngFor="let event of groupRounds[indexRound].teamEvents ;let index = index; trackBy:trackByIndex;">
+                                            <td  >
+                                                {{event.homeTeam.teamName}}
+                                            </td>
+                                            <td>
+                                                {{event.awayTeam.teamName}}
+                                            </td>
+                                            <td>
+                                                {{event.resultHome}}
+                                            </td>
+                                            <td>
+                                                {{event.resultAway}}
+                                            </td>
+                                            <td>
+                                                {{event.time}}
+                                            </td>
+                                            <td>
+                                                {{event.date}}
+                                            </td>
+                                            <td>
+                                                {{event.location}}
+                                            </td>
+                                            <td>
+                                                {{event.winner}}
+                                            </td>
+                                            <td>
+                                                <button mat-raised-button color="primary"
+                                                    [disabled]="!showEdits(indexRound)"
+                                                    (click)="editGroupEvent(groupRounds[indexRound].teamEvents[index],indexRound,index)">Edit</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+            <br>
+        </div>
+        <br>
+        <div class="span3" *ngIf="currentTournament.quarterFinalsStarted">
+            Playoffs: <button mat-raised-button color="primary" (click)="finishQuarterFinals()">Finish Quarter
+                Finals</button>
             <div class="row">
                 <div class="container">
-
+    
                     <div class="row">
                         <div class="col-12">
-
+    
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -77,16 +152,15 @@
                                         <th scope="col">Location</th>
                                         <th scope="col">Winner</th>
                                         <th scope="col">Edit</th>
-
-
+    
+    
                                     </tr>
                                 </thead>
                                 <tbody>
-
-
-                                    <tr
-                                        *ngFor="let event of groupRounds[indexRound].teamEvents ;let index = index; trackBy:trackByIndex;">
-                                        <td  >
+    
+    
+                                    <tr *ngFor="let event of this.currentTournament.quarterFinals;let index = index; trackBy:trackByIndex;">
+                                        <td>
                                             {{event.homeTeam.teamName}}
                                         </td>
                                         <td>
@@ -112,298 +186,227 @@
                                         </td>
                                         <td>
                                             <button mat-raised-button color="primary"
-                                                [disabled]="!showEdits(indexRound)"
-                                                (click)="editGroupEvent(groupRounds[indexRound].teamEvents[index],indexRound,index)">Edit</button>
+                                                (click)="editQuarterFinals(currentTournament.quarterFinals[index],index)">Edit</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-
-
+    
+    
                         </div>
                     </div>
                 </div>
-
+    
             </div>
-
+    
         </div>
         <br>
-    </div>
-    <br>
-    <div class="span3" *ngIf="currentTournament.quarterFinalsStarted">
-        Playoffs: <button mat-raised-button color="primary" (click)="finishQuarterFinals()">Finish Quarter
-            Finals</button>
-        <div class="row">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Home team</th>
-                                    <th scope="col">Away team</th>
-                                    <th scope="col">Result home</th>
-                                    <th scope="col">Result away</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Winner</th>
-                                    <th scope="col">Edit</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <tr *ngFor="let event of quarterFinals;let index = index; trackBy:trackByIndex;">
-                                    <td>
-                                        {{event.homeTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{event.awayTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{event.resultHome}}
-                                    </td>
-                                    <td>
-                                        {{event.resultAway}}
-                                    </td>
-                                    <td>
-                                        {{event.time}}
-                                    </td>
-                                    <td>
-                                        {{event.date}}
-                                    </td>
-                                    <td>
-                                        {{event.location}}
-                                    </td>
-                                    <td>
-                                        {{event.winner}}
-                                    </td>
-                                    <td>
-                                        <button mat-raised-button color="primary"
-                                            (click)="editQuarterFinals(currentTournament.quarterFinals[index],index)">Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
+        <div class="span3" *ngIf="currentTournament.semiFinalsStarted">
+            Playoffs: <button mat-raised-button color="primary" (click)="finishSemiFinals()">Finish Semi Finals</button>
+            <div class="row">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="col-12">
+    
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Home team</th>
+                                        <th scope="col">Away team</th>
+                                        <th scope="col">Result home</th>
+                                        <th scope="col">Result away</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Winner</th>
+                                        <th scope="col">Edit</th>
+    
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+    
+                                    <tr *ngFor="let event of  currentTournament.semiFinals;let index = index; trackBy:trackByIndex;">
+                                        <td>
+                                            {{event.homeTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{event.awayTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{event.resultHome}}
+                                        </td>
+                                        <td>
+                                            {{event.resultAway}}
+                                        </td>
+                                        <td>
+                                            {{event.time}}
+                                        </td>
+                                        <td>
+                                            {{event.date}}
+                                        </td>
+                                        <td>
+                                            {{event.location}}
+                                        </td>
+                                        <td>
+                                            {{event.winner}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button color="primary"
+                                                (click)="editSemiFinals(currentTournament.semiFinals[index],index)">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+    
+    
+                        </div>
                     </div>
                 </div>
+    
             </div>
-
+    
         </div>
-
-    </div>
-    <br>
-    <div class="span3" *ngIf="currentTournament.semiFinalsStarted">
-        Playoffs: <button mat-raised-button color="primary" (click)="finishSemiFinals()">Finish Semi Finals</button>
-        <div class="row">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Home team</th>
-                                    <th scope="col">Away team</th>
-                                    <th scope="col">Result home</th>
-                                    <th scope="col">Result away</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Winner</th>
-                                    <th scope="col">Edit</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <tr *ngFor="let event of  currentTournament.semiFinals;let index = index; trackBy:trackByIndex;">
-                                    <td>
-                                        {{event.homeTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{event.awayTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{event.resultHome}}
-                                    </td>
-                                    <td>
-                                        {{event.resultAway}}
-                                    </td>
-                                    <td>
-                                        {{event.time}}
-                                    </td>
-                                    <td>
-                                        {{event.date}}
-                                    </td>
-                                    <td>
-                                        {{event.location}}
-                                    </td>
-                                    <td>
-                                        {{event.winner}}
-                                    </td>
-                                    <td>
-                                        <button mat-raised-button color="primary"
-                                            (click)="editSemiFinals(currentTournament.semiFinals[index],index)">Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
+        <br>
+        <div class="span3" *ngIf="currentTournament.thirdPlaceStarted">
+            Playoffs: <button mat-raised-button color="primary" (click)="finishThirdPlace()">Finish Third Place</button>
+            <div class="row">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="col-12">
+    
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Home team</th>
+                                        <th scope="col">Away team</th>
+                                        <th scope="col">Result home</th>
+                                        <th scope="col">Result away</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Winner</th>
+                                        <th scope="col">Edit</th>
+    
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+    
+                                    <tr >
+                                        <td>
+                                            {{currentTournament.teamThird.homeTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.awayTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.resultHome}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.resultAway}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.time}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.date}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.location}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamThird.winner}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button color="primary"
+                                                (click)="editThird(currentTournament.teamThird)">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+    
+    
+                        </div>
                     </div>
                 </div>
+    
             </div>
-
+    
         </div>
-
-    </div>
-    <br>
-    <div class="span3" *ngIf="currentTournament.thirdPlaceStarted">
-        Playoffs: <button mat-raised-button color="primary" (click)="finishThirdPlace()">Finish Third Place</button>
-        <div class="row">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Home team</th>
-                                    <th scope="col">Away team</th>
-                                    <th scope="col">Result home</th>
-                                    <th scope="col">Result away</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Winner</th>
-                                    <th scope="col">Edit</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <tr >
-                                    <td>
-                                        {{currentTournament.teamThird.homeTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.awayTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.resultHome}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.resultAway}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.time}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.date}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.location}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamThird.winner}}
-                                    </td>
-                                    <td>
-                                        <button mat-raised-button color="primary"
-                                            (click)="editThird(currentTournament.teamThird)">Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
+        <br>
+        <div class="span3" *ngIf="currentTournament.finalsStarted">
+            Playoffs: <button mat-raised-button color="primary" (click)="finishFinals()">Finish Finals END TOURNAMENT</button>
+            <div class="row">
+                <div class="container">
+    
+                    <div class="row">
+                        <div class="col-12">
+    
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Home team</th>
+                                        <th scope="col">Away team</th>
+                                        <th scope="col">Result home</th>
+                                        <th scope="col">Result away</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Winner</th>
+                                        <th scope="col">Edit</th>
+    
+    
+                                    </tr>
+                                </thead>
+                                <tbody>
+    
+    
+                                    <tr >
+                                        <td>
+                                            {{currentTournament.teamFinals.homeTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.awayTeam.teamName}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.resultHome}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.resultAway}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.time}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.date}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.location}}
+                                        </td>
+                                        <td>
+                                            {{currentTournament.teamFinals.winner}}
+                                        </td>
+                                        <td>
+                                            <button mat-raised-button color="primary"
+                                                (click)="editFinals(currentTournament.teamFinals)">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+    
+    
+                        </div>
                     </div>
                 </div>
+    
             </div>
-
+    
         </div>
-
     </div>
-    <br>
-    <div class="span3" *ngIf="currentTournament.finalsStarted">
-        Playoffs: <button mat-raised-button color="primary" (click)="finishFinals()">Finish Finals END TOURNAMENT</button>
-        <div class="row">
-            <div class="container">
 
-                <div class="row">
-                    <div class="col-12">
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Home team</th>
-                                    <th scope="col">Away team</th>
-                                    <th scope="col">Result home</th>
-                                    <th scope="col">Result away</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Location</th>
-                                    <th scope="col">Winner</th>
-                                    <th scope="col">Edit</th>
-
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-
-                                <tr >
-                                    <td>
-                                        {{currentTournament.teamFinals.homeTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.awayTeam.teamName}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.resultHome}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.resultAway}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.time}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.date}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.location}}
-                                    </td>
-                                    <td>
-                                        {{currentTournament.teamFinals.winner}}
-                                    </td>
-                                    <td>
-                                        <button mat-raised-button color="primary"
-                                            (click)="editFinals(currentTournament.teamFinals)">Edit</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
 </div>

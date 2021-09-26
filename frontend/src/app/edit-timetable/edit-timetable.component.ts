@@ -54,14 +54,15 @@ export class EditTimetableComponent implements OnInit {
   // thirdPlaceStarted: boolean = false;
   // finalsStarted: boolean = false;
   selectedGroups: boolean = false;
+  dataAvailable: boolean = false;
   ngOnInit(): void {
     // var tmp =  JSON.parse(
     //   localStorage.getItem('currentEvent') || '{}'
     // );
     this.currentTournament = JSON.parse(
       localStorage.getItem('currentTournament') || '{}'
-    );
-
+    )
+    
     if (this.currentTournament.individual) {
       //posle
       localStorage.setItem(
@@ -163,12 +164,12 @@ export class EditTimetableComponent implements OnInit {
             this.groupRounds = this.currentTournament.groupRounds;
           }
 
-          console.log(this.currentTournament);
-          this.currentTournament = JSON.parse(
-            localStorage.getItem('currentTournament') || '{}'
-          );
-          console.log(this.currentTournament);
-      
+          // console.log(this.currentTournament);
+          // this.currentTournament = JSON.parse(
+          //   localStorage.getItem('currentTournament') || '{}'
+          // );
+          // console.log(this.currentTournament);
+          this.dataAvailable=true;
 
         } else if (this.currentTournament.teams.length == 8) {
         } else if (this.currentTournament.teams.length == 4) {
@@ -178,7 +179,7 @@ export class EditTimetableComponent implements OnInit {
         this.currentTournament.sportName == 'Tennis Double'
       ) {
       }
-    
+      this.dataAvailable=true;
   }
 
   finishedEditingRound(index) {
@@ -455,22 +456,12 @@ export class EditTimetableComponent implements OnInit {
                 sports[i].disciplines[j].medals = [];
               }
               sports[i].disciplines[j].medals.push(medal);
-              this.sportService.addMedal(sports[i]).subscribe((msg: any) => {
-                console.log(msg);
-              });
-            }
-            if (
-              sports[i].disciplines[j].discipline.disciplineName ==
-              loser.teamMembers[0].competesIn[0].disciplineName
-            ) {
-              if (sports[i].disciplines[j].medals == null) {
-                sports[i].disciplines[j].medals = [];
-              }
               sports[i].disciplines[j].medals.push(silver);
               this.sportService.addMedal(sports[i]).subscribe((msg: any) => {
                 console.log(msg);
               });
             }
+           
           }
         }
       }
