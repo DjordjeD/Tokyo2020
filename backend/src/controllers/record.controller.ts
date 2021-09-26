@@ -6,6 +6,7 @@ export class recordController {
     Records.find({}, (err, record) => {
       if (err) console.log(err);
       else res.json(record);
+      console.log("")
     });
   };
 }
