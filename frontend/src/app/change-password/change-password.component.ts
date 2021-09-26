@@ -32,7 +32,8 @@ export class ChangePasswordComponent implements OnInit {
         let regex=new RegExp("^(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[0-9]){2,})(?=(.*[!@#\$%\^&\*\/]){2,})(?=.{8,12})");
         if(this.form.getRawValue().password==this.form.getRawValue().newPassword)
         { this.error="New password cannot be the same as the old password"}
-        if(regex.test(this.form.getRawValue().password)){
+        
+        if(!regex.test(this.form.getRawValue().newPassword)){
           this.error="Password must meet password requirements"
         }
     

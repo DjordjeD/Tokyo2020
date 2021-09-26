@@ -33,7 +33,7 @@ export class InsertResultsIndividualComponent implements OnInit {
     private userService: UserService,
     private teamService: TeamService
   ) {}
-
+  finished:boolean=false;
   index: number;
   currentTournament: Tournaments;
   tournaments: Array<Tournaments>;
@@ -66,7 +66,10 @@ export class InsertResultsIndividualComponent implements OnInit {
       .updateTournament(this.currentTournament)
       .subscribe((msg: any) => {
         console.log(msg);
+        this.finished=true;
       });
+
+      
   }
 
   trackByIndex(index: number, obj: any): any {

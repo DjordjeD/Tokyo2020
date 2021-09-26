@@ -178,6 +178,7 @@ export class IndividualEditTimetableComponent implements OnInit {
         return 0;
       });
 
+      console.log(this.currentTournament.individualEvent.results);
       
       this.currentTournament.individualEvent.goldMedal =
         this.currentTournament.individualEvent.results[0].athlete;
@@ -255,11 +256,11 @@ export class IndividualEditTimetableComponent implements OnInit {
     this.currentTournament.ongoing = false;
     
 
-    // this.tournamentService
-    // .updateTournament(this.currentTournament)
-    // .subscribe((msg: any) => {
-    //   console.log(msg);
-    // });
+    this.tournamentService
+    .updateTournament(this.currentTournament)
+    .subscribe((msg: any) => {
+      console.log(msg);
+    });
 
 
   }
