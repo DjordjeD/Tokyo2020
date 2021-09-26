@@ -168,11 +168,11 @@ export class IndividualEditTimetableComponent implements OnInit {
         }
 
         if (best1 < best2) {
-          return -1;
+          return 1;
         }
 
         if (best1 > best2) {
-          return 1;
+          return -1;
         }
 
         return 0;
