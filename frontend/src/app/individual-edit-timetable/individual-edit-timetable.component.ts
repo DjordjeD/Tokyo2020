@@ -154,7 +154,6 @@ export class IndividualEditTimetableComponent implements OnInit {
         this.currentTournament.individualEvent.results[1].athlete;
       this.currentTournament.individualEvent.bronzeMedal =
         this.currentTournament.individualEvent.results[2].athlete;
-        
     } else if ((this.currentTournament.format.resultFormat = 'points')) {
       this.currentTournament.individualEvent.results.sort((obj1, obj2) => {
         var best1 = 0;

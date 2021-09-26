@@ -116,7 +116,7 @@ export class EditTimetableComponent implements OnInit {
       this.group2 = this.currentTournament.group2;
       this.shuffle();
     }
-    console.log(this.currentTournament);
+
   }
 
   shuffle() {
@@ -164,6 +164,12 @@ export class EditTimetableComponent implements OnInit {
           }
 
           console.log(this.currentTournament);
+          this.currentTournament = JSON.parse(
+            localStorage.getItem('currentTournament') || '{}'
+          );
+          console.log(this.currentTournament);
+      
+
         } else if (this.currentTournament.teams.length == 8) {
         } else if (this.currentTournament.teams.length == 4) {
         }

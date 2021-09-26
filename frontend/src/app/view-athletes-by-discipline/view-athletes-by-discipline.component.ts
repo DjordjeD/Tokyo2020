@@ -56,8 +56,10 @@ export class ViewAthletesByDisciplineComponent implements OnInit {
             
             if(competitors[i].competesIn[j].disciplineName==this.discipline.disciplineName && competitors[i].country.countryName== this.currentUser.nationality)
             {
+            
               this.competitors.push(competitors[i]);
             }
+            this.sport=competitors[i].competesIn[j].sportName
             
           }
           
@@ -70,6 +72,7 @@ export class ViewAthletesByDisciplineComponent implements OnInit {
 
    
   }
+  sport:string
   sports: Sport[]=[];
   countries: Country[] = [];
   competitors:Competitor[] = [];

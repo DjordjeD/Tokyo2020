@@ -29,10 +29,18 @@ export class ChangePasswordComponent implements OnInit {
     this.userService.getUser(this.form.getRawValue().username, this.form.getRawValue().password).subscribe((user: User)=>{
       if(user)
       { 
+        let regex=new RegExp("^(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[0-9]){2,})(?=(.*[!@#\$%\^&\*\/]){2,})(?=.{8,12})");
         if(this.form.getRawValue().password==this.form.getRawValue().newPassword)
         { this.error="New password cannot be the same as the old password"}
+        if(regex.test(this.form.getRawValue().password)){
+          this.error="Password must meet password requirements"
+        }
+    
         else
         {
+          
+
+          
           this.userService.changePassword(user.username,user.password,this.form.getRawValue().newPassword).subscribe((user:User) => {
             console.log(user);
           })

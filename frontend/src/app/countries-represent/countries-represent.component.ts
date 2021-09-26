@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { CompetitorService } from '../competitor.service';
 import { CountryService } from '../country.service';
@@ -21,23 +23,31 @@ export class CountriesRepresentComponent implements OnInit {
 
     ngOnInit(): void {
 
-      // this.country=new Country()
-      // this.country.flagImage="olympicGames.png"
-      // this.country.countryName="srbiija"
-      // this.country.numberOfAthletes=25
-
-      // this.countries.push(this.country)
-
-      // console.log(this.countries[0].flagImage)
-
+ 
       this.countryService.getAllCountries().subscribe((countries: Country[]) => {
         if (countries) {
           this.countries = countries;
+          this.dataSource = new MatTableDataSource<Country>(this.countries);
+          this.dataSource.paginator = this.paginator;
           console.log(this.countries[0].countryName);
         }
       });
 
     }
+
+
+    
+  displayedColumns: string[] = ['name', 'flag','number'];
+
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  dataSource:any
+
+  @ViewChild(MatPaginator) paginator:MatPaginator
+
   
   country:Country
   countries: Array<Country> =[]   

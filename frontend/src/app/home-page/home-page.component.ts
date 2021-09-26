@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { COMPILER_OPTIONS, Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -20,7 +20,7 @@ export class HomePageComponent implements OnInit {
     private competitorService: CompetitorService,
     private sportService: SportService,
     private countryService: CountryService
-  ) { }
+  ) {}
 
   competitors: Competitor[];
   sports: Sport[];
@@ -43,23 +43,27 @@ export class HomePageComponent implements OnInit {
   nameFormControl = new FormControl('');
   surnameFormControl = new FormControl('');
 
-  displayedColumns: string[] = ['name', 'surname','country','sex','competesIn','medalWinner'];
+  displayedColumns: string[] = [
+    'name',
+    'surname',
+    'country',
+    'sex',
+    'competesIn',
+    'medalWinner',
+  ];
 
   length = 100;
   pageSize = 10;
   pageSizeOptions: number[] = [5, 10, 25, 100];
 
   // MatPaginator Output
-  dataSource:any
+  dataSource: any;
 
-  @ViewChild(MatPaginator) paginator:MatPaginator
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void {
-    this.currentUser = JSON.parse(
-      localStorage.getItem('currentUser') || '{}'
-    );
-   console.log(this.currentUser.name);
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    console.log(this.currentUser.name);
     if (this.currentUser == null) this.registered = false;
     else this.registered = true;
 
@@ -69,7 +73,9 @@ export class HomePageComponent implements OnInit {
         if (competitors) {
           this.competitors = competitors;
           this.allCompetitors = competitors;
-          this.dataSource = new MatTableDataSource<Competitor>(this.competitors);
+          this.dataSource = new MatTableDataSource<Competitor>(
+            this.competitors
+          );
           this.dataSource.paginator = this.paginator;
         }
       });
@@ -101,34 +107,46 @@ export class HomePageComponent implements OnInit {
       )
       .subscribe((competitors: Competitor[]) => {
         if (competitors) {
-          if (this.disciplineName !=null) {
-            let sorted: Array<Competitor> = [];
+          let sorted = Array.from(competitors);
 
-            console.log(this.disciplineName);
+          console.log(sorted);
+          // sorted=competitors;
+          console.log(this.disciplineName);
+          if (this.disciplineName != null) {
+            let disc = this.disciplineName;
+            sorted = sorted.filter((eachVal) => {
+              let opt = eachVal.competesIn.some(
+                (discipline) => discipline.disciplineName === disc
+              );
 
-            for (let i = 0; i < this.allCompetitors.length; i++) {
-              for (
-                let j = 0;
-                j < this.allCompetitors[i].competesIn.length;
-                j++
-              ) {
-                if (
-                  this.allCompetitors[i].competesIn[j].disciplineName ==
-                  this.disciplineName
-                ) {
-                  console.log(this.allCompetitors[i]);
-                  sorted.push(this.allCompetitors[i]);
-                }
-              }
-            }
-            this.competitors = sorted;
-            this.dataSource=sorted;
-          } else {
-            if(competitors)
-            {this.competitors = competitors;
-              this.dataSource=competitors;
-            }
+              return opt;
+            });
           }
+
+          if (this.sportName != null) {
+            let sport = this.sportName;
+            sorted = sorted.filter((eachVal) => {
+              let opt = eachVal.competesIn.some(
+                (discipline) => discipline.sportName == sport
+              );
+              return opt;
+            });
+          }
+
+          if (this.floatLabelControl.value != '') {
+            let sex = this.floatLabelControl.value;
+            sorted = sorted.filter((x) => x.sex == sex);
+          }
+
+          if (this.medalWinnerFormControl.value != '') {
+            let type = this.medalWinnerFormControl.value;
+            if (type == "true")
+              sorted = sorted.filter((x) => x.medalWinner == true);
+            else sorted = sorted.filter((x) => x.medalWinner == false);
+          }
+
+          console.log(sorted);
+          this.dataSource = sorted;
         }
       });
   }

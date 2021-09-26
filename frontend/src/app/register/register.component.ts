@@ -51,9 +51,16 @@ export class RegisterComponent implements OnInit {
     this.countryName,this.form.getRawValue().name, this.form.getRawValue().surname,this.form.getRawValue().email,this.isDelegate).subscribe((user: User)=>{
       if(user)
       { 
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        console.log("dodat user");
-        this.message="User request added"
+        let regex=new RegExp("^(?=(.*[a-z]){3,})(?=.*[A-Z])(?=(.*[0-9]){2,})(?=(.*[!@#\$%\^&\*\/]){2,})(?=.{8,12})");
+        if(regex.test(this.form.getRawValue().password)){
+          localStorage.setItem("currentUser", JSON.stringify(user));
+          console.log("dodat user");
+          this.message="User request added"
+        }
+        else{
+          this.error="Password does't meet the requirements"
+        }
+    
       }
       else{
         this.error="Unsuccesfull adition"

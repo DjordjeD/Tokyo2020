@@ -1,1 +1,95 @@
-<p>medals-represent works!</p>
+<mat-toolbar color="primary">
+
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="medalsRepresent()">Olympic Medal Count </button>
+        </div>
+
+
+        <div>
+            <button mat-menu-item color="primary" (click)="home()">Home </button>
+        </div>
+
+
+
+    </mat-menu>
+    <span class="example-spacer"></span>
+
+    <div *ngIf="!registered">
+        <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with heart icon" (click)="register()">
+            Register
+        </button>
+    </div>
+ 
+        
+    <div class="buttons-row">
+
+        <button class="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" (click)="login()">
+            Login
+        </button>
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" (click)="changePassword()">
+        Change password
+        </button>
+        <button classs="distance-buttons" mat-raised-button aria-label="Example icon-button with share icon" (click)="home()">
+            Back
+        </button>
+    </div>
+    
+
+</mat-toolbar>
+
+
+
+
+<div class="container">
+  
+    <div class="d-flex justify-content-between p-2">
+      <mat-paginator [pageSizeOptions]="[5, 10, 20,50,100]"
+      showFirstLastButtons 
+      aria-label="Select page of periodic elements">
+</mat-paginator>
+  
+  </div>
+  <h5>Search Results:</h5>
+  <div class="span3">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+      <ng-container matColumnDef="countryName">
+        <mat-header-cell *matHeaderCellDef> countryName </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.countryName}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="numberOfGold">
+        <mat-header-cell *matHeaderCellDef> numberOfGold </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.numberOfGold}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="numberOfSilver">
+        <mat-header-cell *matHeaderCellDef> numberOfSilver </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.numberOfSilver}} </mat-cell>
+      </ng-container>
+    
+  
+      <ng-container matColumnDef="numberOfBronze">
+        <mat-header-cell *matHeaderCellDef> numberOfBronze </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.numberOfBronze}} </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="totalNumber">
+        <mat-header-cell *matHeaderCellDef> totalNumber</mat-header-cell>
+        <mat-cell *matCellDef="let competitor"> {{competitor.totalNumber}}</mat-cell>
+       
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+  </div>
+  
+</div>

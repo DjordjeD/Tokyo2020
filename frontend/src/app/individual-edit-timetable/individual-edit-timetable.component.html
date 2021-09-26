@@ -52,11 +52,14 @@
 
 
 <mat-card  >
+   
     <mat-card-title>Edit Location</mat-card-title>
     <mat-card-content>
         <div class="container">
             <form >
-
+                
+                    
+                
                 <p>
                     <mat-form-field>
                         <input type="text" matInput placeholder="Time:" [(ngModel)]="time" name="time">
@@ -94,6 +97,7 @@
                     <button mat-raised-button color="primary"  (click)="addInfo()" [disabled]="!editTime"> Save</button>
                 </div>
                 <h5 *ngIf="!editTime" >Time location and date are alreay added</h5>
+                <h1 style="color:red" *ngIf="currentTournament.ongoing">TOURNAMENT ENDED</h1> 
          
         </div>
         
