@@ -1,0 +1,433 @@
+/* 1 */
+{
+    "_id" : ObjectId("6147bc6ce204263710c4c8c8"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "100m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            },
+            "medals" : [ 
+                {
+                    "athlete" : {
+                        "country" : {
+                            "countryName" : "USA",
+                            "flagImage" : "USA.png",
+                            "numberOfAthletes" : 7
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "100m",
+                                "sportName" : "Athletics",
+                                "individual" : true,
+                                "min" : 1,
+                                "max" : 1
+                            }
+                        ],
+                        "_id" : "614f4bb044ebb2200c904787",
+                        "name" : "John",
+                        "surname" : "Smith",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    },
+                    "type" : "bronze",
+                    "country" : {
+                        "countryName" : "USA",
+                        "flagImage" : "USA.png",
+                        "numberOfAthletes" : 7
+                    }
+                }, 
+                {
+                    "athlete" : {
+                        "country" : {
+                            "countryName" : "USA",
+                            "flagImage" : "USA.png",
+                            "numberOfAthletes" : 6
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "100m",
+                                "sportName" : "Athletics",
+                                "individual" : true,
+                                "min" : 1,
+                                "max" : 1
+                            }
+                        ],
+                        "_id" : "614f4ba644ebb2200c904786",
+                        "name" : "Ashton",
+                        "surname" : "Eaton",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    },
+                    "type" : "silver",
+                    "country" : {
+                        "countryName" : "USA",
+                        "flagImage" : "USA.png",
+                        "numberOfAthletes" : 6
+                    }
+                }, 
+                {
+                    "athlete" : {
+                        "country" : {
+                            "countryName" : "USA",
+                            "flagImage" : "USA.png",
+                            "numberOfAthletes" : 5
+                        },
+                        "competesIn" : [ 
+                            {
+                                "disciplineName" : "100m",
+                                "sportName" : "Athletics",
+                                "individual" : true,
+                                "min" : 1,
+                                "max" : 1
+                            }
+                        ],
+                        "_id" : "614f4b9544ebb2200c904785",
+                        "name" : "Tyson",
+                        "surname" : "Gay",
+                        "sex" : "man",
+                        "medalWinner" : false
+                    },
+                    "type" : "gold",
+                    "country" : {
+                        "countryName" : "USA",
+                        "flagImage" : "USA.png",
+                        "numberOfAthletes" : 5
+                    }
+                }
+            ]
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "200m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "400m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "800m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "5000m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "10000m",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "4x100m Relay",
+                "sportName" : "Athletics",
+                "individual" : false,
+                "min" : "4",
+                "max" : "4"
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "4x400m Relay",
+                "sportName" : "Athletics",
+                "individual" : false,
+                "min" : "4",
+                "max" : "4"
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "High Jump",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Long Jump",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Triple Jump",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Marathon",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Pole Vault",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Shot Put",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Discus Throw",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Javelin Throw",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Hammer Throw",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "20km Walk",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "50km Walk",
+                "sportName" : "Athletics",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }
+    ],
+    "sportName" : "Athletics"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("6147bcafe204263710c4c8c9"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "Volleyball",
+                "sportName" : "Volleyball",
+                "individual" : false,
+                "min" : "6",
+                "max" : "12"
+            }
+        }
+    ],
+    "sportName" : "Volleyball"
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("6147bcd2e204263710c4c8ca"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "Tennis Single",
+                "sportName" : "Tennis",
+                "individual" : false,
+                "min" : "1",
+                "max" : "1"
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Tennis Double",
+                "sportName" : "Tennis",
+                "individual" : false,
+                "min" : "2",
+                "max" : "2"
+            }
+        }
+    ],
+    "sportName" : "Tennis"
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("6147bd4ae204263710c4c8cb"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "Waterpolo",
+                "sportName" : "Waterpolo",
+                "individual" : false,
+                "min" : "6",
+                "max" : "12"
+            }
+        }
+    ],
+    "sportName" : "Waterpolo"
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("6147bd5fe204263710c4c8cc"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "225km Road Race",
+                "sportName" : "Cycling",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }
+    ],
+    "sportName" : "Cycling"
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("6147bd67e204263710c4c8cd"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "100m Butterfly",
+                "sportName" : "Swimming",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "200m Freestyle",
+                "sportName" : "Swimming",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }
+    ],
+    "sportName" : "Swimming"
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("6147bd83e204263710c4c8ce"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "10m Air Rifle",
+                "sportName" : "Shooting",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "Rifle 3 Positions",
+                "sportName" : "Shooting",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            },
+            "medals" : []
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "10m Air Pistol",
+                "sportName" : "Shooting",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }, 
+        {
+            "discipline" : {
+                "disciplineName" : "25m Rapid Fire Pistol",
+                "sportName" : "Shooting",
+                "individual" : true,
+                "min" : 1,
+                "max" : 1
+            }
+        }
+    ],
+    "sportName" : "Shooting"
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("614a6dfc0eaa4e3718e8c334"),
+    "disciplines" : [ 
+        {
+            "discipline" : {
+                "disciplineName" : "Basketball",
+                "sportName" : "Basketball",
+                "individual" : false,
+                "min" : "5",
+                "max" : "12"
+            },
+            "medals" : []
+        }
+    ],
+    "sportName" : "Basketball"
+}

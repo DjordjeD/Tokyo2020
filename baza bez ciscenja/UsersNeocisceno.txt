@@ -1,0 +1,203 @@
+/* 1 */
+{
+    "_id" : ObjectId("6148ae984668681ea40e699b"),
+    "username" : "admin",
+    "password" : "admin123",
+    "nationality" : "srbija",
+    "name" : "admin",
+    "surname" : "adminovic",
+    "email" : "admin@gmail.com",
+    "isDelegate" : false
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("614a2aca567de5349cfa04c2"),
+    "username" : "delegateGermany",
+    "password" : "delegate",
+    "nationality" : "Germany",
+    "name" : "German Referee",
+    "surname" : "Delegatovic",
+    "email" : "delegatovic123@gmail.com",
+    "isDelegate" : true
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("614a43d100a42a4b8ca9d486"),
+    "username" : "ludi",
+    "password" : "srbi",
+    "nationality" : "Serbia",
+    "name" : "ludi",
+    "surname" : "srbi",
+    "email" : "ludisrbi",
+    "isDelegate" : false
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("614c75ffc3d426199066c4cd"),
+    "username" : "germany",
+    "password" : "germany",
+    "nationality" : "Germany",
+    "name" : "nemac",
+    "surname" : "nemac",
+    "email" : "germany@gmail.com",
+    "isDelegate" : false
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("614d0439810af422a8176fe2"),
+    "username" : "delegate",
+    "password" : "basket",
+    "nationality" : "Netherlands",
+    "name" : "Netherlands Referee",
+    "surname" : "delegatovic",
+    "email" : "delegat",
+    "isDelegate" : true
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("614d05f9810af422a8176fe3"),
+    "username" : "delegateJapan",
+    "password" : "delegate",
+    "nationality" : "Japan",
+    "name" : "Japan Referee",
+    "surname" : "Referee",
+    "email" : "japandelegate@gmail.com",
+    "isDelegate" : true
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("614d0781810af422a8176fe6"),
+    "username" : "china",
+    "password" : "china",
+    "nationality" : "China",
+    "name" : "china",
+    "surname" : "china",
+    "email" : "china@gmail.com",
+    "isDelegate" : false
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("614d07ae810af422a8176fe7"),
+    "username" : "usa",
+    "password" : "usa",
+    "nationality" : "USA",
+    "name" : "usa",
+    "surname" : "usa",
+    "email" : "usa@usgov.com",
+    "isDelegate" : false
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("614d0851810af422a8176fe8"),
+    "username" : "japan",
+    "password" : "japan",
+    "nationality" : "Japan",
+    "name" : "japan",
+    "surname" : "japan",
+    "email" : "japan@japan.com",
+    "isDelegate" : false
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("614d0870810af422a8176fe9"),
+    "username" : "russia",
+    "password" : "russia",
+    "nationality" : "Russia",
+    "name" : "russia",
+    "surname" : "russia",
+    "email" : "russia@russia.com",
+    "isDelegate" : false
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("614d08c8810af422a8176feb"),
+    "username" : "britain",
+    "password" : "britain",
+    "nationality" : "Great Britain",
+    "name" : "britain",
+    "surname" : "britain",
+    "email" : "britain@britain",
+    "isDelegate" : false
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("614d08f9810af422a8176fec"),
+    "username" : "netherlands",
+    "password" : "netherlands",
+    "nationality" : "Netherlands",
+    "name" : "netherlands",
+    "surname" : "netherlands",
+    "email" : "netherlands@netherlands",
+    "isDelegate" : false
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("614d088f810af422a8176fea"),
+    "username" : "australia",
+    "password" : "australia",
+    "nationality" : "Australia",
+    "name" : "australia",
+    "surname" : "australia",
+    "email" : "australia@australia.com",
+    "isDelegate" : false
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("614d0910810af422a8176fed"),
+    "username" : "italy",
+    "password" : "italy",
+    "nationality" : "Italy",
+    "name" : "italy",
+    "surname" : "italy",
+    "email" : "italy",
+    "isDelegate" : false
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("614d0d1a810af422a8176ffb"),
+    "username" : "brazil",
+    "password" : "brazil",
+    "nationality" : "Brazil",
+    "name" : "brazil",
+    "surname" : "brazil",
+    "email" : "brazil@brazil",
+    "isDelegate" : false
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("614d0d2d810af422a8176ffc"),
+    "username" : "spain",
+    "password" : "spain",
+    "nationality" : "Spain",
+    "name" : "spain",
+    "surname" : "spain",
+    "email" : "spain@spain",
+    "isDelegate" : false
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("615074b53abac53dac1ad4fc"),
+    "username" : "usertest",
+    "password" : "Usertest12!!",
+    "nationality" : "USA",
+    "name" : "user",
+    "surname" : "test",
+    "email" : "usertest",
+    "isDelegate" : true
+}
